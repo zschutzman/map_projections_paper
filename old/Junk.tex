@@ -1,0 +1,140 @@
+\mute{
+
+\begin{proof}[Proof of~\ref{Thm1}]
+  Let $C\subset U$ be an open cap of $S^2$, 
+  and $B\subset C$ some other cap. Let $A'\subset \vphi(B)\subset \vphi(C)\subset \R^2$ 
+  be some disk, and $A = \vphi^{-1}(A')$. Since $\vphi$ is a 
+  diffeomorphism, it follows that 
+  $\vphi(B),\vphi(C),A$ are open sets with smooth boundary.
+  \begin{Claim}
+    $A'$ maximizes Polsby-Popper score 
+    in $\vphi(C)$, but $A$ does not maximize Polsby-Popper 
+    score in $C$. 
+  \end{Claim}
+  \begin{proof}
+    $A'$ maximizes Polsby-Popper score in $\vphi(C)$, because 
+    it is a disk in the plane. On the sphere, let 
+    $\hat A$ be the cap with equal area to $A$. By 
+    \cref{PP_S2}, it follows that 
+    $\PP_S(\hat A)\ge \PP_S(A)$. Since $A\subset B$ 
+    it follows by construction that 
+    $\mathrm{Area}(\hat A)\le \mathrm{Area}(B)$, meaning 
+    that $\hat A$ is a cap with geodesic radius 
+    smaller than $B$'s.
+
+    By the computation in \cref{Caps_Eg}, it follows
+    that:
+    \begin{align*}
+      \PP_S(A)\le \PP_S(\hat A)\le \PP_S(B)< \PP_S(C)
+    \end{align*}
+    as desired.
+  \end{proof}
+  Notice that the claim proves the 
+  theorem, as any diffeomorphism 
+  preserving orders of Polsby-Popper scores would 
+  preserve maximal regions in the ordering.
+\end{proof}
+\abn{muted the second proof with measures and other bs}
+
+\begin{proof}
+  TODO: proof 2: delete?
+  \begin{Claim}
+
+  \end{Claim}
+  \begin{proof}
+  \end{proof}
+  Let $C\subset U$ be an open ball in $S^2$. Let $A\subset C$ be some 
+  region, and $B$ be a ball such that $\mu_S(A)=\mu_S(B)$. We note 
+  that since $Area(B)< Area(C)$, we can position $B$ such that 
+  $B\subset C$. Moreover, by By \cref{PP_S2}, 
+  it follows that $\PP_S(B)\ge \PP_S(A)$. 
+
+  Note that $\PP_S(B(r))$ is monotonically strictly 
+  increasing with the radius $r$, as shown by 
+  \cref{Caps_Eg}. Note that 
+  $\sup_{A\subset C} \PP_S(A)=\PP_S(C)$, simply by 
+  taking an increasing sequence of balls whose radii 
+  converge to that of $C$. Since $\PP_S(A) \le \PP_S(B) < \PP_S(C)$, 
+  there does not exist a maximizer of $\PP_S$ within $C$.
+
+  However, on the plane, every open region has a 
+  maximizer of $\PP$. In particular, these maximizers are the open discs.
+  Suppose that $A'$ is one such open disc in $\phi(C)$. 
+  Then $\PP_{\R^2}(\vphi(A')) < \PP_{\R^2}(C)$, so there is an open cap $B \subset C$ 
+  so that $\PP_{\R^2}(\vphi(A')) < \PP_{\R^2}(B)$.
+
+  Let $A = \vphi(A')$. Then $\PP_{\R^2}(A) < \PP_{\R^2}(B)$, but 
+  $\PP_{\R^2}(\phi(A)) = \PP_{\R^2}(A') \geq \PP_{\R^2}(\phi(B))$, which is the
+  conclusion of the theorem.
+  
+\end{proof}
+}
+
+
+
+
+
+\mute{
+Throughout this note, we will write 
+$A_{\eps} = \cup_{a\in A}B_{a,\eps}$, the $\eps$-thickening 
+of $A$.
+This theorem will follow from a crucial lemma due to 
+\cite{PP_Sphere}:
+\begin{Lemma}\label{Cite_Lemma}
+  Let $A$ be a closed subset of $S^2$, and let $B$ be a ball in 
+  $S^2$ such that $\mu_S(A)=\mu_S(B)$. Then for every 
+  $\eps>0$, $\mu(A_{\eps})\ge \mu(B_{\eps})$.
+\end{Lemma}
+\begin{Lemma} \label{Tube_Lemma}
+  Let $A\subset S^2$ be some compact region. Then
+  \begin{align*}
+    \mu_S(A_{\eps}) = \mu_S(A)+\eps \nu_S(\del A)+O(\eps^2)
+  \end{align*}
+\end{Lemma}
+\begin{proof}
+  sketch: do it for polygons, then pick a sequence of polygons $A_n$ 
+  converging to $A$ in Hausdorff measure. Then 
+  $(A_n)_{\eps}\to A_{\eps}$ in Hausdorff measure so 
+  $vol(A_n\eps)\to vol(A_{\eps})$. But 
+  $Vol(A_n)\to Vol(A)$ by dominated convergence, and 
+  $Perim(A_n)\to Perim(A)$ by rectifiability, so
+  \begin{align*}
+    Vol(A_{\eps})
+    =\lim Vol((A_n)_{\eps})
+    =\lim Vol(A_n)+\eps Perim(A_n)+O(\eps^2)
+    =Vol(A_{\eps})+\eps Perim(A_{\eps})+O(\eps^2)
+  \end{align*}
+\end{proof}
+\begin{Corollary}
+  If $A$ is a closed subset of $S^2$, and $B$ is a ball in 
+  $S^2$ with $\mu_S(A)=\mu_S(B)$, then 
+  $\nu_S(\del A)\ge \nu_S(\del B)$.
+\end{Corollary}
+\begin{proof}
+  By \cref{Tube_Lemma}, we have:
+  \begin{align*}
+    \mu_S(A_{\eps}) &= \mu_S(A)+\eps\nu_S(A)+O(\eps^2)\\
+    \mu_S(B_{\eps}) &= \mu_S(B)+\eps\nu_S(B)+O(\eps^2)
+    =\mu_S(A)+\eps\nu_S(B)+O(\eps^2)
+  \end{align*}
+  By \cref{Cite_Lemma}, 
+  $\mu_S(A_{\eps})\ge \mu_S(B_{\eps})$, it follows that:
+  \begin{align*}
+    \eps\nu_S(A)\ge \eps\nu_S(B)+O(\eps^2)
+  \end{align*}
+  Dividing by $\eps$ and passing to the limit as $\eps\to 0$ 
+  gives the desired result.
+\end{proof}
+\begin{Corollary} \label{Main_Lemma}
+  Balls in $S^2$ minimize Polsby-Popper ratios.
+\end{Corollary}
+\begin{proof}
+  By~\cref{Cite_Lemma}, balls minimize perimeters 
+  in their volume class, and hence, maximize Polsby-Popper ratios.
+\end{proof}
+}
+
+\mute{
+  Balls minimize perimeters in their volume class, and hence 
+  maximize Polsby-Popper ratios.
+}

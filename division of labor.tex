@@ -1,0 +1,57 @@
+Who are we talking to: Ourselves at the beginning of last summer.
+
+Tasks:
+
+1. (Lorenzo) Clean up dpp proof
+
+2. (Assaf) Pictures
+ --> Lorenzo's doodle about dpp
+
+3. Convex hull score - find precise conditions on theta1, theta2, etc. Rewrite the word argument with one simple formula or a counter-example?
+
+4. Reock = convex hull for our example. Write a paragraph explaining this?
+
+5. (Eduardo) Find the result about streographic projection being **unique** projection that preserves circles. Same for gnomic.
+Precise statement: Let U be an open subset of sphere, and V an open subset of the plane. If there is a diffeomorphism from U to V that sends all lines (resp. circles) to lines (resp. circles) it must be gnomic followed by an affine (resp. stereographic followed by an isometry).
+
+--we have a proof that gnomonic + affine linear is the unique family of convexity-preserving things
+-- idea about stereographic is unique circle-preserving: Consider a cap away from the north pole and the circle it get sent to in the plane.  Then there are line segments in R^3 connecting the points on the boundary of the cap to the corresponding points on the circle in the plane, and these segments don't cross each other.  Additionally, the extention of all of these segments to lines pass through the north pole, so we can define the hull of a cone-ish thing with the nape at the north pole, such that the cross-sections at by the plane identifying the cap in the sphere and the plane we're projecting to are both circles.  I don't quite know where I'm going with this, but maybe this construction is enough to characterize a circle-preserving map, and it doesn't have enough degrees of freedom to be anything but the stereographic plus a scaling and a rotation of the plane?
+
+6. (Assaf) Experiments
+
+Responding to the objection that this is just a mathematical exercise, because the sphere is close enough to being flat...
+-> Pictures of order reversing in real life examples
+-> Try Colorado metric / total perimeter metric
+
+7. For bumpy metrics that are not spherical
+
+Idea (?) -- In each tangent space, the differential must be an isometry, in order to preserve PP. Then use exponential map, look at PP (exp_t(V)) 
+General theorem(?) : If $F$ is not an isometry, then it changes PP order.
+[Then use that a bumpy sphere is not isometric to the plane]
+
+8. Find this energy paper that Justin recommended
+
+9. Total perimeter metric? (Colorado metric)
+
+-> There are no maps that preserve all perimeters (/ all distances), b/c they are isometries, so this metric is bound to get distorted also. I guess the reason why the PP score stuff is interesting is because it involves a ratio fo two different parameters, and preserving it doesn't automatically reduce  
+
+10. Missing corollary -- if there are two sphere projections, F and G, and *they are really different* ($F^{-1} \circ G$ not an isometry), then there is order reversing between F's map and G's map, for PP score.
+
+11. Find some clarity about how people use compactness scores [ Ask Jon O'Neill]
+
+12. What is the philosophy of this paper?
+
+13. Misc questions:
+
+\lsn{ Is there any compactness metric whose ordering doesn't change when we project with it? (Probably not... what is a 'compactness score'? Maybe we can formalize this question.)
+
+Or should the recommendation of the paper be to not use projections when computing these scores? [Do people already do that?] There is no way to pick a projection that doesn't bias, so don't pick any...
+
+Maybe we could present some adversarial situation in which someone designs a map to make their district seem very compact?
+
+Conj: Given any two districst D_1 and D_2, there are maps under which $D_1$ scores better than $D_2$ and vica versa. (This is a different statement than thm 1. It seems kind of stupid because you give too much flexibility to the choice of map... maybe we can say something even for a very restricted class of maps?) 
+
+Maybe we can give some sort of variational description? What is an optimally PP-order preserving mpa?
+
+Relating compactness scores to overfitting? (@Zach You mentioned this on slack in the beginning of summer and I'm still very intriguied by this idea - Lorenzo)}
+(@Lorenzo Maybe the way I want to think about it is "information-theoretic compactness" as opposed to 'discrete' or 'geometric' or whatever, where you measure complexity/compactness by the number of bits you need to describe the plan. There's this nice relationship between information complexity and overfitting -- AIC/RIC/BIC are common measures. I also have this grand vision of doing something where you crowdsource a "hot or not" for a bunch of fictional districts and use that to train generative adversarial neural nets to gerrymander :) --zach)

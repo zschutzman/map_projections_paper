@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul 27 16:34:37 2018
+
+@author: assaf
+"""
+
+import pandas as pd
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy.stats as stats
+import tkinter as tk
+
+### change the line below to be your favourite districting plan shapefile
+districts = gpd.read_file("../approx_unit_run/districting_plans/cd2013/tl_rd13_us_cd113.shp")
+districts = districts.to_crs({"init": "epsg:" + "32614"})
+districts["polsby_UTM14"] = 4*np.pi*districts.geometry.area/(districts.geometry.length**2)
+districts["UTM_rank"] = districts["polsby_UTM14"].rank(ascending=False)
+
+districts = districts.to_crs({"init": "epsg:" + "4326"})
+districts["polsby_LATLONG"] = 4*np.pi*districts.geometry.area/(districts.geometry.length**2)
+districts["LATLONG_rank"] = districts["polsby_LATLONG"].rank(ascending=False)
+
+districts = districts.to_crs({"init": "esri:" + "102009"})
+districts["polsby_conic"] = 4*np.pi*districts.geometry.area/(districts.geometry.length**2)
+districts["conic_rank"] = districts["polsby_conic"].rank(ascending=False)
+
+for i, dist in districts.iterrows():
+    print(dist["GEOID"])
+    print(dist["UTM_rank"])
+    print(dist["LATLONG_rank"])
+    print(dist["conic_rank"])
+    
+f, ax = plt.subplots()
+ax.plot(districts["polsby_UTM14"], districts["polsby_LATLONG"], 'o', picker=10, color='purple')
+
+def my_ch_test(t1, t2, p1, p2):
+    plane = np.tan(t1)*np.tan(p2) > np.tan(p1)*np.tan(t2)
+    sphere = (np.cos(t1) - np.cos(t2))*(1-np.cos(p2)) > (np.cos(p1)-np.cos(p2))*(1-np.cos(t2))
+    if sphere and plane:
+        print("Some points where shit flips:")
+        print(t1)
+        print(t2)
+        print(p1)
+        print(p2)
+
+for t1 in [np.pi/8]:  # np.linspace(0,np.pi/2,5):
+    for t2 in [np.pi/4]:  # np.linspace(0,np.pi/2,5):
+        for p1 in [np.pi/4]:  # np.linspace(0,np.pi/2,5):
+            for p2 in [np.pi*2/5]: # np.linspace(0,np.pi/2,5):
+                print("blee")
+                my_ch_test(t1,t2,p1,p2)
+    

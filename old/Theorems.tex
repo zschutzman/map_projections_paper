@@ -1,0 +1,131 @@
+\zs{We should discuss the tone/intended audience of this paper -- what kind of terminology, shorthand, discourse, etc should be in here. re the venue, Moon suggested either we look at geography journals, in which case we should make the language a little less technical and maybe bring in some application, or the [something] of the AMS (whichever takes cute, <10pg ones, in which case we should try to make the language a little more precise and structure it more like a math paper.} 
+
+
+
+
+Since the enactment of the Apportionment Act of 1911, 
+mandating that congressional districts be \enquote{composed of a contiguous and compact territory} \cite{App1911}, there has been a debate about the definition of \enquote{compact}. In a paper\cite{PP_Paper} trying to answer this, Daniel Polsby and Robert Popper proposed a test first developed by E.P. Cox \cite{EPCox} to give 
+compactness scores to regions in the plane:
+\begin{Definition} \label{PP_Plane}
+  Let $U\subset \R^2$ be a bounded open set with smooth
+  boundary. We define:
+  \begin{align*}
+    \PP_{\R^2}(U) =\frac{\mathrm{Area}(U)}{\mathrm{Perimeter}(U)^2}
+  \end{align*}
+\end{Definition}
+\zs{isn't PP usually defined with constants so that it is in the range $[0,1]$ or $[0,100]$?}  The isoperimetric inequality states that $\PPR(U)\le \frac{1}{4\pi}$, with equality if and only if $U$ is a disk.\cite{SteinShak}
+
+On a spherical region, we similarly define:
+\begin{Definition}
+  Let $U$ be an open set in $S^2$ with smooth boundary. 
+  We similarly define:
+  \begin{align*}
+    \PP_S(U) = \frac{\mathrm{Area}(U)}{\mathrm{Perimeter}(U)^2}
+  \end{align*}
+  Where area and perimeter are measured on the sphere.
+\end{Definition}
+\zs{These two definitions should be grouped together as $\PP_\mathcal{M}(U)$ is the PP score of a set $U$ in a surface $\mathcal{M}$.  Then $\mathcal{S}$ and $\R$ come as special cases.}
+\lsn{We should also point out that $PP_S$ is *not* scale invariant!}
+
+\abn{TODO - explain why this is the right notion.}
+\lsn{Our point is that it isn't, but this is how you might naively compute Polsby-Popper without projecting to the earth. \\ We are trying to refute the claim that $PP_{\mathbb{R}^2}$ is natural. Since the earth is a sphere, any computation of $PP_{\mathbb{R}^2}$ requires some sphere projection. To circumvent this, one might try to compute PP using geometry computed on the sphere. This leads to $PP_S$. We show that $PP_S$ is a different score from $PP_R$, for any projection.  \\This paper says: what if people did this stupid thing? This is why it's stupid. Maybe we can find people who makes this mistake, and cite their papers.}
+\abn{Is it mean to target specific papers? It might be better to leave this discussion to the end of the paper, where we can discuss applications}
+\abn{Is this remark necessary?}
+
+Since any real valued function induces a total preorder on its 
+domain, the Polsby-Popper scores defined above also induce such 
+total preorders on bounded open subsets with smooth boundary of $S^2$ 
+and $\R^2$
+  If $X$ is $\R^2$ or $S^2$, then the Polsby-Popper scores as 
+  defined above induces a total preorder 
+  on the open subregions with smooth boundary of X, by assigning $U > V$ iff $\PP_X(U) > \PP_X(V)$. 
+
+\begin{Example}\label{Caps_Eg} 
+  Consider $S^2$ the unit sphere centered at $0\in \R^3$, and 
+  define $U_h = \{(x,y,z)\in S^2: z\ge h\}$. \zs{We should call this a cap and argue that it is the analogue of a circle on the sphere.}  A 
+  straightforward integration by shells shows that 
+  $\mathrm{Area}(U_h) = 2\pi(1-h)$, and that 
+  $\mathrm{Perimeter}(U_h)=2\pi(\sqrt{1-h^2})$. Overall, 
+  we get:
+  \begin{align*}
+    \PP_S(U_h) = \frac{2\pi(1-h)}{4\pi^2(1-h^2)}
+    =\frac{1}{2\pi}\frac{1}{1+h}
+  \end{align*}
+  Note that $\PP_S(U_h)$ is monotonically strictly 
+  decreasing with $h$. This means that 
+  as the radius of the cap $U_h$ 
+  gets larger, so does the Polsby-Popper score.
+\end{Example}
+The goal of this paper is to prove the following theorem:
+\begin{Theorem} \label{Thm1}
+  Let $U\subset S^2$ be some open region. Then there does 
+  not exist a diffeomorphism $\vphi:U\to V\subset \R^2$ 
+  preserving orders of Polsby-Popper scores. In other words, 
+  for any such $\vphi$, there exist regions $A,B\subset U$ 
+  such that $\PP_S(A)>\PP_S(B)$, but 
+  $\PPR(\vphi(A))\le \PPR(\vphi(B))$.
+\zs{All of this works for non-unit spheres. If we can do it for the general case without making the math messy, we should.}\end{Theorem}
+
+We will use the isoperimetric inequality on spheres \cite{Rado} \cite{Oss}
+\begin{Theorem}
+  If $L$ is the length of a simple curve $\gamma$ on $S^2$, and 
+  $A$ the area it encloses, then:
+  \begin{align*}
+    L^2\ge A^2-4\pi A
+  \end{align*}
+  with equality if and only if $\gamma$ is the boundary 
+  of a ball.
+\end{Theorem}
+\begin{Corollary} \label{PP_S2}
+  Among all regions with a fixed area $a$, spherical caps
+  minimize perimeters, and hence Polsby-Popper ratios.
+\end{Corollary}
+\begin{proof}[Proof of~\ref{Thm1}]
+  We first observe that the theorem 
+  follows if we show that $\vphi$ 
+  does not preserve maximal elements in the ordering.
+  Let $C\subset U$ be an open cap of $S^2$, and 
+  choose some disk $A'\subsetneq \vphi(C)\subset \R^2$. 
+  We set $A = \vphi^{-1}(A')$. Since $\vphi$ is a 
+  diffeomorphism, it follows that 
+  $\vphi(B),\vphi(A)$ are open sets with smooth boundary.
+  \begin{Claim}
+    $A'$ maximizes Polsby-Popper score 
+    in $\vphi(C)$, but $A$ does not maximize Polsby-Popper 
+    score in $C$.
+  \end{Claim}
+  \begin{proof}
+    $A'$ maximizes Polsby-Popper score in $\vphi(C)$, because 
+    it is a disk in the plane. On the sphere, let 
+    $\hat A$ be the cap with equal area to $A$. By 
+    \cref{PP_S2}, it follows that 
+    $\PP_S(\hat A)\ge \PP_S(A)$. Since $A\subset  C$ 
+    it follows by construction that 
+    $\mathrm{Area}(\hat A) = \mathrm{Area}(A) \le \mathrm{Area}(C)$, meaning 
+    that $\hat A$ is a cap with geodesic radius 
+    smaller than $C$'s.
+
+    By the computation in \cref{Caps_Eg}, it follows
+    that:
+    \begin{align*}
+      \PP_S(A)\le \PP_S(\hat A)< \PP_S(C)
+    \end{align*}
+    as desired.
+  \end{proof}
+  Notice that the claim proves the 
+  theorem, as any diffeomorphism 
+  preserving orders of Polsby-Popper scores would 
+  preserve maximal elements in the  ordering.
+\end{proof}
+
+
+\begin{Remark}
+  Note that the proof above actually tells us something 
+  stronger - namely, that for any projection, Polsby-Popper score 
+  orderings are not preserved in {\it any} cap.
+\end{Remark}
+
+TODO: comments on generalizing to rectifiable curves,
+TODO: further questions: Reock/Convex hull
+optimization, drop the assumption that the Earth is a 
+sphere (it's a flat torus)

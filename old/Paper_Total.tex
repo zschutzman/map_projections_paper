@@ -1,0 +1,39 @@
+\input{defs}
+\usepackage{titling}
+\thanksmarkseries{arabic}
+
+
+\graphicspath{{./Images/}}
+\def\eps{\varepsilon}
+\pagestyle{fancy}
+\begin{document}
+
+
+% \author[short version for running head]{name for top of paper}
+\author{Assaf Bar-Natan\thanks{assafbarnatan@gmail.com, University of Toronto} \and Austin Eide\thanks{email,etc} \and Victor Eduardo Heredia-Chavez\thanks{email, etc} \and Lorenzo Najt\thanks{email, etc} \and Zachary Schutzman\thanks{ email, etc\newline\indent\indent The authors want to thank VRDI and Jesus and Chuthulu ... serious: we have to acknowledge Bose funding and also GEAR}}
+
+\newcommand\shorttitle{Order-Reversal of Polsby-Popper Scores}
+
+%\shorttitle{\scriptsize Poslby-Popper vs. Map Projections: Battle For Democracy}
+
+\title{Order-Reversal of Polsby-Popper Scores Under Projections}
+
+\setlength{\headheight}{18pt} 
+\fancyhf{}
+\fancyhead[L]{\thepage}
+\fancyhead[R]{\Author}
+\fancyhead[C]{\shorttitle}
+\makeatletter
+\newcommand\Author{B-N, E, H-C, N, S}
+
+\makeatother
+
+\maketitle
+\vspace{-4ex}
+\input{Abstract.tex}
+\zs{TODO: set font to 10/12 and margins to 1in}
+\input{Theorems.tex}
+\input{ConvexHull.tex}
+\input{Questions.tex}
+\input{Bibliography.tex}
+\end{document}
