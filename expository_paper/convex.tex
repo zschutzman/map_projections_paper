@@ -1,80 +1,279 @@
 \section{Convex Hull}\label{sec:ch}
-
-Another commonly used compactness score is the \textit{convex hull score}.  We briefly recall the definition of a convex set and then define this score function.
-
-\begin{definition}
-A set $X$ in a metric space is \textbf{convex} if for any pair of points $x_1$ and $x_2$ in $X$, the shortest geodesic segment connecting $x_1$ and $x_2$ is entirely contained in $X$.  In the plane, these geodesic segments are ordinary line segments.  On the sphere, the geodesics are segments of great circles.
-\end{definition}
-
+Another commonly used compactness score is the \textit{convex hull
+score}.  We briefly recall the definition of a convex set and then
+define this score function.
 
 \begin{definition}
-Let $\mathrm{conv}(\Omega)$ denote the \textit{convex hull} of a region $\Omega$ in either the sphere or the plane, which is the smallest convex region containing $\Omega$.  Then we define the \textit{convex hull score} of $\Omega$ as $$\mathrm{CH}(\Omega)= \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{conv}(\Omega))}.$$
+A set $X$ in a metric space is \textbf{convex} if for any pair of
+points $x_1$ and $x_2$ in $X$, the shortest geodesic segment
+connecting $x_1$ and $x_2$ is entirely contained in $X$. 
+\end{definition}
+In the plane, these geodesic segments are ordinary line segments.  On
+the sphere, the geodesics are segments of great circles. In 
+particular, this means that on the sphere, caps are 
+convex, and in the plane, circular regions are convex.
+
+\begin{definition}
+Let $\mathrm{conv}(\Omega)$ denote the \textit{convex hull} of
+a region $\Omega$ in either the sphere or the plane, which is the
+smallest convex region containing $\Omega$.  Then we define the
+\textit{convex hull score} of $\Omega$ as 
+\begin{align*}
+  \mathrm{CH}(\Omega)=
+  \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{conv}(\Omega))}
+\end{align*}
 \end{definition}
 
-The convex hull score of a region $\Omega$  will be equal to one if and only if $\Omega$ is itself convex.  We note that the convex hull and Polsby-Popper scores agree when $\Omega$ is a circle, provide a similar score when $\Omega$ is roughly circluar, and differ greatly if $\Omega$ is a highly non-circular but convex region, such as a long, thin rectangle.
+The convex hull score of a region $\Omega$  will be equal to one if
+and only if $\Omega$ is itself convex.  We note that the convex hull
+and Polsby-Popper scores agree when $\Omega$ is a circle, provide
+a similar score when $\Omega$ is roughly circluar, and differ greatly
+if $\Omega$ is a highly non-circular but convex region, such as
+a long, thin rectangle.
 
-
-Our strategy to demonstrate that any map projection cannot preserve the orders of convex hull scores will be similar to the previous section.  We first argue that any order-preserving map must, in particular, preserve the maximizers in the ordering, meaning convex regions on the sphere are mapped to convex regions in the plane.  Then, we use this condition to restrict our attention to the map projections which preserve these maximizers, which we can then use to construct our counterexample.
+\abn{muted some stuff... Let the theorems speak for themselves?}
+\mute{
+Our strategy to demonstrate that any map projection cannot preserve
+the orders of convex hull scores will be similar to the previous
+section. We first argue that any order-preserving map must, in
+particular, preserve the maximizers in the ordering, meaning convex
+regions on the sphere are mapped to convex regions in the plane.
+Then, we use this condition to restrict our attention to the map
+projections which preserve these maximizers, which we can then use to
+construct our counterexample.
 
 An overview of the structure of the argument is as follows:
 \begin{enumerate}
-    \item Any map projection which preserves the ordering of convex hull scores must, in particular, preserve the maximizers in that ordering.  This means that such a projection must send convex sets on the sphere to convex sets in the plane.
-    \item One projection which is convexity-preserving is the gnomonic projection.
-    \item Affine linear transformations of the plane are also convexity-preserving.
-    \item \textit{Any} map projection which is convexity-preserving must be the composition of the gnomonic projection and an affine linear transformation.
-    \item The gnomonic projection does not preserve the ordering of convex hull scores, and any affine linear transformation \textit{does}.
-    \item Therefore, there is no composition of the gnomonic projection and an affine linear projection which together preserve the ordering of convex hull scores.
+    \item Any map projection which preserves the ordering of convex
+      hull scores must, in particular, preserve the maximizers in that
+      ordering.  This means that such a projection must send convex
+      sets on the sphere to convex sets in the plane.
+    \item One projection which is convexity-preserving is the gnomonic
+      projection.
+    \item Affine linear transformations of the plane are also
+      convexity-preserving.
+    \item \textit{Any} map projection which is convexity-preserving
+      must be the composition of the gnomonic projection and an affine
+      linear transformation.
+    \item The gnomonic projection does not preserve the ordering of
+      convex hull scores, and any affine linear transformation
+      \textit{does}.
+    \item Therefore, there is no composition of the gnomonic
+      projection and an affine linear projection which together
+      preserve the ordering of convex hull scores.
 \end{enumerate}
 
+Since the convex hull score of $\Omega$ is one if and only if $\Omega$
+is itself a convex region, the maximizers of the induced score
+ordering are exactly the convex sets in the surface of interest. We
+can observe that if there is some map projection which preserves the
+ordering of convex hull scores, it must at the very least map convex
+sets in the sphere to convex sets in the plane (and vice versa), since
+convex sets are the maximizers of the convex hull score.
 
+As it turns out, the family of map projections which send every convex
+set on the lower half-sphere to a convex set in the plane is exactly
+the set of projections which can be written as a composition of the
+\textit{gnomonic projection} from the lower half-sphere to the plane
+followed by an \textit{affine linear transformation}.
+}
+\abn{I'm still hunting down the reference for this theorem. 
+Some say it's due to Hartshorne, but I can't find the reference. 
+Someone says it's due to von Staudt from the 1850's...}
+\begin{theorem}
+  If $f:\R^n\to\R^n$ is a homeomorphism sendind straight 
+  lines to straight lines, and $n>1$, then $f$ is an affine linear 
+  transformation.
+\end{theorem}
 
-Since the convex hull score of $\Omega$ is one if and only if $\Omega$ is itself a convex region, the maximizers of the induced score ordering are exactly the convex sets in the surface of interest. We can observe that if there is some map projection which preserves the ordering of convex hull scores, it must at the very least map convex sets in the sphere to convex sets in the plane (and vice versa), since convex sets are the maximizers of the convex hull score.
+\begin{proof}
+  After possibly translating, we can assume $f(0) = 0$, in which 
+  case we must show that $f$ is linear. Since $f$ is a 
+  bijection sending straight lines to straight lines, it must 
+  send affine subspaces of $\R^n$ to affine subspaces of 
+  $\R^n$. Additionally, $f$ must preserve intersections of 
+  lines, and hence sends coplanar parallel lines to coplanar 
+  parallel lines, and hence nondegenerate parallelograms 
+  to nondegenerate parallelograms.
+  
+  Let $v\in \R^2$ be some nonzero vector, and let 
+  $w\not\in \mathrm{Span}(v)$. Let $L_v$ and 
+  $L_w$ be the spans of $v$ and $w$ respectively. 
+  In the plane $\mathrm{Span}(v,w)$, 
+  we can draw the following parallelogram:
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=1pt]
+      \draw[thick] (0,0) -- (3,1) node[below] {};
+      \draw[thick] (0,0) -- (1,2) node[left] {};
+      \draw[thick] (1,2) -- (4,3) node[above] {};
+      \draw[thick] (3,1) -- (4,3) node[right] {};
+      \fill (3,1) circle (0.1) node[below] {$v$};
+      \fill (1,2) circle (0.1) node[left] {$w$};
+      \fill (0,0) circle (0.1) node[below] {$0$};
+      \fill (4,3) circle (0.1) node[above] {$v+w$};
+    \end{tikzpicture}
+  \end{figure}
+  By the above discussion, $f$ sends this parallelogram 
+  to another parallelogram whose vertices are 
+  $0$, $f(v)$, $f(w)$, and $f(v+w)$. By the geometric 
+  interpretation of vector addition, this means that 
+  $f(v+w) = f(v)+f(w)$. A similar argument works for 
+  subtraction.
+  
+  Now, if $w\in \mathrm{Span}(v)$, then choose some 
+  $u\not\in\mathrm{Span}(v)$, and apply the above argument to 
+  the pair $w-u$ and $v+u$, and then to the pairs 
+  $w,u$ and $v,u$ to get $f(v+w) = f(v) + f(w)$.
 
+  We can finish the proof here, since any continuous 
+  additive function is linear. However, showing that 
+  $f(\alpha v) = \alpha f(v)$ is both interesting and instructional.
 
+  Let $\alpha\in \R\ssm\{0\}$, and $v\in \R^n\ssm \{0\}$. We 
+  can write $f(\alpha v) = g(\alpha,v)f(v)$, and we need to show 
+  that $g$ does not depend on $v$. Let $w\not\in\mathrm{Span}(v)$, 
+  and consider the following line configuration:
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \draw[thick] (0,0) -- (4,0) node[below] {};
+      \draw[thick] (0,0) -- (4,1) node[left] {};
+      \draw[thick] (2,0) -- (2,0.5) node[above] {};
+      \draw[thick] (3,0) -- (3,0.75) node[above] {};
+      \fill (0,0) circle (0.1) node[below] {$0$};
+      \fill (2,0.5) circle (0.1) node[above] {$w$};
+      \fill (2,0) circle (0.1) node[below] {$v$};
+      \fill (3,0.75) circle (0.1) node[above] {$\alpha w$};
+      \fill (3,0) circle (0.1) node[below] {$\alpha v$};
+    \end{tikzpicture}
+  \end{figure}
+  Where the two vertical lines are parallel. Since $f$ 
+  preserves line configurations and paralellism, if 
+  $f(\alpha v) = \beta f(v)$, then 
+  $f(\alpha w) = \beta f(w)$. The case when 
+  $w\in \mathrm{Span}(v)$ is treated similarly to additivity. 
+  Overall, we get that $g:\R\to \R$ as defined above 
+  does not depend on $v$.
 
+  Morevoer, it is easy to check that $g$ is a field 
+  automorphism of $\R$, and hence is the identity.
+\end{proof}
+Note that we have actually proved a stronger result 
+for a general field:
+\begin{theorem}
+  Let $\K$ be a field with at least three elements, and 
+  let let $n>1$. Let $f:\K^n\to \K^n$ be a bijection. Then 
+  there exists $z\in \K^n$ such that for all 
+  $x,y\in \K^n$ and $\alpha\in \K$,
+  \begin{align*}
+    f(\alpha x) = g(\alpha)f(x) + f(y) + z
+  \end{align*}
+  Where $g:\K\to\K$ is a field automorphism.
 
-As it turns out, the family of map projections which send every convex set on the lower half-sphere to a convex set in the plane is exactly the set of projections which can be written as a composition of the \textit{gnomonic projection} from the lower half-sphere to the plane followed by an \textit{affine linear transformation}.
-
-
-
-
+  Such a function is called \textit{semilinear}
+\end{theorem}
 \begin{definition}
-	The \textbf{gnomonic projection} is the map projection from the lower half-sphere to the plane defined by placing the south pole of the sphere tangent to the plane at the origin and sending a point $p$ on the lower half-sphere to the unique point $q$ in the plane which lies on the line in $\mathbb{R}^3$ which passes through the center of the sphere, $p$ and $q$.
+  The \textbf{gnomonic projection} is the map projection from the
+  lower half-sphere to the plane defined by placing the south pole of
+  the sphere tangent to the plane at the origin and sending a point
+  $p$ on the lower half-sphere to the unique point $q$ in the plane
+  which lies on the line in $\mathbb{R}^3$ which passes through the
+  center of the sphere, $p$ and $q$.
 \end{definition}
 	
-	
-	Intuitively, the image of a region on the sphere under the gnomonic projection is the shadow in the plane of that region which is created when we put the bottom of the sphere at the origin and turn on a light source at the center of the sphere.
+  Intuitively, the image of a region on the sphere under the gnomonic
+  projection is the shadow in the plane of that region which is
+  created when we put the bottom of the sphere at the origin and turn
+  on a light source at the center of the sphere.
 
-\zs{do we want to write the explicit parametrization of the gnomonic projection here? the xy version of it is pretty gross.  the polar version is less messy.  I don't know if it provides any extra insight...}
+\zs{do we want to write the explicit parametrization of the gnomonic
+projection here? the xy version of it is pretty gross.  the polar
+version is less messy.  I don't know if it provides any extra
+insight...}
 
-We can observe that the gnomonic projection sends caps centered at the south pole to circles in the plane centered at the origin, and sends any segment of a great circle passing through the south pole to a line segment in the plane passing through the origin.  What may be somewhat surprising is that it sends \textit{every} convex set on the sphere to a convex set in the plane.
+We can observe that the gnomonic projection sends caps centered at the
+south pole to circles in the plane centered at the origin, and sends
+any segment of a great circle passing through the south pole to a line
+segment in the plane passing through the origin.  What may be somewhat
+surprising is that it sends \textit{every} convex set on the sphere to
+a convex set in the plane.
 
 
 \begin{lemma}
-The gnomonic projection from the lower half-sphere to the plane preserves convex sets.  That is, if $X$ is a convex set on the sphere, its image under the gnomonic projection will be a convex set in the plane.
+The gnomonic projection from the lower half-sphere to the plane
+preserves convex sets.  That is, if $x$ is a convex set on the sphere,
+its image under the gnomonic projection will be a convex set in the
+plane.
 \end{lemma}
 \begin{proof}
 
-To prove this, it suffices to show that the one-dimensional convex sets are preserved, i.e. that any segment of a great circle on the sphere is sent to a line segment in the plane.
+To prove this, it suffices to show that the one-dimensional convex
+sets are preserved, i.e. that any segment of a great circle on the
+sphere is sent to a line segment in the plane.
 
-A great circle on the sphere is uniquely identified by the intersection of a `slicing' plane passing through the center of the sphere with the surface of the sphere.  Then, for any point $p$ on the great circle, the line passing through the sphere's center and $p$ is contained within this plane.  But this is exactly the construction used to find the image of $p$ under the projection, so if $p$ is mapped to the point $q$, then $q$ is also on this line and therefore in the plane, and $q$ must lie at the intersection of the slicing plane and the projection plane.  Since the intersection of two planes is a line, any choice of $p$ on the great circle is sent to a $q$ on this line of intersection, so the image of any segment of the great circle is a segment of a line.
+A great circle on the sphere is uniquely identified by the
+intersection of a `slicing' plane passing through the center of the
+sphere with the surface of the sphere.  Then, for any point $p$ on the
+great circle, the line passing through the sphere's center and $p$ is
+contained within this plane.  But this is exactly the construction
+used to find the image of $p$ under the projection, so if $p$ is
+mapped to the point $q$, then $q$ is also on this line and therefore
+in the plane, and $q$ must lie at the intersection of the slicing
+plane and the projection plane.  Since the intersection of two planes
+is a line, any choice of $p$ on the great circle is sent to a $q$ on
+this line of intersection, so the image of any segment of the great
+circle is a segment of a line.
 \end{proof}
 
-Using this, we can complete the construction of the main tool of this section -- that any map projection which preserves convex sets can be written as the composition of the gnomonic projection and an affine linear transformation of the plane.
+Using this, we can complete the construction of the main tool of this
+section -- that any map projection which preserves convex sets can be
+written as the composition of the gnomonic projection and an affine
+linear transformation of the plane.
 
 
 \begin{lemma}
-	The map projections from the half-sphere to the plane which map every convex region to a convex region are exactly those which can be written as the composition of the gnomonic projection followed by an affine linear transformation of the plane.
+  The map projections from the half-sphere to the plane which map
+  every convex region to a convex region are exactly those which can
+  be written as the composition of the gnomonic projection followed by
+  an affine linear transformation of the plane.
 \end{lemma}
 
 \begin{proof}
-	By the previous lemma, the gnomonic projection does indeed preserve convex sets.   If a map projection preserves convex sets, it must in particular preserve the one-dimensional convex sets, meaning it maps segments of great circles on the sphere to line segments in the plane.  Take $\psi$ and $\varphi$ to convexity-preserving map projections, and, without loss of generality take $\varphi$ to be the standard gnomonic projection described above. We consider the composition $\psi\varphi^{-1}$, which is a transformation of the plane which preserves convex sets, so in particular it sends line segments to line segments.  Since these transformations also preserve containment, we can additionally observe that $\psi\varphi^{-1}$ preserves \textit{collinearity} in the plane, which means it is an affine linear transformation of the plane.  Since we can write $\psi$ as $\psi\varphi^{-1}\varphi$, we have successfully written our convexity-preserving map as the composition of the gnomonic projection and an affine linear transformation of the plane.
+  By the previous lemma, the gnomonic projection does indeed preserve
+  convex sets.   If a map projection preserves convex sets, it must in
+  particular preserve the one-dimensional convex sets, meaning it maps
+  segments of great circles on the sphere to line segments in the
+  plane.  Take $\psi$ and $\varphi$ to convexity-preserving map
+  projections, and, without loss of generality take $\varphi$ to be
+  the standard gnomonic projection described above. We consider the
+  composition $\psi\varphi^{-1}$, which is a transformation of the
+  plane which preserves convex sets, so in particular it sends line
+  segments to line segments.  Since these transformations also
+  preserve containment, we can additionally observe that
+  $\psi\varphi^{-1}$ preserves \textit{collinearity} in the plane,
+  which means it is an affine linear transformation of the plane.
+  Since we can write $\psi$ as $\psi\varphi^{-1}\varphi$, we have
+  successfully written our convexity-preserving map as the composition
+  of the gnomonic projection and an affine linear transformation of
+  the plane.
 \end{proof}
 
-This lemma lets us prove our theorem in two steps.  We can first show that the gnomonic projection does not preserve the ordering of convex hull scores, then argue that this misordering cannot be corrected by any affine linear transformation of the plane.  This first part we will prove by explicitly constructing two regions whose convex hull scores are permuted under the gnomonic projection, and to facilitate this construction, we make the following observation:
+This lemma lets us prove our theorem in two steps.  We can first show
+that the gnomonic projection does not preserve the ordering of convex
+hull scores, then argue that this misordering cannot be corrected by
+any affine linear transformation of the plane.  This first part we
+will prove by explicitly constructing two regions whose convex hull
+scores are permuted under the gnomonic projection, and to facilitate
+this construction, we make the following observation:
 
 \begin{lemma}
-Let $\varphi$ be the gnomonic projection and $C_\theta$ be a spherical cap centered at the south pole parametrized by the angle $\theta$ formed between the central axis of the sphere and a line segment between the center of the sphere and the boundary of the cap (Figure~\ref{fig:gnomcap}).  Then $\varphi(C_\theta)$ is a disk in the plane, centered at the origin, and has radius $\tan(\theta)$.
+Let $\varphi$ be the gnomonic projection and $C_\theta$ be a spherical
+cap centered at the south pole parametrized by the angle $\theta$
+formed between the central axis of the sphere and a line segment
+between the center of the sphere and the boundary of the cap
+(Figure~\ref{fig:gnomcap}).  Then $\varphi(C_\theta)$ is a disk in the
+plane, centered at the origin, and has radius $\tan(\theta)$.
 \end{lemma}
 
 \begin{figure}
