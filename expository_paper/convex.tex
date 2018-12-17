@@ -229,11 +229,12 @@ Note that we have actually proved a stronger result
 for a general field:
 \begin{theorem}
   Let $\K$ be a field with at least three elements, and 
-  let let $n>1$. Let $f:\K^n\to \K^n$ be a bijection. Then 
+  let let $n>1$. Let $f:\K^n\to \K^n$ be a bijection sending 
+  affine subspaces to affine subspaces. Then 
   there exists $z\in \K^n$ such that for all 
   $x,y\in \K^n$ and $\alpha\in \K$,
   \begin{align*}
-    f(\alpha x) = g(\alpha)f(x) + f(y) + z
+    f(\alpha x + y) = g(\alpha)f(x) + f(y) + z
   \end{align*}
   Where $g:\K\to\K$ is a field automorphism.
 
