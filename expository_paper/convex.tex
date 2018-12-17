@@ -414,6 +414,37 @@ this construction, we make the following observation:
   regions whose scores' order are permuted by $\varphi$.
 \end{example}
 }
+{\bf
+TODO: big issue: We are looking at patches, not the entire hemisphere. 
+The example below does not work when dealing with the gnomonic 
+projection on a small patch that doesn't contain the south pole. 
+I think that this can be remedied, but it might require a 
+computation engine like mathematica to show what happens to annuli. 
+
+Another possibility is to try to see what happens when you rotate 
+the hemisphere. How does the projection change? Some of the projected 
+hemisphere will "miss" the plane, but the part that stays on might do 
+something predictable, or, at the very least, something that might 
+preserve convex-hull scores... Though somehow I doubt this will work, 
+since this transformation on R2 will not be linear.
+
+Here's what I think we should do:
+
+1. explicitly compute gnomonic projection
+2. for any point on the hemisphere, see what happens to small, 
+concentric annuli?
+
+I originally thought that we could make an argument like so:
+1. the map projection is locally the gnomonic composed with a linear 
+isomorphism
+2. Extend the linear isomorphism to one of the whole plane, and then 
+we can extend the map projection to be defined on the entire hemisphere
+3. Use the example below.
+
+This won't work, however, since is might still be the case that 
+the gnomonic projection preserves convex-hull scores away from the 
+south pole (fat chance)
+}
 \begin{example}
   Let $p = (0,0,1)$ be the center of the sphere, and let $0$ be the
   origin. For any angle $0\le \theta< \frac\pi2$, let $C_\theta$ be
@@ -425,22 +456,19 @@ this construction, we make the following observation:
   an annular region. A straightforward computation shows that:
   \begin{align*}
     \mathrm{CH}(A(\alpha_1,\alpha_2)) &= 
-    1+\frac{\mathrm{Area}(C_{\alpha_1})}{\mathrm{Area}(C_{\alpha_2})}
+    1-\frac{\mathrm{Area}(C_{\alpha_1})}{\mathrm{Area}(C_{\alpha_2})}
     =1- \frac{1-\cos(\alpha_1)}{1-\cos(\alpha_2)}\\
     \mathrm{CH}(\vphi(A(\alpha_1,\alpha_2))) &=
-    1+\frac{\mathrm{Area}(\vphi(C_{\alpha_1}))}%
+    1-\frac{\mathrm{Area}(\vphi(C_{\alpha_1}))}%
     {\mathrm{Area}(\vphi(C_{\alpha_2}))}
       =1- \frac{\tan^2(\alpha_1)}{\tan^2(\alpha_2)}
   \end{align*}
   Where $\vphi$ is the gnomonic projection. 
-  Let $A=A(\alpha_1,\alpha_2)$ be defined by the angles 
-  (in degrees) $\alpha_1=46^\circ$ and
-  $\alpha_2=60^\circ$ and $B=A(\beta_1,\beta_2)$ be defined by 
-  $\beta_1=20^\circ$ and $\beta_2=26^\circ$. 
-  Then we have $\mathrm{CH}(A)\approx .39$ and
-  $\mathrm{CH}(B)\approx .41$, but $\mathrm{CH}(\varphi(A))\approx .64$
-  and $\mathrm{CH}(\varphi(B))\approx .45$, which is our example of two
-  regions whose scores' order are permuted by $\varphi$.
+  Let $A=A(\alpha_1,\alpha_2)$, and $B = A(\beta_1,\beta_2)$. 
+  Let $\alpha_2$ be arbitrary, and choose 
+  $\alpha_1 = \frac{\alpha_2}{2} = \beta_2$, and 
+  $\beta_1 = \frac{\beta_2}{2}$. 
+  
 \end{example}
 Now that we've shown that the gnomonic projection alone cannot
 preserve convex hull scores, to complete the argument, we must now
