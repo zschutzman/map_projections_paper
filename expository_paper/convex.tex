@@ -86,13 +86,15 @@ followed by an \textit{affine linear transformation}.
   which lies on the line in $\mathbb{R}^3$ which passes through the
   center of the sphere, $p$ and $q$.
 \end{definition}
-By convention, we will let the sphere be the unit sphere 
-centered at $(0,0,1)$.
-
 Intuitively, the image of a region on the sphere under the gnomonic
 projection is the shadow in the plane of that region which is
 created when we put the bottom of the sphere at the origin and turn
 on a light source at the center of the sphere.
+
+By convention, we will let the sphere be the unit sphere 
+centered at $(0,0,1)$. Throughout this section, we let 
+$\Omega\subset S^2$ be an open region such that $0\in \Omega$ 
+and $\Omega$ is contained in the lower-hemisphere. 
 
 \zs{do we want to write the explicit parametrization of the gnomonic
 projection here? the xy version of it is pretty gross.  the polar
@@ -251,7 +253,7 @@ linear transformation of the plane.
 
 \begin{theorem}
   Let $\psi:U\to \R^2$ be a map projection 
-  defined on the lower-hemisphere, and let 
+  defined on a subset of the lower-hemisphere, and let 
   $\vphi$ be the gnomonic projection. If $\psi^{-1}$ sends 
   convex sets to convex sets, then there exists an affine linear map 
   $L$ such that $\psi = L\circ \vphi$.
@@ -260,11 +262,11 @@ linear transformation of the plane.
 \begin{proof}
   By Lemma ~\ref{lem:gnomonic_convex}, the map $\vphi\circ
   \psi^{-1}:\psi(U)\to \R^2$ sends convex sets to convex sets. It is
-  bijective, since $\psi$ and $\vphi$ are bijective, and hence
-  satisfies the conditions of Theorem ~\ref{thm:geometric_algebra}, 
-  meaning that there exists an affine linear isomorphism 
-  $L^{-1}:\R^2\to \R^2$ such that $\vphi = \psi \circ L^{-1}$. 
-  Thus, $\psi = \vphi \circ L$, as desired.
+  bijective on its range, since $\psi$ and $\vphi$ are bijective, and
+  hence satisfies the conditions of Theorem
+  ~\ref{thm:geometric_algebra}, meaning that there exists an affine
+  linear isomorphism $L^{-1}:\R^2\to \R^2$ such that $\vphi = \psi
+  \circ L^{-1}$.  Thus, $\psi = \vphi \circ L$, as desired.
   \mute{
   By the previous lemma, the gnomonic projection does indeed preserve
   convex sets.   If a map projection preserves convex sets, it must in
@@ -285,7 +287,7 @@ linear transformation of the plane.
   the plane.}
 \end{proof}
 We now show that the gnomonic projection does not preserve 
-convex-hull score orderings.
+convex-hull score orderings on any region of the sphere.
 
 \abn{mute this and write it in later:
 This lemma lets us prove our theorem in two steps.  We can first show
@@ -415,41 +417,6 @@ this construction, we make the following observation:
   regions whose scores' order are permuted by $\varphi$.
 \end{example}
 }
-{\bf
-TODO: big issue: We are looking at patches, not the entire hemisphere. 
-The example below does not work when dealing with the gnomonic 
-projection on a small patch that doesn't contain the south pole. 
-I think that this can be remedied, but it might require a 
-computation engine like mathematica to show what happens to annuli. 
-
-Another possibility is to try to see what happens when you rotate 
-the hemisphere. How does the projection change? Some of the projected 
-hemisphere will "miss" the plane, but the part that stays on might do 
-something predictable, or, at the very least, something that might 
-preserve convex-hull scores... Though somehow I doubt this will work, 
-since this transformation on R2 will not be linear.
-
-Here's what I think we should do:
-
-1. explicitly compute gnomonic projection
-2. for any point on the hemisphere, see what happens to small, 
-concentric annuli?
-
-I originally thought that we could make an argument like so:
-1. the map projection is locally the gnomonic composed with a linear 
-isomorphism
-2. Extend the linear isomorphism to one of the whole plane, and then 
-we can extend the map projection to be defined on the entire hemisphere
-3. Use the example below.
-
-This won't work, however, since is might still be the case that 
-the gnomonic projection preserves convex-hull scores away from the 
-south pole (fat chance)
-
-Update: I'm an idiot. Just think of the region of definition of 
-the projection as based around $0$. Everything works now, modulo 
-computational verification of the example below
-}
 
 \input{new_stereo_proof}
 \begin{example}
@@ -475,16 +442,18 @@ computational verification of the example below
   Let $\alpha_2$ be arbitrary, and choose 
   $\alpha_1 = \frac{\alpha_2}{2} = \beta_2$, and 
   $\beta_1 = \frac{\beta_2}{2}$. 
-  
 \end{example}
+Note that in the above example, $\alpha_1$ (and hence 
+all other angles) can be chosen to be arbitrarily small. 
+
 Now that we've shown that the gnomonic projection alone cannot
 preserve convex hull scores, to complete the argument, we must now
 show that there is no affine linear transformation of the plane which
 can correct for this.
 
 \begin{lemma}\label{lem:noafflin}
-  Let $L$ be an affine linear transformation of the plane.  Then $L$ preserves the convex hull scores of all figures in the plane.
-
+  Let $L$ be an affine linear transformation of the plane.  Then $L$
+  preserves the convex hull scores of all figures in the plane.
 \end{lemma}
 \begin{proof}
   Since affine linear transformations map lines to lines, they preserve
