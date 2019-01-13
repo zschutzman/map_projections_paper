@@ -3,6 +3,7 @@ Another commonly used compactness score is the \textit{convex hull
 score}.  We briefly recall the definition of a convex set and then
 define this score function.
 
+\mute{
 \begin{definition}
   A set $X$ in a metric space is \textbf{convex} if for any pair of
   points $x_1$ and $x_2$ in $X$, the shortest geodesic segment
@@ -12,7 +13,7 @@ In the plane, these geodesic segments are ordinary line segments.  On
 the sphere, the geodesics are segments of great circles. In 
 particular, this means that on the sphere, caps are 
 convex, and in the plane, circular regions are convex.
-
+}
 \begin{definition}
   Let $\mathrm{conv}(\Omega)$ denote the \textit{convex hull} of
   a region $\Omega$ in either the sphere or the plane, which is the
@@ -77,6 +78,8 @@ the set of projections which can be written as a composition of the
 \textit{gnomonic projection} from the lower half-sphere to the plane
 followed by an \textit{affine linear transformation}.
 }
+
+\mute{
 
 \begin{definition}
   The \textbf{gnomonic projection} is the map projection from the
@@ -286,6 +289,7 @@ linear transformation of the plane.
   of the gnomonic projection and an affine linear transformation of
   the plane.}
 \end{proof}
+}
 We now show that the gnomonic projection does not preserve 
 convex-hull score orderings on any region of the sphere.
 
@@ -415,7 +419,7 @@ this construction, we make the following observation:}
   regions whose scores' order are permuted by $\varphi$.
 \end{example}}
 
-\input{new_stereo_proof}
+
 \begin{example}
   Let $p = (0,0,1)$ be the center of the sphere, and let $0$ be the
   origin. For any angle $0\le \theta< \frac\pi2$, let $C_\theta$ be

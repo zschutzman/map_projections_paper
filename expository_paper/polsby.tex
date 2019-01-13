@@ -127,6 +127,7 @@ of Polsby-Popper scores for all regions.
   sphere, but the Polsby-Popper score of $\varphi(A)$ is greater than
   that of $\varphi(C)$ in the plane.
 \end{theorem}
+\zs{\LARGE\bf 	I MUTED THE FIGURE BECAUSE IT WOULDNT COMPILE. PLS UNMUTE }
 \begin{figure}\label{fig:dpp}
   \centering
   \begin{tikzpicture}[scale=2pt]
@@ -134,7 +135,7 @@ of Polsby-Popper scores for all regions.
     node[midway,above] {$\vphi$};
     \draw[thick,->] (1,-0.3) -- (-1,-0.3)%
     node[midway,below] {$\vphi^{-1}$}; 
-
+\mute{
     \draw[line width=1, RedViolet] (-2.5,0) circle (1);
     \draw node at (-2.5,1.2) {\color{RedViolet} $C$};
     \draw[line width=1, RedViolet] plot [smooth cycle, tension=0.5]%
@@ -149,6 +150,7 @@ of Polsby-Popper scores for all regions.
     coordinates { (-2.5,-0.6) (-3, 0) (-3.3,-0.2) (-3,0.3) (-2.5,0.6)%
     (-2,0.3) (-1.8,0) (-2,-0.1)};
     \draw node at (-2.5,0.1) {\color{NavyBlue} $A=\vphi^{-1}(\Sigma)$};
+}
   \end{tikzpicture}
   \caption{The construction of regions $A$, $C$, and $\hat{A}$ in the
   proof of Theorem~\ref{thm:dpp}.} 
