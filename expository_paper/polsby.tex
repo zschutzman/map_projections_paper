@@ -1,28 +1,9 @@
 \section{Polsby-Popper}\label{sec:pp}
-
 The first compactness score we analyze is the \textit{Polsby-Popper
 score}, which takes the form of an \textit{isoperimetric quotient},
 meaning it measures how much area a region's perimeter encloses,
 relative to all other regions with the same perimeter.
-\mute{
-\begin{definition}\label{def:pp}
-  The Polsby-Popper score of a region $\Omega$ is defined to be
-  $$\mathrm{PP}(\Omega) = \frac{4\pi
-  \cdot\mathrm{area}(\Omega)}{\mathrm{perim}(\Omega)^2}$$ 
-  and takes the form of an \textit{isoperimetric quotient} \abn{what's
-  an isoperimetric quotient?}.  
-\end{definition}
-It's easy to check that among all regions in the plane with a fixed
-area, a circle of that area has the shortest perimeter, and
-equivalently, the Polsby-Popper score for a circle is 1.  We can
-analogously define the score on the sphere by transferring this
-intuition of isoperimetry.  In this first attempt, we transfer this
-notion directly to the sphere, and define the Polsby-Popper score on
-the sphere to be exactly the function in Definition~\ref{def:pp}.
-}
-\abn{Rewrote Polsby-Popper intro to be more formulas and less
-words}\zs{looks good. leaving the comment here so we know something
-changed.}
+
 \begin{definition}\label{def:pp}
   The Polsby-Popper score of a region $\Omega$ is defined to be
   $$\mathrm{PP}_X(\Omega) = \frac{4\pi
@@ -31,6 +12,7 @@ changed.}
   $\mathrm{area}_X$ and $\mathrm{perim}_X$ are the area and perimeter
   respectively of $A$ in $X$.
 \end{definition}
+
 The ancient Greeks were first to observed that if $\Omega$ is a region
 in the plane, then $4\pi\cdot\mathrm{area}(\Omega)\leq
 \mathrm{perim}(\Omega)^2$, with equality if and only if $\Omega$ is
@@ -44,7 +26,7 @@ the plane. An isoperimetric inequality for the sphere exists, and we
 state it as the following lemma.  For a more detailed treatment of
 isoperimetry in general, see \cite{osserman1979bonnesen}, and for
 a proof of this inequality for the sphere, see \cite{rado}.
-\zs{rewrote slightly}
+
 \begin{lemma}
   If $\Omega$ is a region on the \mute{half-sphere} sphere with area
   $A$ and perimeter $P$, then $P^2\geq A^2-4\pi A$ with equality if
@@ -55,14 +37,14 @@ a fixed area $A$, a spherical cap with area $A$ has the shortest
 perimeter. However, the key difference between the isoperimetric 
 quotient in the plane and on the sphere is that on the 
 sphere, there is no scale invariance.
-%\lsn{ It feels weird to  me to call this theorem a "lemma"}
-%\zs{I stated it as a lemma because I don't think we need to or even
-%should be proving isoperimetric inequalities in here.  We can talk
-%a little more about the audience, but it's one of those things that's
-%intuitively true, but in order to get a rigorous proof, you need
-%a few pages of symbol chasing and worrying about edge cases.  Maybe
-%we can put a proof in an appendix if we feel like we need to include
-%it?}
+\lsn{ It feels weird to  me to call this theorem a "lemma"}
+\zs{I stated it as a lemma because I don't think we need to or even
+should be proving isoperimetric inequalities in here.  We can talk
+a little more about the audience, but it's one of those things that's
+intuitively true, but in order to get a rigorous proof, you need
+a few pages of symbol chasing and worrying about edge cases.  Maybe
+we can put a proof in an appendix if we feel like we need to include
+it?}
 
 \begin{lemma}\label{lem:ppscale}
   Let $S$ be the unit sphere, and let $\kappa(h)$ be the cap at height
@@ -118,8 +100,6 @@ Using this, we can show the main theorem of this section, that no map
 projection from the half-sphere to the plane can preserve the ordering
 of Polsby-Popper scores for all regions.  
 
-%\lsn{I think this is not the right statement / proof. See my email.}
-
 \begin{theorem}\label{thm:dpp}
   If $\varphi$ is a map projection from the half-sphere to the plane,
   then there are two regions $A$ and $C$ in the half sphere such that
@@ -127,7 +107,6 @@ of Polsby-Popper scores for all regions.
   sphere, but the Polsby-Popper score of $\varphi(A)$ is greater than
   that of $\varphi(C)$ in the plane.
 \end{theorem}
-\zs{\LARGE\bf 	I MUTED THE FIGURE BECAUSE IT WOULDNT COMPILE. PLS UNMUTE }
 \begin{figure}\label{fig:dpp}
   \centering
   \begin{tikzpicture}[scale=2pt]
@@ -135,7 +114,6 @@ of Polsby-Popper scores for all regions.
     node[midway,above] {$\vphi$};
     \draw[thick,->] (1,-0.3) -- (-1,-0.3)%
     node[midway,below] {$\vphi^{-1}$}; 
-\mute{
     \draw[line width=1, RedViolet] (-2.5,0) circle (1);
     \draw node at (-2.5,1.2) {\color{RedViolet} $C$};
     \draw[line width=1, RedViolet] plot [smooth cycle, tension=0.5]%
@@ -150,30 +128,16 @@ of Polsby-Popper scores for all regions.
     coordinates { (-2.5,-0.6) (-3, 0) (-3.3,-0.2) (-3,0.3) (-2.5,0.6)%
     (-2,0.3) (-1.8,0) (-2,-0.1)};
     \draw node at (-2.5,0.1) {\color{NavyBlue} $A=\vphi^{-1}(\Sigma)$};
-}
   \end{tikzpicture}
   \caption{The construction of regions $A$, $C$, and $\hat{A}$ in the
   proof of Theorem~\ref{thm:dpp}.} 
 \end{figure}
-\mute{
-\begin{figure}\label{fig:dpp}
-  \centering
-  \includegraphics[width=.9\textwidth]{figs/dumb_pp_cropped.jpg}\\[1.5em]
-  \caption{ The construction of regions $A$, $C$, and $\hat{A}$ in the proof of Theorem~\ref{thm:dpp}.}
-\end{figure}
-}
 
 \begin{proof}
   Let $\varphi$ be a map projection, and take $C$ to be a cap in the
   half-sphere. Let $\Sigma$ be a circle in the plane such that $\Sigma
   \subsetneq \varphi(C)$ and let $A=\varphi^{-1}(\Sigma)$ (see
   Figure~\ref{fig:dpp}).
-
-  %\lsn{It doesn't depend on the preimage of $\Sigma$ not being a cap,
-  %because the preimage of $\Sigma$ has less area thatn $C$, so it's
-  %polsby popper score will be strictly worse.  I think this
-  %computation is necessary -- it's in the original doc. Also see my
-  %email.}
 
   We now use the isoperimetric inequality for the sphere 
   and Corollary~\ref{cor:capscale} to claim that 
@@ -191,14 +155,6 @@ of Polsby-Popper scores for all regions.
   \begin{align*}
     \mathrm{PP_S}({A})\leq \mathrm{PP_S}(\hat{A})< \mathrm{PP_S}(C)
   \end{align*}
-
-  \mute{
-  By construction, $\mathrm{area}(\hat{A})=\mathrm{area}(A)$ but
-  $\mathrm{area}(A) \lneq \mathrm{area}(C)$, so
-  $\mathrm{area}(\hat{A})< \mathrm{area}(C)$, which means that
-  $\hat{A}$ is a cap with height and radius strictly smaller than that
-  of $C$.
-  }
 
   Since $\Sigma = \varphi(A)$ maximizes the Polsby-Popper score in the
   plane, but $A$ does not do so in the sphere, we have shown that
