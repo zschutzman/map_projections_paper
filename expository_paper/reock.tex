@@ -133,11 +133,18 @@ Since $\varphi$ projects from the north pole of the sphere and the sphere's sout
 
 \end{proof}
 }
+\mute{
 Since the properties of the stereographic projection near the origin is structurally so similar to that of the gnomonic projection, the exact same pair of regions serves as the counterexample in this setting as well.  When we examine the Reock scores of the projected regions in the plane, the factors of two cancel out.
 
 
 
-We now have a concrete example of the stereographic projection permuting scores, by Lemma~\ref{lem:noafflin} in the previous section, since scaled isometries are a special kind of affine linear transformations, they too preserve ratios of areas and therefore Reock scores.  We can conclude this section by summarizing the proof of the main result.
+We now have a concrete example of the stereographic projection permuting scores}
+
+\input{new_stereo_proof}
+
+
+
+ By Lemma~\ref{lem:noafflin} in the previous section, since scaled isometries are a special kind of affine linear transformations, they too preserve ratios of areas and therefore Reock scores.  We can conclude this section by summarizing the proof of the main result.
 
 \begin{theorem}
 There is no map projetion from the sphere to the plane which preserves the ordering of Reock scores.
@@ -145,4 +152,3 @@ There is no map projetion from the sphere to the plane which preserves the order
 \begin{proof}
 Since such a projection must send caps on the sphere to circles in the plane, it must be the composition of the stereographic projection with a scaled isometry of the plane.  Since scaled isometries preserve Reock scores and therefore their ordering, a Reock score order-preserving projection from the sphere to the plane cannot exist if the stereographic projection does not preserve the ordering.  By the constructed counterexample, it does not, and therefore there is no such Reock score ordering map projection.
 \end{proof}
-\input{new_stereo_proof}

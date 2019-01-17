@@ -158,7 +158,7 @@ this construction, we make the following observation:}
   $\mathrm{CH}(B)\approx .41$, but $\mathrm{CH}(\varphi(A))\approx .64$
   and $\mathrm{CH}(\varphi(B))\approx .45$, which is our example of two
   regions whose scores' order are permuted by $\varphi$.
-\end{example}}
+\end{example}
 
 
 \begin{example}
@@ -187,6 +187,13 @@ this construction, we make the following observation:}
 \end{example}
 Note that in the above example, $\alpha_1$ (and hence 
 all other angles) can be chosen to be arbitrarily small. 
+}
+
+
+We finally have the tools to prove the main result of this section,
+which is a direct consequence of the four previous lemmas.
+
+\input{new_gnom_proof}
 
 Now that we've shown that the gnomonic projection alone cannot
 preserve convex hull scores, to complete the argument, we must now
@@ -194,23 +201,18 @@ show that there is no affine linear transformation of the plane which
 can correct for this.
 
 \begin{lemma}\label{lem:noafflin}
-  Let $L$ be an affine linear transformation of the plane.  Then $L$
-  preserves the convex hull scores of all figures in the plane.
+	Let $L$ be an affine linear transformation of the plane.  Then $L$
+	preserves the convex hull scores of all figures in the plane.
 \end{lemma}
 \begin{proof}
-  Since affine linear transformations map lines to lines, they preserve
-  convexity, and since they also preserve the containment of regions in
-  other regions, if $\Omega$ is a region in the plane, then it must be
-  the case that the convex hull of $\Omega$ is mapped to the convex hull
-  of $L(\Omega)$ by $L$.  In other words, the image of the convex hull
-  of $\Omega$ is the convex hull of the image of $\Omega$.  Finally,
-  since affine linear transformations preserve the ratio of the areas of
-  any two regions, $L$ must, in particular, preserve the ratio of the
-  areas of $\Omega$ and its convex hull, so the convex hull score is
-  preserved.
+	Since affine linear transformations map lines to lines, they preserve
+	convexity, and since they also preserve the containment of regions in
+	other regions, if $\Omega$ is a region in the plane, then it must be
+	the case that the convex hull of $\Omega$ is mapped to the convex hull
+	of $L(\Omega)$ by $L$.  In other words, the image of the convex hull
+	of $\Omega$ is the convex hull of the image of $\Omega$.  Finally,
+	since affine linear transformations preserve the ratio of the areas of
+	any two regions, $L$ must, in particular, preserve the ratio of the
+	areas of $\Omega$ and its convex hull, so the convex hull score is
+	preserved.
 \end{proof}
-
-We finally have the tools to prove the main result of this section,
-which is a direct consequence of the four previous lemmas.
-
-\input{new_gnom_proof}
