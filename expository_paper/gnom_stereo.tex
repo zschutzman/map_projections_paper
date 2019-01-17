@@ -279,7 +279,7 @@ we want to conserve space?}
     } \mathcal{W}=u^2+v^2 
   \end{align*}
 
-  This last line is the equation of a circle in the plane if $c\neq d$
+  This last step is the equation of a circle in the plane if $c\neq d$
   and a line otherwise.  Since $c=d$ if and only if the point
   $(x,y,z)=(0,0,1)$ (i.e. the north pole) is on the plane, and we
   assumed that this is not the case, we have shown that the image
@@ -288,7 +288,7 @@ we want to conserve space?}
 
 \end{proof}
 
-We now have in-hand a circle-preserving map projection, and we now
+We have in-hand a circle-preserving map projection, and we now
 turn to demonstrating that the stereographic projection is essentially
 the unique map projection with this property.  We can observe that if
 we perform stereographic projection and compose it with
@@ -352,7 +352,7 @@ a translation, i.e. a scaled isometry.
   Thus, a transformation of the plane is circle-preserving if and only
   if it is a scaled isometry.
 \end{proof}
-
+\zs{here is where the local mobius thing should go.  if it's a two-sentence technicality (i.e. our proof is ``Suppose we were only interested in circle-preserving maps in \textit{regions} of the plane. Then, we should want every \textit{circular arc} in the patch to be sent to a circular arc in the image and everything carries through as before, since three non-collinear points define a circular arc when restricted to a patch'', then it can even just be a footnote.})
 We can put these two pieces together to prove the main tool of this
 section -- that any map projection from the sphere to the plane which
 preserves circles is the composition of the stereographic projection
@@ -374,6 +374,9 @@ and a scaled isometry.
   composition of the stereographic projection and a scaled isometry.
 \end{proof}
 
+
+
+\zs{not convinced we need this next bit anymore}
 As in the previous section, we can construct an example of two regions
 whose Reock scores are permuted by the stereographic projection.  In
 fact, we can use \textit{exactly} the same pair of regions as in the
@@ -385,7 +388,7 @@ convex hull settings, as is made clear by the following lemma.
   $\theta <\pi/4$ formed between the central axis of the sphere and
   the line of projection passing through the north pole and the
   boundary of the cap (Figure~\ref{fig:stereocap}). Then
-  $\phi(C_\theta)$ is a disk in the plane, centered at the origin, and
+  $\vphi(C_\theta)$ is a disk in the plane, centered at the origin, and
   has radius $2\tan\theta$
 \end{lemma}
 \begin{figure}
@@ -414,5 +417,5 @@ convex hull settings, as is made clear by the following lemma.
   between the origin and $\varphi(p)$ as $2\tan(\theta)$.
 
 \end{proof}
-
+\zs{$\backslash${end} not convinced}
 \input{new_stereo_proof}
