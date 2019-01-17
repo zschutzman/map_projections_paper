@@ -60,29 +60,28 @@ a convex set in the plane.
 
   Let $p$ be the center of the sphere $S^2$, and let $C\subset S^2$ be
   a geogesic segment in the lower hemisphere.  Note that $C$ is uniquely
-  identified by the intersection of $S^2$ with a portion of a hyperplane
-  $\mc{P}$ passing through $p$, and not parallel to the $xy$-plane,
-  $\mc{P}_{xy}$. By construction, $\vphi(C)\subset \mc{P}\cap
-  \mc{P}_{xy}$, which is a line. 
+  identified by the intersection of $S^2$ with a portion of a plane
+  $\mc{P}$ passing through $p$ which is not parallel to the $xy$-plane,  $\mc{P}_{xy}$. Since $\mc{P}$ contains all of the lines passing through $p$ and a point in $C$, by construction, $\vphi(C)\subset \mc{P}\cap
+  \mc{P}_{xy}$, and two planes intersect along a line. 
 
   Since the gnomonic projection is injective, it follows that 
   geodesic segments in $S^2$ cannot be sent to points, and hence 
-  must be sent to lines.
+  must be sent to lines. \zs{do we need this statement?}
 \end{proof}
 
 \abn{I'm still hunting down the reference for this theorem. 
 Some say it's due to Hartshorne, but I can't find the reference. 
 Someone says it's due to von Staudt from the 1850's...}
 \begin{theorem} \label{thm:geometric_algebra}
-  If $f:\R^n\supset U\to\R^n$ is injective, sends straight 
-  lines to straight lines, and $n>1$, then $f$ is an affine linear 
+  Let $U$ be some subset of $\mathbb{R}^n$ for $n\geq 2$.  If $f: U\to\R^n$ is 
+  injective and line segments  to  line segments, then $f$ is an affine linear 
   transformation.
 \end{theorem}
 \begin{proof}
-  After possibly translating, we can assume that 
+  After possibly translating, we can assume without loss of generality that 
   $0\in U$ and $f(0) = 0$, in which 
   case we must show that $f$ is linear. We write $V = f(U)$. 
-  Since $f$ is a bijection from $U$ to $V$ 
+  Since $f$ is a bijection \zs{we only assume injection} from $U$ to $V$ 
   sending straight lines to straight lines, it follows that 
   if $\mc{P}$ is an affine subspace of $\R^n$, then 
   $f(\mc{P}\cap U)$ must be of the form $\mc{Q}\cap V$, where 
@@ -97,7 +96,7 @@ Someone says it's due to von Staudt from the 1850's...}
   $v+w\in U$.
   Restricted to the plane $\mathrm{Span}(v,w)$, 
   we can draw the following parallelogram:
-  \begin{figure}
+  \begin{figure}[!h]
     \centering
     \begin{tikzpicture}[scale=1pt]
       \draw[thick] (0,0) -- (3,1) node[below] {};
@@ -110,6 +109,8 @@ Someone says it's due to von Staudt from the 1850's...}
       \fill (4,3) circle (0.1) node[above] {$v+w$};
     \end{tikzpicture}
   \end{figure}
+ 
+ 
   By the above discussion, $f$ sends this parallelogram 
   to another parallelogram whose vertices are 
   $0$, $f(v)$, $f(w)$, and $f(v+w)$. By the geometric 
@@ -127,7 +128,7 @@ Someone says it's due to von Staudt from the 1850's...}
   we need to show that $g$ does not depend on $v$. Let
   $w\in U\ssm \mathrm{Span}(v)$ be such that $\alpha w\in U$, 
   and consider the following line configuration:
-  \begin{figure}
+  \begin{figure}[!h]
     \centering
     \begin{tikzpicture}
       \draw[thick] (0,0) -- (4,0) node[below] {};
@@ -141,6 +142,8 @@ Someone says it's due to von Staudt from the 1850's...}
       \fill (3,0) circle (0.1) node[below] {$\alpha v$};
     \end{tikzpicture}
   \end{figure}
+
+
   Where the lines $(v,w)$ and $(\alpha v,\alpha w)$ are parallel. 
   Since $f$ preserves line configurations and paralellism, if 
   $f(\alpha v) = \beta f(v)$, then 
@@ -149,7 +152,7 @@ Someone says it's due to von Staudt from the 1850's...}
   Overall, we get that $g$ as defined above 
   does not depend on $v$.
 
-  Morevoer, it is easy to check that $g$ wherever 
+  Moreover, it is easy to check that wherever 
   $g$ is defined, $g(\alpha+\beta) = g(\alpha) + g(\beta)$ 
   and $g(\alpha\beta) = g(\alpha)g(\beta)$, and hence 
   is a restriction of a field 
@@ -186,7 +189,7 @@ linear transformation of the plane.
   convex sets to convex sets, then there exists an affine linear map 
   $L$ such that $\psi = L\circ \vphi$.
 \end{theorem}
-
+\zs{this field automorphism business feels a little too abstract for the audience. In order to show $f$ is linear, you need to show $f(u+v) = f(u)+f(v)$ and $f(kx) = kf(x)$ and preserving parallelograms is strong enough to imply both of these. You showed additivity, and scaling is even easier. If a parallelogram is preserved, it sends parallel segments of equal length to parallel segments of equal length, and this extends to the statement that any pair of parallel segments has the ratio of their lengths preserved, so any pair of collinear segments have the ratio of their length preserved, which implies linear.}
 \begin{proof}
   By Lemma ~\ref{lem:gnomonic_convex}, the map $\vphi\circ
   \psi^{-1}:\psi(U)\to \R^2$ sends convex sets to convex sets. It is
@@ -214,8 +217,9 @@ linear transformation of the plane.
   of the gnomonic projection and an affine linear transformation of
   the plane.}
 \end{proof}
+\zs{we don't use this anywhere. it's cute, but I don't think it's relevant}
 
-\input{new_gnom_proof}
+
 
 \subsection{Stereographic Projection}
 
