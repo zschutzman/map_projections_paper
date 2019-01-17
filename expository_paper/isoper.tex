@@ -1,8 +1,5 @@
 \section{Isoperimetric Quotient}\label{sec:isoper}
-\zs{\textbf{  I think the same proof actually goes through here. Take a bite from the top and bottom. Since the bites get sent to different size bites, one isn't the rotation/translation of the other, and because they started from the same circle, scaling doesn't fix the problem. The one with the bigger bite taken out has both smaller area and larger perimeter, so its PP is strictly worse.  }}
-\zs{The proof here is pretty informal.  I don't know if it's worth doing; the calculus needed is super gross. }
 
-\zs{One way we can include this without having to compute a bunch of path integrals is to move the Polsby-Popper section to after Reock, then this can be rolled into that section as part of the `discussion' or whatever.}
 
 We remarked at the end of Section~\ref{sec:pp} that a more principled version of an isoperimetric quotient may avoid the failure of the ordinary Polsby-Popper score to induce an ordering which can be preserved by some map projection.
 
@@ -35,14 +32,12 @@ There exist two regions on the sphere $A$ and $B$ such that $\mathrm{IPQ}(A)>\ma
 
 
 \begin{proof}
-Let $C$ be a cap with its center slightly away from the south pole, and divide it into a `top' and `bottom' half with the plane that meets the great circle connecting the poles and cap's center orthogonally.  This divides the cap into two pieces with equal area and perimeter, and therefore equal isoperimetric quotient scores.  Shift this division line down so that the top part of the circle has a slightly higher than the bottom.  We let the top part be $A$ and the bottom be $B$.  The stereographic projection sends caps to circles, but does not preserve the \textit{centers} of such caps away from the south pole, and will send the slightly perturbed division line to a nearly circular arc (Figure~\ref{fig:stereoipq}).  
-
-If we had used the original division of the cap into exact halves, then in the plane, the isoperimetric quotient score of $\varphi(A)$ would be strictly less than that of $\varphi(B)$. Since we can choose our perturbation to be small enough to not reverse this order, we have constructed our example of a pair of regions whose isoperimetric score order is not preserved by the stereographic projection.
+Using the same construction as in the proof of Theorem~\ref{thm:reock}, since the image under the stereographic projection of $\kappa'_N$ has both smaller area and larger perimeter than the image of $\kappa'_S$, the isoperimetric quotient score of the image of $\kappa'_N$ in the plane is strictly worse than the score of the image of $\kappa'_S$, although they have the same score as regions on the surface of the sphere.
 
 \end{proof}
 
 
-The remainder of the argument follows from our previous results.  Lemma~\ref{lem:noafflin} says that no scaled isometry can correct for the permutation of score ordering, so there does not exist a map projection which preserves the ordering over regions induced by the isoperimetric quotient score.
+The remainder of the argument also follows from our previous results.  Lemma~\ref{lem:noafflin} says that no scaled isometry can correct for the permutation of score ordering, so there does not exist a map projection which preserves the ordering over regions induced by the isoperimetric quotient score.
 
 
 
