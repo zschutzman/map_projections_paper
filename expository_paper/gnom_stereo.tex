@@ -303,7 +303,8 @@ a transformation of the plane which sends every circle to a circle,
 then this composition is a circle-preserving map projection.  The next
 lemma demonstrates that the class of transformations of the plane
 which preserve circles is actually quite narrow.
-
+\abn{Localized the lemma to concern mobius transformations}
+\mute{
 \begin{lemma}
   If $T$ is a transformation of the plane which sends every circle in
 the plane to another circle, then $T$ must be a linear transformation
@@ -364,26 +365,33 @@ We can put these two pieces together to prove the main tool of this
 section -- that any map projection from the sphere to the plane which
 preserves circles is the composition of the stereographic projection
 and a scaled isometry.
-
+}
 \begin{lemma}
+  Let $f:U\to V$ be a bijection between two planar regions 
+  sending generalised circles to generalised circles. 
+  Then $f$ is a M\"{o}bius transformation composed with a 
+  reflection.
+\end{lemma}
+\begin{corollary}
   The map projections from the sphere to the plane which send every
   cap to a circle are exactly those which can be written as the
-  composition of the stereographic projection followed by a scaled
-  isometry of the plane.
-\end{lemma}
+  composition of the stereographic projection followed by a 
+  M\"{o}bius transoformation and a reflection.
+\end{corollary}
 \begin{proof}
   Let $\varphi$ and $\psi$ be two map projections which preserve
   circles, and without loss of generality let $\varphi$ be the
   standard stereographic projection.  Then the composition
-  $T=\psi\circ\varphi^{-1}$ is a transformation of the plane which
-  preserves circles, so by the previous lemma, $T$ is a scaled
-  isometry.  Then, we can write $\psi= T^{-1}\varphi$, which is the
+  $M^{-1}=\psi\circ\varphi^{-1}$ is a transformation of 
+  the plane which preserves circles, so by the previous lemma, 
+  $M^{-1}$ is a M\"{o}bius transformation composed with a reflection. 
+  Then, we can write $\psi= M\varphi$, which is the
   composition of the stereographic projection and a scaled isometry.
 \end{proof}
 
-
-
 \zs{not convinced we need this next bit anymore}
+\abn{I muted it}
+\mute{
 As in the previous section, we can construct an example of two regions
 whose Reock scores are permuted by the stereographic projection.  In
 fact, we can use \textit{exactly} the same pair of regions as in the
@@ -425,4 +433,4 @@ convex hull settings, as is made clear by the following lemma.
 
 \end{proof}
 \zs{$\backslash${end} not convinced}
-
+}
