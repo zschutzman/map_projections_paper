@@ -69,19 +69,26 @@ a convex set in the plane.
   must be sent to lines. \zs{do we need this statement?}
 \end{proof}
 
+
+We briefly recall the definition of an \textit{affine subspace}, which we will need for the proof of the following theorem
+\begin{definition}
+	An \textbf{affine subspace} $W$ of a vector space $V$ (such as $\mathbb{R}^n$) is a subset of $V$ such that there exists a vector $a\in V$ such that the set $\{w-a \vert w\in W \}$ is a vector (sub)space of $V$.
+\end{definition}
+
+
 \abn{I'm still hunting down the reference for this theorem. 
 Some say it's due to Hartshorne, but I can't find the reference. 
 Someone says it's due to von Staudt from the 1850's...}
 \begin{theorem} \label{thm:geometric_algebra}
   Let $U$ be some subset of $\mathbb{R}^n$ for $n\geq 2$.  If $f: U\to\R^n$ is 
-  injective and line segments  to  line segments, then $f$ is an affine linear 
-  transformation.
+  bijective and sends line segments  to  line segments, then $f$ is an affine linear 
+  transformation.\zs{should try to make work for injective}
 \end{theorem}
 \begin{proof}
   After possibly translating, we can assume without loss of generality that 
   $0\in U$ and $f(0) = 0$, in which 
   case we must show that $f$ is linear. We write $V = f(U)$. 
-  Since $f$ is a bijection \zs{we only assume injection} from $U$ to $V$ 
+  Since $f$ is a bijection  from $U$ to $V$ 
   sending straight lines to straight lines, it follows that 
   if $\mc{P}$ is an affine subspace of $\R^n$, then 
   $f(\mc{P}\cap U)$ must be of the form $\mc{Q}\cap V$, where 
