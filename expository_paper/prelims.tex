@@ -51,6 +51,15 @@ invertible $2{\times}2$ matrices, and \textbf{affine linear
 transformations} are those transformations which are the composition
 of a linear transformation and a translation of the plane.
 \end{definition}
+We also briefly recall the definition of an \textit{affine subspace}:
+\abn{condensed definition}
+\begin{definition}
+	An \textbf{affine subspace} $W$ of a vector space $V$ 
+  \mute{(such as $\mathbb{R}^n$)} is a subset $S$ of $V$ such 
+  that $S = \vert W + a$ for some $a\in V$.
+  \mute{there exists a vector $a\in V$ such 
+  that the set $\{w-a \vert w\in W \}$ is a vector (sub)space of $V$.}
+\end{definition}
 
 Since the image of a region under a map projection $\varphi$ is also
 a region, we can examine the compactness score of that region both 
@@ -60,18 +69,3 @@ standard choices of compactness scores $\mathcal{C}$, that the order
 induced by $\mathcal{C}$ is different than the order induced by
 $\mathcal{C}\circ\varphi$ for \textit{any} choice of map projection
 $\varphi$.
-
-For each of the compactness scores we analyze, our proof that no map
-projection can preserve their order follows a similar recipe.  We
-first use the fact that any map projection which preserves an ordering
-must preserve the \textit{maximizers} of that ordering, meaning that
-if $\Omega$ is a region for which $\mathcal{C}(\Omega)\geq
-\mathcal{C}(\Sigma)$ for all regions $\Sigma$, then it must at the
-very least be the case that $\mathcal{C}(\varphi(\Omega))\geq
-\mathcal{C}(\varphi(\Sigma))$ if $\varphi$ preserves $\mathcal{C}$'s
-ordering.
-
-Using this fact, we can restrict our attention to those map
-projections which preserve the maximizers in the induced ordering,
-then argue that any projection in this restricted set must permute the
-order of scores of some pair of regions.

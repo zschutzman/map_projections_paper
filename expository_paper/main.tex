@@ -4,7 +4,7 @@
 \usepackage{amssymb,amsmath,amsthm,amsfonts}
 \usepackage{amsfonts}
 \usepackage[usenames,dvipsnames]{color}
-% \usepackage{kpfonts}
+% \usepackage{kpfont}
 \usepackage{algorithm}
 \usepackage[noend]{algorithmic}
 \usepackage[square, comma, numbers,sort&compress]{natbib}
@@ -107,7 +107,7 @@
 
 
 
-\newif \ifdraft \drafttrue
+\newif \ifdraft \draftfalse
 \newcommand{\zs}[1]{\ifdraft \textcolor{RedViolet}{[Zach: #1]} \fi} 
 \newcommand{\abn}[1]{\ifdraft \textcolor{Green}{[Assaf: #1]} \fi}
 \newcommand{\lsn}[1]{\ifdraft \textcolor{Blue}{[Lorenzo: #1]} \fi}
@@ -122,6 +122,7 @@
 \input{abstract.tex}
 \end{abstract}
 \input{intro}
+\input{organization}
 \input{prelims}
 
 
