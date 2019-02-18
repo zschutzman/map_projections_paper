@@ -33,7 +33,7 @@ We now treat the M\"{o}bius transformation composition
 in the following manner:
 \begin{claim}
   There exists a rigid transformation of the 
-  sphere, $T_M$, such that $M\psi = T\psi$.
+  sphere, $T_M$, such that $M\psi = T_M\psi$.
 \end{claim}
 In other words, to show that $M\psi$ 
 does not preserve Reock score rankings 
@@ -102,7 +102,7 @@ $T(U)$.
   worse, and the stereographic projection does not preserve Reock
   scores.
 \end{proof}
-
+\mute{
 By Lemma~\ref{lem:noafflin} in the previous section, since scaled
 isometries are a special kind of affine linear transformations, they
 too preserve ratios of areas and therefore Reock scores.  We can
@@ -121,3 +121,8 @@ conclude this section by summarizing the proof of the main result.
   the constructed counterexample, it does not, and therefore there is no
   such Reock score ordering map projection.
 \end{proof}
+}
+Piecing this together yields:
+\begin{theorem}
+  There is no map projetion from the sphere to the plane which preserves the ordering of Reock scores.
+\end{theorem}
