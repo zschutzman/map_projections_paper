@@ -93,7 +93,10 @@ Someone says it's due to von Staudt from the 1850's...}
   lines, and hence sends coplanar parallel lines to coplanar 
   parallel lines, and hence nondegenerate parallelograms 
   to nondegenerate parallelograms.
-
+  \abn{Lorenzo says that this is enough, and I believe 
+  him, but I've never seen it...}
+  Thus, $f$ is linear.
+  \mute{
   Let $v\in U$ be some nonzero vector, and let 
   $w\in U\ssm \mathrm{Span}(v)$ be such that 
   $v+w\in U$.
@@ -112,7 +115,6 @@ Someone says it's due to von Staudt from the 1850's...}
       \fill (4,3) circle (0.1) node[above] {$v+w$};
     \end{tikzpicture}
   \end{figure}
- 
  
   By the above discussion, $f$ sends this parallelogram 
   to another parallelogram whose vertices are 
@@ -146,7 +148,6 @@ Someone says it's due to von Staudt from the 1850's...}
     \end{tikzpicture}
   \end{figure}
 
-
   Where the lines $(v,w)$ and $(\alpha v,\alpha w)$ are parallel. 
   Since $f$ preserves line configurations and paralellism, if 
   $f(\alpha v) = \beta f(v)$, then 
@@ -159,8 +160,10 @@ Someone says it's due to von Staudt from the 1850's...}
   $g$ is defined, $g(\alpha+\beta) = g(\alpha) + g(\beta)$ 
   and $g(\alpha\beta) = g(\alpha)g(\beta)$, and hence 
   is a restriction of a field 
-  automorphism of $\R$, and hence is the identity.
+  automorphism of $\R$, and hence is the identity.}
 \end{proof}
+\abn{removed general result}
+\mute{
 Note that we have actually proved a stronger result 
 for a general field:
 \begin{theorem}
@@ -179,6 +182,7 @@ for a general field:
 We can prove this by taking $U = \K^n$ and following the same argument. 
 The condition $|\K|\ge 3$ is to be able to characterize 
 parallel lines as disjoint lines lying in the same affine plane.
+}
 
 Using this, we can complete the construction of the main tool of this
 section -- that any map projection which preserves convex sets can be
@@ -192,7 +196,16 @@ linear transformation of the plane.
   convex sets to convex sets, then there exists an affine linear map 
   $L$ such that $\psi = L\circ \vphi$.
 \end{theorem}
-\zs{this field automorphism business feels a little too abstract for the audience. In order to show $f$ is linear, you need to show $f(u+v) = f(u)+f(v)$ and $f(kx) = kf(x)$ and preserving parallelograms is strong enough to imply both of these. You showed additivity, and scaling is even easier. If a parallelogram is preserved, it sends parallel segments of equal length to parallel segments of equal length, and this extends to the statement that any pair of parallel segments has the ratio of their lengths preserved, so any pair of collinear segments have the ratio of their length preserved, which implies linear.}
+\zs{this field automorphism business feels a little too abstract for
+the audience. In order to show $f$ is linear, you need to show $f(u+v)
+= f(u)+f(v)$ and $f(kx) = kf(x)$ and preserving parallelograms is
+strong enough to imply both of these. You showed additivity, and
+scaling is even easier. If a parallelogram is preserved, it sends
+parallel segments of equal length to parallel segments of equal
+length, and this extends to the statement that any pair of parallel
+segments has the ratio of their lengths preserved, so any pair of
+collinear segments have the ratio of their length preserved, which
+implies linear.}
 \begin{proof}
   By Lemma ~\ref{lem:gnomonic_convex}, the map $\vphi\circ
   \psi^{-1}:\psi(U)\to \R^2$ sends convex sets to convex sets. It is
@@ -222,8 +235,6 @@ linear transformation of the plane.
 \end{proof}
 \zs{we don't use this anywhere. it's cute, but I don't think it's relevant}
 
-
-
 \subsection{Stereographic Projection}
 
 \zs{defn 9, lem 5 lem 6 lem 7 lem 8}
@@ -249,15 +260,19 @@ linear transformation of the plane.
 
 What is somewhat surprising is that this projection sends every cap on
 the sphere which doesn't pass through the north pole to a circle in
-the plane.  There are several proofs of this fact, and we present
-a rather straightforward algebraic one here.
+the plane. 
+\mute{There are several proofs of this fact, and we present
+a rather straightforward algebraic one here.}
 
 \abn{This is a fact that is usually taught at a second 
 year complex analysis course - perhaps we can leave this out if 
 we want to conserve space?}
+\abn{okay, Assaf, I'll do it.}
 \begin{lemma}
-  The stereographic projection sends every cap which does not pass through the north pole to a circle in the plane.
+  The stereographic projection sends every cap which does not pass
+  through the north pole to a circle in the plane.
 \end{lemma}
+\mute{
 \begin{proof}
   We proceed algebraically.  Since a cap on the sphere can be
   identified by the plane in $\R^3$ which intersects the sphere along
@@ -290,7 +305,7 @@ we want to conserve space?}
   through the north pole is a circle in the plane.
 
 \end{proof}
-
+}
 We have in-hand a circle-preserving map projection, and we now
 turn to demonstrating that the stereographic projection is essentially
 the unique map projection with this property.  We can observe that if
