@@ -43,157 +43,71 @@ will prove by explicitly constructing two regions whose convex hull
 scores are permuted under the gnomonic projection, and to facilitate
 this construction, we make the following observation:}
 
-\abn{Condensed all of this to one paragraph. See below.}
-\mute{
-\begin{example}
-  Let $\varphi$ be the gnomonic projection and $C_\theta$ be a spherical
-  cap centered at the south pole parametrized by the angle $\theta$
-  formed between the central axis of the sphere and a line segment
-  between the center of the sphere and the boundary of the cap. 
-  Then $\varphi(C_\theta)$ is a disk in the
-  plane, centered at the origin, and has radius $\tan(\theta)$.
-  \begin{figure}
-    \centering
-    \includegraphics[width=.8\textwidth]{figs/gnom_cap.jpg}\\
-    \caption{The image of a cap with polar angle $\theta$ is a circle of radius $\tan\theta$.}
-    \label{fig:gnomcap}
-  \end{figure}
-  \begin{proof}
-    A (literal) sketch of this proof can be seen in Figure~\ref{fig:gnomcap}.
-
-    Since $\varphi$ projects from the center of the sphere and the
-    sphere's south pole is mapped to the origin in the plane, the
-    image of $C_\theta$ is totally radially symmetric about the
-    origin, and is therefore a circle.  To see that its radius is
-    $\tan(\theta)$, place the south pole of the sphere tangent to the
-    plane at the origin. By construction, for any point $p$ on the
-    boundary of $C_\theta$, there is a unique line passing through the
-    center of the sphere, $p$, and the point $\varphi(p)$ on the
-    boundary of the disk in the plane.  By definition, this line meets
-    the central axis of the sphere at an angle of $\theta$, and the
-    central axis of the sphere meets the plane orthogonally, so the
-    center of the sphere, the origin, and the point $\varphi(p)$ form
-    a right triangle with angle $\theta$.  Since we know that the
-    distance between the center of the sphere and the origin is 1, we
-    can write the distance between the origin and $\varphi(p)$ as
-    $\tan(\theta)$.
-  \end{proof}
-  Using this, we can perform the construction of two regions whose
-  convex hull scores are permuted by the gnomonic projection.
-
-  \begin{lemma}
-    There exist two regions on the sphere, $A$ and $B$, such that
-    $\mathrm{CH}(A) > \mathrm{CH}(B)$ in the sphere, but, under the
-    gnomonic projection $\varphi$,
-    $\mathrm{CH}(\varphi(A))<\mathrm{CH}(\varphi(B))$.
-  \end{lemma}
-
-  Let $A$ be the region on the sphere defined by taking a cap centered
-  at the south pole parametrized by the angle $\alpha_2$ and removing
-  the cap centered at the south pole parametrized by the angle
-  $\alpha_1$, with $\alpha_1<\alpha_2$.  Similarly, let $B$ be the
-  region defined by angles $\beta_1$ and $\beta_2$.  The convex hull
-  score of this kind of region on the sphere is $1-\frac{\text{area of
-  inner cap}}{\text{area of outer cap}}$.  The projection under
-  $\varphi$ of this kind of region is a disk in the plane with
-  a smaller, cocentric disk deleted.  The convex hull score of this kind
-  of region in the plane is $1-\frac{\text{area of inner
-  disk}}{\text{area of outer disk}}$.  
-
-  In the previous section, we parametrized a cap on the sphere by its
-  \textit{height}, but we can instead parametrize it by its
-  \textit{polar angle}, which is the angle formed between the polar axis
-  and a line segment connecting the center of the sphere with the
-  boundary of the cap.  Using the notation of $h$ for the height of
-  a cap and $r$ for its radius as before, and letting $\theta$ be the
-  cap's polar angle, we can use trigonometry to rewrite the area of the
-  cap at height $h$, $\kappa(h)$.  Since $(1-h)=\cos(\theta)$, the area
-  of the cap at height $h$ is $2\pi (1-\cos(\theta))$.  Therefore, if we
-  have two cocentric caps on the disk parametrized by angles
-  $\theta_1<\theta_2$, the convex hull score of this region is 
-
-  $$1-\frac{2\pi (1-\cos(\theta_1))}{2\pi (1-\cos(\theta_2))}
-  = 1-\frac{1-\cos(\theta_1)}{1-\cos(\theta_2)}.$$
-
-  In the plane, since the image of a cap centered at the south pole
-  parametrized by angle $\theta$ is a circle of radius $\tan^2(\theta)$,
-  and the convex hull score of the image of a pair of cocentric caps
-  parametrized by angles $\theta_1<\theta_2$ is
-
-  $$  1-\frac{\tan^2(\theta_1)}{\tan^2(\theta_2)}.  $$
-
-  Next, we observe that as we take a cap parametrized by an angle close
-  to $\pi/2$ and increase that angle, the area of the cap grows much
-  more slowly than the area of the disk defined by the cap's projection
-  under $\varphi$.  This can be shown formally using
-  calculus\footnote{The derivative of $1-\cos(\theta)$ is $\sin(\theta)$
-  and the derivative of $\tan^2(\theta)$ is
-  $2\tan(\theta)\sec^2(\theta)$.  The quantity
-  $2\tan(\theta)\sec^2(\theta)-\sin(\theta)$ is positive for
-  $0<\theta<\pi/2$.  We can also observe that as $\theta$ approaches
-  $\pi/2$, $\tan^2(\theta)$ grows without bound, but $1-\cos(\theta)$
-  approaches 1.} and intuitively recognized by considering that near
-  $\theta=0$, $1-\cos(\theta)$ and $\tan^2(\theta)$ are almost equal,
-  but as $\theta$ grows and approaches 1, $\tan^2(\theta)$ is much
-  larger than $1-\cos(\theta)$.  What this means in the context of the
-  gnomonic projection is that the areas of regions near the south pole
-  of the sphere are not distorted much, but the areas of regions far
-  from the south pole become very large under the projection, and
-  increasingly so the further from the south pole they are. 
-
-  We will use this observation to construct our example of two regions
-  whose convex hull scores are permuted under $\varphi$, since for all
-  such regions constructed as above for a fixed convex hull score on the
-  sphere, those parameterized by larger angles will have comparably
-  worse scores in the plane.  We will take two regions whose spherical
-  convex hull scores are near $.4$, but perturbed slightly such that the
-  one parametrized by larger angles has a slightly lower score.  The
-  distortion of areas under the projection will more than compensate for
-  this slight difference.
-
-
-  Let $A$ be defined by the angles (in degrees) $\alpha_1=46^\circ$ and
-  $\alpha_2=60^\circ$ and $B$ be defined by $\beta_1=20^\circ$ and
-  $\beta_2=26^\circ$.  Then we have $\mathrm{CH}(A)\approx .39$ and
-  $\mathrm{CH}(B)\approx .41$, but $\mathrm{CH}(\varphi(A))\approx .64$
-  and $\mathrm{CH}(\varphi(B))\approx .45$, which is our example of two
-  regions whose scores' order are permuted by $\varphi$.
-\end{example}
-
-
-\begin{example}
-  Let $p = (0,0,1)$ be the center of the sphere, and let $0$ be the
-  origin. For any angle $0\le \theta< \frac\pi2$, let $C_\theta$ be
-  the spherical cap:
-  \begin{align*}
-    C_{\theta} = \{x|0\le\angle(x,o,p)\le \theta\}
-  \end{align*}
-  Let $A(\alpha_1,\alpha_2) = C_{\alpha_2}\ssm C_{\alpha_1}$ be 
-  an annular region. A straightforward computation shows that:
-  \begin{align*}
-    \mathrm{CH}(A(\alpha_1,\alpha_2)) &= 
-    1-\frac{\mathrm{Area}(C_{\alpha_1})}{\mathrm{Area}(C_{\alpha_2})}
-    =1- \frac{1-\cos(\alpha_1)}{1-\cos(\alpha_2)}\\
-    \mathrm{CH}(\vphi(A(\alpha_1,\alpha_2))) &=
-    1-\frac{\mathrm{Area}(\vphi(C_{\alpha_1}))}%
-    {\mathrm{Area}(\vphi(C_{\alpha_2}))}
-      =1- \frac{\tan^2(\alpha_1)}{\tan^2(\alpha_2)}
-  \end{align*}
-  Where $\vphi$ is the gnomonic projection. 
-  Let $A=A(\alpha_1,\alpha_2)$, and $B = A(\beta_1,\beta_2)$. 
-  Let $\alpha_2$ be arbitrary, and choose 
-  $\alpha_1 = \frac{\alpha_2}{2} = \beta_2$, and 
-  $\beta_1 = \frac{\beta_2}{2}$. 
-\end{example}
-Note that in the above example, $\alpha_1$ (and hence 
-all other angles) can be chosen to be arbitrarily small. 
-}
-
-
 We finally have the tools to prove the main result of this section,
 which is a direct consequence of the four previous lemmas.
 
-\input{new_gnom_proof}
+\begin{figure}
+	\centering
+	\includegraphics[width=.4\textwidth]{figs/differentkappa}\\[1.5em]
+	\caption{ The construction used in \Cref{thm:convhull}. }
+	\label{fig:caphr}
+\end{figure}
+
+\begin{theorem}
+	\label{thm:convhull}
+	Let $A$ be a region on the sphere.  Then there exist two regions $\kappa'_N,\kappa'_S\subset A$ such that the convex hull scores of $\kappa'_N$ and $\kappa'_S$ are equal on the sphere, but under the gnomonic projection $\varphi$, the convex hull score of $\kappa'_S$ is strictly greater than that of $\kappa'_N$. 
+\end{theorem}
+
+\begin{proof}
+  First, since $A$ is a region, we can find some cap $\kappa$ inside
+  of $A$ such that the center of $\kappa$ is not the south pole of the
+  sphere, and the north pole is exterior to $\kappa$.  This cap is
+  bisected by a line of longitude, in particular the great circle
+  which passes through the two poles and the center of $\kappa$.  This
+  line of longitude meets $\kappa$ at exactly two points, and we call
+  $p_N$ the point closer to the north pole and $p_S$ the point closer
+  to the south pole.
+	
+  Choose some $r$ strictly less the radius of $\kappa$ and let
+  $\kappa'_S$ be the region constructed by deleting a cap of radius
+  $r$ from the interior of $\kappa$ tangent at $p_S$.  Construct
+  $\kappa'_N$ analogously by deleting a cap of radius $r$ tangent at
+  $p_n$. Observe that the convex hull scores of $\kappa'_N$ and
+  $\kappa'_S$ are identical, since each has the boundary of $\kappa$
+  as its smallest bounding cap and both convex hulls have the same
+  area.
+	
+  We now consider the images of $\kappa'_N$ and $\kappa'_S$ under the
+  gnomonic projection $\varphi$.  Since $\varphi$ preserves points of
+  tangency, containment, and sends every cap to an ellipse, the images
+  $\varphi(\kappa'_N)$ and $\varphi(\kappa'_S)$ are both regions which
+  are ellipses with a smaller ellipse, tangent to a point on the
+  circumference, deleted.  Furthermore, since the boundary of $\kappa$
+  was the smallest bounding cap of both regions on the sphere, the
+  image of the boundary of $\kappa$ under $\varphi$ is the smallest
+  bounding circle of the images of these regions in the plane.
+	
+  We can now observe that these two regions in the plane do not have
+  the same convex hull score.  Both have the same bounding ellipse,
+  which is their convex hulls, but $\varphi(\kappa'_N)$ is strictly
+  smaller than $\varphi(\kappa'_S)$.  This is because the gnomonic
+  projection distorts areas in a way such that regions further from
+  the south pole have their areas magnified more than the same region
+  closer to the south pole.  If the regions in question are
+  sufficiently small, letting $\theta$ denote the polar angle at which
+  we consider a small cap on the sphere, a cap of radius $r$ will be
+  sent to an ellipse with a major axis (along the line through the
+  center of the ellipse and the origin) of length roughly
+  $r/\sin^2{\theta}$\zs{check  this}, and a minor axis of length
+  $r/\sin{\theta}$, and a straightforward examination of this as
+  a function of $\theta$ shows that it grows faster as $\theta$
+  increases.
+	
+  Since $\varphi(\kappa'_N)$ fills a smaller fraction of the bounding
+  ellipse than $\varphi(\kappa'_N)$ does, its convex hull score is
+  strictly worse, and the gnomonic projection does not preserve convex
+  hull scores.
+\end{proof}
 
 Now that we've shown that the gnomonic projection alone cannot
 preserve convex hull scores, to complete the argument, we must now
