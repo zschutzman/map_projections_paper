@@ -1,8 +1,8 @@
 \section{The Gnomonic and Stereographic Projections}\label{sec:gnom_stereo}
 In this section, we'll present some results about two common
 projections from the sphere to the plane: the \textit{gnomonic} and
-the \textit{stereographic} projections.  We build these results to
-show that the convex hull score and the Reock score are not preserved
+the \textit{stereographic} projections.  We build these results to 
+later show that the convex hull score and the Reock score are not preserved
 by any map projection.
 
 \subsection{The Gnomonic Projection}
@@ -10,9 +10,9 @@ by any map projection.
 \zs{old defn 6}
 
 \begin{definition}
-	A set $X$ in a metric space is \textbf{convex} if for any pair of
-	points $x_1$ and $x_2$ in $X$, the shortest geodesic segment
-	connecting $x_1$ and $x_2$ is entirely contained in $X$. 
+  A set $X$ in a metric space is \textbf{convex} if for any pair of
+  points $x_1$ and $x_2$ in $X$, the shortest geodesic segment
+  connecting $x_1$ and $x_2$ is entirely contained in $X$. 
 \end{definition}
 In the plane, these geodesic segments are ordinary line segments.  On
 the sphere, the geodesics are segments of great circles. In 
@@ -22,20 +22,18 @@ convex, and in the plane, circular regions are convex.
 \zs{old defn 8, lem 3, thm 2,3,4}
 
 \begin{definition}
-	The \textbf{gnomonic projection} is the map projection from the
-	lower half-sphere to the plane defined by placing the south pole of
-	the sphere tangent to the plane at the origin and sending a point
-	$p$ on the lower half-sphere to the unique point $q$ in the plane
-	which lies on the line in $\mathbb{R}^3$ which passes through the
-	center of the sphere, $p$ and $q$.
+  The \textbf{gnomonic projection} is the map projection from the
+  lower half-sphere to the plane defined by placing the south pole of
+  the sphere tangent to the plane at the origin and sending a point
+  $p$ on the lower half-sphere to the unique point $q$ in the plane
+  which lies on the line in $\mathbb{R}^3$ which passes through the
+  center of the sphere, $p$ and $q$.
 \end{definition}
 Intuitively, the image of a region on the sphere under the gnomonic
 projection is the shadow in the plane of that region which is
 created when we put the bottom of the sphere at the origin and turn
 on a light source at the center of the sphere.
 
-By convention, we will let the sphere be the unit sphere 
-centered at $(0,0,1)$.
 \zs{do we want to write the explicit parametrization of the gnomonic
 projection here? the xy version of it is pretty gross.  the polar
 version is less messy.  I don't know if it provides any extra
@@ -50,8 +48,8 @@ surprising is that it sends \textit{every} convex set on the sphere to
 a convex set in the plane.
 
 \begin{lemma} \label{lem:gnomonic_convex}
-  Let $\vphi$ be the gnomonic projection, and $U\subset S^2$ a convex 
-  set. Then $\vphi(U)$ is convex.
+  Let $\vphi$ be the gnomonic projection, and $\Omega\subset S^2$ a convex 
+  set. Then $\vphi(\Omega)$ is convex.
 \end{lemma}
 \begin{proof}
   To prove this, it suffices to show that the one-dimensional convex
@@ -61,8 +59,10 @@ a convex set in the plane.
   Let $p$ be the center of the sphere $S^2$, and let $C\subset S^2$ be
   a geogesic segment in the lower hemisphere.  Note that $C$ is uniquely
   identified by the intersection of $S^2$ with a portion of a plane
-  $\mc{P}$ passing through $p$ which is not parallel to the $xy$-plane,  $\mc{P}_{xy}$. Since $\mc{P}$ contains all of the lines passing through $p$ and a point in $C$, by construction, $\vphi(C)\subset \mc{P}\cap
-  \mc{P}_{xy}$, and two planes intersect along a line. 
+  $\mc{P}$ passing through $p$ which is not parallel to the $xy$-plane,  
+  $\mc{P}_{xy}$. Since $\mc{P}$ contains all of the lines passing
+  through $p$ and a point in $C$, by construction, $\vphi(C)\subset
+  \mc{P}\cap \mc{P}_{xy}$, and two planes intersect along a line. 
 
   Since the gnomonic projection is injective, it follows that 
   geodesic segments in $S^2$ cannot be sent to points, and hence 
@@ -70,25 +70,23 @@ a convex set in the plane.
 \end{proof}
 
 
-
-
 \abn{I'm still hunting down the reference for this theorem. 
 Some say it's due to Hartshorne, but I can't find the reference. 
 Someone says it's due to von Staudt from the 1850's...}
 \begin{theorem} \label{thm:geometric_algebra}
-  Let $U$ be some subset of $\mathbb{R}^n$ for $n\geq 2$.  If $f: U\to\R^n$ is 
+  Let $\Omega$ be some subset of $\mathbb{R}^n$ for $n\geq 2$.  If $f: \Omega\to\R^n$ is 
   bijective and sends line segments  to  line segments, then $f$ is an affine linear 
   transformation.\zs{should try to make work for injective}
 \end{theorem}
 \begin{proof}
   After possibly translating, we can assume without loss of generality that 
-  $0\in U$ and $f(0) = 0$, in which 
-  case we must show that $f$ is linear. We write $V = f(U)$. 
-  Since $f$ is a bijection  from $U$ to $V$ 
+  $0\in \Omega$ and $f(0) = 0$, in which 
+  case we must show that $f$ is linear. We write $V = f(\Omega)$. 
+  Since $f$ is a bijection  from $\Omega$ to $V$ 
   sending straight lines to straight lines, it follows that 
-  if $\mc{P}$ is an affine subspace of $\R^n$, then 
-  $f(\mc{P}\cap U)$ must be of the form $\mc{Q}\cap V$, where 
-  $\mc{Q}$ is an affine subspace of $\R^n$.
+  if $\mc{P}$ is an affine plane in $\R^n$, then 
+  $f(\mc{P}\cap \Omega)$ must be of the form $\mc{Q}\cap V$, where 
+  $\mc{Q}$ is an affine plane in $\R^n$.
   Additionally, $f$ must preserve intersections of 
   lines, and hence sends coplanar parallel lines to coplanar 
   parallel lines, and hence nondegenerate parallelograms 
@@ -97,9 +95,9 @@ Someone says it's due to von Staudt from the 1850's...}
   him, but I've never seen it...}
   Thus, $f$ is linear.
   \mute{
-  Let $v\in U$ be some nonzero vector, and let 
-  $w\in U\ssm \mathrm{Span}(v)$ be such that 
-  $v+w\in U$.
+  Let $v\in \Omega$ be some nonzero vector, and let 
+  $w\in \Omega\ssm \mathrm{Span}(v)$ be such that 
+  $v+w\in \Omega$.
   Restricted to the plane $\mathrm{Span}(v,w)$, 
   we can draw the following parallelogram:
   \begin{figure}[!h]
@@ -115,7 +113,7 @@ Someone says it's due to von Staudt from the 1850's...}
       \fill (4,3) circle (0.1) node[above] {$v+w$};
     \end{tikzpicture}
   \end{figure}
- 
+
   By the above discussion, $f$ sends this parallelogram 
   to another parallelogram whose vertices are 
   $0$, $f(v)$, $f(w)$, and $f(v+w)$. By the geometric 
@@ -123,15 +121,15 @@ Someone says it's due to von Staudt from the 1850's...}
   $f(v+w) = f(v)+f(w)$. A similar argument works for 
   subtraction.
 
-  Now, if $w\in \mathrm{Span}(v)\cap U$, then choose some 
-  $u\in U\ssm \mathrm{Span}(v)$, and apply the above argument to 
+  Now, if $w\in \mathrm{Span}(v)\cap \Omega$, then choose some 
+  $u\in \Omega\ssm \mathrm{Span}(v)$, and apply the above argument to 
   the pair $w-u$ and $v+u$, and then to the pairs 
   $w,u$ and $v,u$ to get $f(v+w) = f(v) + f(w)$.
 
-  Let $v\in U\ssm \{0\}$ and $\alpha \in \R\ssm 0$ be such that 
-  $\alpha v\in U$. We can write $f(\alpha v) = g(\alpha,v)f(v)$, and
+  Let $v\in \Omega\ssm \{0\}$ and $\alpha \in \R\ssm 0$ be such that 
+  $\alpha v\in \Omega$. We can write $f(\alpha v) = g(\alpha,v)f(v)$, and
   we need to show that $g$ does not depend on $v$. Let
-  $w\in U\ssm \mathrm{Span}(v)$ be such that $\alpha w\in U$, 
+  $w\in \Omega\ssm \mathrm{Span}(v)$ be such that $\alpha w\in \Omega$, 
   and consider the following line configuration:
   \begin{figure}[!h]
     \centering
@@ -179,7 +177,7 @@ for a general field:
 
   Such a function is called \textit{semilinear}
 \end{theorem}
-We can prove this by taking $U = \K^n$ and following the same argument. 
+We can prove this by taking $\Omega = \K^n$ and following the same argument. 
 The condition $|\K|\ge 3$ is to be able to characterize 
 parallel lines as disjoint lines lying in the same affine plane.
 }
@@ -189,9 +187,9 @@ section -- that any map projection which preserves convex sets can be
 written as the composition of the gnomonic projection and an affine
 linear transformation of the plane.
 
-\begin{theorem}
-  Let $\psi:U\to \R^2$ be a map projection 
-  defined on a subset of the lower-hemisphere, and let 
+\begin{theorem}~\label{thm:convex_to_convex}
+  Let $\psi:\Omega\to \R^2$ be a map projection 
+  defined on a region contained in the lower-hemisphere, and let 
   $\vphi$ be the gnomonic projection. If $\psi^{-1}$ sends 
   convex sets to convex sets, then there exists an affine linear map 
   $L$ such that $\psi = L\circ \vphi$.
@@ -208,7 +206,7 @@ collinear segments have the ratio of their length preserved, which
 implies linear.}
 \begin{proof}
   By Lemma ~\ref{lem:gnomonic_convex}, the map $\vphi\circ
-  \psi^{-1}:\psi(U)\to \R^2$ sends convex sets to convex sets. It is
+  \psi^{-1}:\psi(\Omega)\to \R^2$ sends convex sets to convex sets. It is
   bijective on its range, since $\psi$ and $\vphi$ are bijective, and
   hence satisfies the conditions of Theorem
   ~\ref{thm:geometric_algebra}, meaning that there exists an affine
@@ -240,12 +238,11 @@ implies linear.}
 \zs{defn 9, lem 5 lem 6 lem 7 lem 8}
 
 \begin{definition}
-  The \textbf{stereograpic projection} from the sphere to the plane is
-  defined by placing the plane tangent to the sphere at the south
-  pole, and for any point $p$ on the sphere other than the north pole,
-  $p$ is sent to the unique point $q$ in the plane which is on the
-  line in 3-space passing through the north pole and $p$.
-
+  The \textbf{stereograpic projection} from the north pole $N$ is
+  defined by placing a copy $\R^2$ tangent to the sphere at the south
+  pole, and sending any $p\in \mbb{S}^2\ssm \{N\}$ to 
+  the unique point $q$ in $\R^2$ such that $q\in \overline{Np}$.
+  \cut{
   If $(x,y,z)$ is a point on the sphere, then the action of the
   stereographic projection is
   \begin{align*}
@@ -256,11 +253,13 @@ implies linear.}
     (u,v)\mapsto \left( \frac{2u}{1+u^2+v^2},\frac{2v}{1+u^2+v^2},
     \frac{u^2+v^2-1}{1+u^2+v^2}   \right)
   \end{align*}
+  }
 \end{definition}
-
-What is somewhat surprising is that this projection sends every cap on
-the sphere which doesn't pass through the north pole to a circle in
-the plane. 
+\begin{remark}
+  It is a classical result that this projection sends every cap on
+  the sphere which doesn't pass through the north pole to a circle in
+  the plane. 
+\end{remark}
 \mute{There are several proofs of this fact, and we present
 a rather straightforward algebraic one here.}
 
@@ -318,9 +317,9 @@ which preserve circles is actually quite narrow.
 \mute{
 \begin{lemma}
   If $T$ is a transformation of the plane which sends every circle in
-the plane to another circle, then $T$ must be a linear transformation
-which is the composition of a scaling, a rotation, a reflection, and
-a translation, i.e. a scaled isometry.  
+  the plane to another circle, then $T$ must be a linear transformation
+  which is the composition of a scaling, a rotation, a reflection, and
+  a translation, i.e. a scaled isometry.  
 \end{lemma}
 \begin{proof}
 
@@ -371,14 +370,20 @@ a translation, i.e. a scaled isometry.
   Thus, a transformation of the plane is circle-preserving if and only
   if it is a scaled isometry.
 \end{proof}
-\zs{here is where the local mobius thing should go.  if it's a two-sentence technicality (i.e. our proof is ``Suppose we were only interested in circle-preserving maps in \textit{regions} of the plane. Then, we should want every \textit{circular arc} in the patch to be sent to a circular arc in the image and everything carries through as before, since three non-collinear points define a circular arc when restricted to a patch'', then it can even just be a footnote.})
+\zs{here is where the local mobius thing should go.  if it's
+a two-sentence technicality (i.e. our proof is ``Suppose we were only
+interested in circle-preserving maps in \textit{regions} of the plane.
+Then, we should want every \textit{circular arc} in the patch to be
+sent to a circular arc in the image and everything carries through as
+before, since three non-collinear points define a circular arc when
+restricted to a patch'', then it can even just be a footnote.})
 We can put these two pieces together to prove the main tool of this
 section -- that any map projection from the sphere to the plane which
 preserves circles is the composition of the stereographic projection
 and a scaled isometry.
 }
 \begin{lemma}
-  Let $f:U\to V$ be a bijection between two planar regions 
+  Let $f:\Omega\to V$ be a bijection between two planar regions 
   sending generalised circles to generalised circles. 
   Then $f$ is a M\"{o}bius transformation composed with a 
   reflection.
@@ -386,22 +391,22 @@ and a scaled isometry.
 This is a slight rewording of a celebrated result by 
 Carath\'{e}odory\cite{caratheodory}:
 \begin{theorem}
-Every arbitrary bijection of a disc $D$ to a bounded set $D'$ by which
-circles lying completely in $D$ are transformed into circles 
-lying in $D'$ must be of the form $M$ or $\bar M$, where $M$ is a 
-M\"{o}bius transformation.
+  Every arbitrary bijection of a disc $D$ to a bounded set $D'$ by which
+  circles lying completely in $D$ are transformed into circles 
+  lying in $D'$ must be of the form $M$ or $\bar M$, where $M$ is a 
+  M\"{o}bius transformation.
 \end{theorem}
 The proof of the lemma then follows:
 \begin{proof}
   By Carath\'{e}odory's theorem, we know that on any open 
-  ball in $U$, $f=M$ or $f=\bar M$, where 
+  ball in $\Omega$, $f=M$ or $f=\bar M$, where 
   $M$ is a M\"{o}bius transformaion. Thus, $f$ or $\bar f$ 
   are holomorphic, so by applying the identity theorem, 
   it follows that $f = M$ or $f = \bar M$ on the entirety of 
-  $U$.
+  $\Omega$.
 \end{proof}
 
-This gives us a surprisingly useful theorem:
+This gives us the desired characterization.
 \begin{theorem}\label{thm:stereographic_mobius}
   The map projections from the sphere to the plane which send every
   cap to a circle are exactly those which can be written as the

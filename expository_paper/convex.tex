@@ -1,5 +1,5 @@
 \section{Convex Hull}\label{sec:ch}
-Another commonly used compactness score is the \textit{convex hull
+A commonly used compactness score is the \textit{convex hull
 score}.  We briefly recall the definition of a convex set and then
 define this score function.
 
@@ -13,25 +13,23 @@ define this score function.
     \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{conv}(\Omega))}
   \end{align*}
 \end{definition}
-
+\cut{
 The convex hull score of a region $\Omega$  will be equal to one if
 and only if $\Omega$ is itself convex.  We note that the convex hull
 and Polsby-Popper scores agree when $\Omega$ is a circle, provide
 a similar score when $\Omega$ is roughly circluar, and differ greatly
 if $\Omega$ is a highly non-circular but convex region, such as
-a long, thin rectangle.
+a long, thin rectangle.}
 
-Our strategy to demonstrate that any map projection cannot preserve
-the orders of convex hull scores will be similar to the previous
-section. We first argue that any order-preserving map must, in
-particular, preserve the maximizers in the ordering, meaning convex
+To demonstrate that any map projection cannot preserve
+the orders of convex hull scores we note that  
+order-preserving map must, in particular, preserve the 
+maximizers in the ordering. This means that convex
 regions on the sphere are mapped to convex regions in the plane.
-Then, we use this condition to restrict our attention to the map
-projections which preserve these maximizers, which we can then use to
-construct our counterexample.
 
-
-We now show that the gnomonic projection does not preserve 
+By Theorem~\ref{thm:convex_to_convex}, such a map 
+must be the gnomonic projection up to a linear transformaion. 
+We first show that the gnomonic projection does not preserve 
 convex-hull score orderings on any region of the sphere.
 
 \abn{mute this and write it in later:
@@ -54,20 +52,24 @@ which is a direct consequence of the four previous lemmas.
 \end{figure}
 
 \begin{theorem}
-	\label{thm:convhull}
-	Let $A$ be a region on the sphere.  Then there exist two regions $\kappa'_N,\kappa'_S\subset A$ such that the convex hull scores of $\kappa'_N$ and $\kappa'_S$ are equal on the sphere, but under the gnomonic projection $\varphi$, the convex hull score of $\kappa'_S$ is strictly greater than that of $\kappa'_N$. 
+  \label{thm:convhull}
+  Let $\Omega$ be a region on the sphere.  Then there exist two regions
+  $\kappa'_N,\kappa'_S\subset \Omega$ such that the convex hull scores of
+  $\kappa'_N$ and $\kappa'_S$ are equal on the sphere, but under the
+  gnomonic projection $\varphi$, the convex hull score of $\kappa'_S$ is
+strictly greater than that of $\kappa'_N$.  
 \end{theorem}
 
 \begin{proof}
-  First, since $A$ is a region, we can find some cap $\kappa$ inside
-  of $A$ such that the center of $\kappa$ is not the south pole of the
+  First, since $\Omega$ is a region, we can find some cap $\kappa$ inside
+  of $\Omega$ such that the center of $\kappa$ is not the south pole of the
   sphere, and the north pole is exterior to $\kappa$.  This cap is
   bisected by a line of longitude, in particular the great circle
   which passes through the two poles and the center of $\kappa$.  This
   line of longitude meets $\kappa$ at exactly two points, and we call
   $p_N$ the point closer to the north pole and $p_S$ the point closer
   to the south pole.
-	
+
   Choose some $r$ strictly less the radius of $\kappa$ and let
   $\kappa'_S$ be the region constructed by deleting a cap of radius
   $r$ from the interior of $\kappa$ tangent at $p_S$.  Construct
@@ -76,7 +78,7 @@ which is a direct consequence of the four previous lemmas.
   $\kappa'_S$ are identical, since each has the boundary of $\kappa$
   as its smallest bounding cap and both convex hulls have the same
   area.
-	
+
   We now consider the images of $\kappa'_N$ and $\kappa'_S$ under the
   gnomonic projection $\varphi$.  Since $\varphi$ preserves points of
   tangency, containment, and sends every cap to an ellipse, the images
@@ -86,7 +88,7 @@ which is a direct consequence of the four previous lemmas.
   was the smallest bounding cap of both regions on the sphere, the
   image of the boundary of $\kappa$ under $\varphi$ is the smallest
   bounding circle of the images of these regions in the plane.
-	
+
   We can now observe that these two regions in the plane do not have
   the same convex hull score.  Both have the same bounding ellipse,
   which is their convex hulls, but $\varphi(\kappa'_N)$ is strictly
@@ -102,7 +104,7 @@ which is a direct consequence of the four previous lemmas.
   $r/\sin{\theta}$, and a straightforward examination of this as
   a function of $\theta$ shows that it grows faster as $\theta$
   increases.
-	
+
   Since $\varphi(\kappa'_N)$ fills a smaller fraction of the bounding
   ellipse than $\varphi(\kappa'_N)$ does, its convex hull score is
   strictly worse, and the gnomonic projection does not preserve convex
@@ -115,18 +117,18 @@ show that there is no affine linear transformation of the plane which
 can correct for this.
 
 \begin{lemma}\label{lem:noafflin}
-	Let $L$ be an affine linear transformation of the plane.  Then $L$
-	preserves the convex hull scores of all figures in the plane.
+  Let $L$ be an affine linear transformation of the plane.  Then $L$
+  preserves the convex hull scores of all figures in the plane.
 \end{lemma}
 \begin{proof}
-	Since affine linear transformations map lines to lines, they preserve
-	convexity, and since they also preserve the containment of regions in
-	other regions, if $\Omega$ is a region in the plane, then it must be
-	the case that the convex hull of $\Omega$ is mapped to the convex hull
-	of $L(\Omega)$ by $L$.  In other words, the image of the convex hull
-	of $\Omega$ is the convex hull of the image of $\Omega$.  Finally,
-	since affine linear transformations preserve the ratio of the areas of
-	any two regions, $L$ must, in particular, preserve the ratio of the
-	areas of $\Omega$ and its convex hull, so the convex hull score is
-	preserved.
+  Since affine linear transformations map lines to lines, they preserve
+  convexity, and since they also preserve the containment of regions in
+  other regions, if $\Omega$ is a region in the plane, then it must be
+  the case that the convex hull of $\Omega$ is mapped to the convex hull
+  of $L(\Omega)$ by $L$.  In other words, the image of the convex hull
+  of $\Omega$ is the convex hull of the image of $\Omega$.  Finally,
+  since affine linear transformations preserve the ratio of the areas of
+  any two regions, $L$ must, in particular, preserve the ratio of the
+  areas of $\Omega$ and its convex hull, so the convex hull score is
+  preserved.
 \end{proof}

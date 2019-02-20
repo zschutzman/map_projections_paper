@@ -6,23 +6,24 @@ end, many jurisdictions have included the criterion of compactness in
 their legal code for drawing districts.  However, there is no
 agreed-upon definition for what makes a district compact or not.
 Several competing mathematical definitions have emerged over the past
-two centuries, including the \textit{Polsby-Popper score}, which
+two centuries, including the \textit{Polsby-Popper score}, \cut{which
 measures the ratio of a district's area to the square of its
-perimeter,  the \textit{convex hull score}, which measures the ratio
-of the area of a district to the smallest convex region containing it,
-and the \textit{Reock score}, which measures the ratio of the area of
-a district to the smallest circle containing it.  Each of these
+perimeter,}  the \textit{convex hull score}, \cut{which measures the ratio
+of the area of a district to the smallest convex region containing it},
+and the \textit{Reock score}, \cut{which measures the ratio of the area of
+a district to the smallest circle containing it}.  Each of these
 measures is appealing at an intuitive level, since they each assign to
 a district a single scalar value between zero and one, allowing easy
 comparisons between proposed redistricting plans. Additionally, the
 mathematics underpinning each is widely understandable by the relevant
 parties, including lawmakers, judges, advocacy groups, and the general
-public.  None of these measures is perfect, however.  For each, it is
-not difficult to construct a mathematical counterexample for which
+public.  None of these measures is perfect, however\cit.  \cut{
+For each, it is not difficult to construct a 
+mathematical counterexample for which
 a human's intuition and the score's evaluation of a shape's
 compactness differ, such as a circle with slightly perturbed boundary
 for the Polsby-Popper measure and a very long, thin rectangle for the
-convex hull measure.  Additionally, these scores often do not agree.
+convex hull measure. } Additionally, these scores often do not agree.
 The long, thin rectangle has a very good convex hull score, but a very
 poor Polsby-Popper score.  These issues are well-studied by political
 scientists and mathematicians alike
@@ -33,7 +34,7 @@ In this paper, we propose a further critique of these measures, namely
 compactness scores named above is defined as a tool to evaluate
 geometric shapes in the plane, but in reality we are interested in
 analyzing shapes which sit on the surface of the planet Earth, which
-is (roughly) spherical.  When a shape is assigned a compactness score,
+is (roughly) spherical\cit.  When a shape is assigned a compactness score,
 it is implicitly done with respect to some choice of map projection.
 We show, both mathematically and empirically, that this may have
 serious consequences for the evaluation of compactness.  In

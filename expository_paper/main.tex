@@ -57,6 +57,7 @@
 \newcommand{\Rd}{\mathbb{R}^d}
 
 \newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mbb}[1]{\mathbb{#1}}
 \newcommand{\R}{\ensuremath{\mathbb{R}}\xspace}
 \newcommand{\C}{\ensuremath{\mathbb{C}}\xspace}
 \newcommand{\K}{\ensuremath{\mathbb{K}}\xspace}
@@ -95,8 +96,6 @@
 \newtheorem{example}{Example}
 
 
-
-
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \newcommand{\E}[1]{\mathbb{E}\left[ #1 \right]}
@@ -106,11 +105,13 @@
 \renewcommand{\Pr}[2]{\mathbb{P}_{#1}\left[ #2 \right]}
 
 
-
-\newif \ifdraft \draftfalse
+\newif \ifdraft \drafttrue
 \newcommand{\zs}[1]{\ifdraft \textcolor{RedViolet}{[Zach: #1]} \fi} 
 \newcommand{\abn}[1]{\ifdraft \textcolor{Green}{[Assaf: #1]} \fi}
 \newcommand{\lsn}[1]{\ifdraft \textcolor{Blue}{[Lorenzo: #1]} \fi}
+\newcommand{\cut}[1]{\textcolor{Red}{[cut: #1]}}
+%\newcommand{\cut}[1]{}%\textcolor{Red}{[cut: #1]}}
+\newcommand{\cit}[1]{\textcolor{Orange}{[citation needed]}}
 
 
 \title{Order-Reversal of Compactness Scores under Map Projections [DRAFT]}
