@@ -1,19 +1,71 @@
 \section{Reock}\label{sec:reock}
+\subsection{The Stereographic Projection}
+Before analyzing Reock scores, we preform a preliminary 
+discussion about the stereographic projection.
+\begin{definition}
+  The \textbf{stereograpic projection} from the north pole $N$ is
+  defined by placing a copy $\R^2$ tangent to the sphere at the south
+  pole, and sending any $p\in \mbb{S}^2\ssm \{N\}$ to 
+  the unique point $q$ in $\R^2$ such that $q\in \overline{Np}$.
+\end{definition}
+\begin{remark}
+  It is a classical result that this projection sends every cap on
+  the sphere which doesn't pass through the north pole to a circle in
+  the plane. 
+\end{remark}
+\begin{lemma}
+  The stereographic projection sends every cap which does not pass
+  through the north pole to a circle in the plane.
+\end{lemma}
 
+\begin{lemma}
+  Let $f:\Omega\to V$ be a bijection between two planar regions 
+  sending generalised circles to generalised circles. 
+  Then $f$ is a M\"{o}bius transformation composed with a 
+  reflection.
+\end{lemma}
+This is a slight rewording of a celebrated result by 
+Carath\'{e}odory\cite{caratheodory}:
+\begin{theorem}
+  Every arbitrary bijection of a disc $D$ to a bounded set $D'$ by which
+  circles lying completely in $D$ are transformed into circles 
+  lying in $D'$ must be of the form $M$ or $\bar M$, where $M$ is a 
+  M\"{o}bius transformation.
+\end{theorem}
+The proof of the lemma then follows:
+\begin{proof}
+  By Carath\'{e}odory's theorem, we know that on any open 
+  ball in $\Omega$, $f=M$ or $f=\bar M$, where 
+  $M$ is a M\"{o}bius transformaion. Thus, $f$ or $\bar f$ 
+  are holomorphic, so by applying the identity theorem, 
+  it follows that $f = M$ or $f = \bar M$ on the entirety of 
+  $\Omega$.
+\end{proof}
+
+This gives us the following characterization:
+\begin{theorem}\label{thm:stereographic_mobius}
+  The map projections from the sphere to the plane which send every
+  cap to a circle are exactly those which can be written as the
+  composition of the stereographic projection followed by a 
+  M\"{o}bius transoformation and a reflection.
+\end{theorem}
+\begin{proof}
+  Let $\varphi$ and $\psi$ be two map projections which preserve
+  circles, and without loss of generality let $\varphi$ be the
+  standard stereographic projection.  Then the composition
+  $M^{-1}=\psi\circ\varphi^{-1}$ is a transformation of 
+  the plane which preserves circles, so by the previous lemma, 
+  $M^{-1}$ is a M\"{o}bius transformation composed with a reflection. 
+  Then, we can write $\psi= M\varphi$, which is the
+  composition of the stereographic projection and a scaled isometry.
+\end{proof}
+\subsection{The Reock Compactness Score}
 Let $\mathrm{circ}(\Omega)$ denote the \textit{smallest bounding
 circle} (smallest bounding \textit{cap} on the sphere) of a region
 $\Omega$.  Then the \textit{Reock score} of $\Omega$ is 
 
 $$\mathrm{Reock}(\Omega)=
 \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{circ}(\Omega))}.$$
-
-In words, it is the ratio of the area of the region to the area of the
-smallest circle containing that region, and it is equal to one if and
-only if $\Omega$ is a circle.  We can observe that
-$\mathrm{CH}(\Omega)\geq \mathrm{Reock}(\Omega)$, since the convex
-hull of a region is never larger than the smallest bounding circle.
-This relation holds with equality if and only if the convex hull of
-$\Omega$ is a circle.  
 
 Since $\mathrm{Reock}(\Omega)=1$ if and only if $\Omega$ is a circle,
 we can observe that any candidate $\vphi$ for a map projection 
@@ -52,13 +104,7 @@ $T(U)$.
   is strictly greater than that of $\kappa'_N$. 
 \end{theorem}
 
-
 \begin{proof}
-
-  The structure of this proof is similar to that of
-  \Cref{thm:convhull}. We set $\kappa,\kappa'_S,\kappa'_N$ as before.
-  \abn{Condensed construction}
-  \mute{
   First, since $A$ is a region, we can find some cap $\kappa$ inside
   of $A$ such that the center of $\kappa$ is not the south pole of the
   sphere, and the north pole is exterior to $\kappa$.  This cap is
@@ -85,7 +131,7 @@ $T(U)$.
   Furthermore, since the boundary of $\kappa$ was the smallest
   bounding cap of both regions on the sphere, the image of the
   boundary of $\kappa$ under $\varphi$ is the smallest bounding circle
-  of the images of these regions in the plane.}
+  of the images of these regions in the plane.
 
   We can now observe that these two regions in the plane do not have
   the same Reock score.  Both have the same bounding circle, but
@@ -105,26 +151,6 @@ $T(U)$.
   worse, and the stereographic projection does not preserve Reock
   scores.
 \end{proof}
-\mute{
-By Lemma~\ref{lem:noafflin} in the previous section, since scaled
-isometries are a special kind of affine linear transformations, they
-too preserve ratios of areas and therefore Reock scores.  We can
-conclude this section by summarizing the proof of the main result.
-
-\begin{theorem}
-  There is no map projetion from the sphere to the plane which preserves the ordering of Reock scores.
-\end{theorem}
-\begin{proof}
-  Since such a projection must send caps on the sphere to circles in the
-  plane, it must be the composition of the stereographic projection with
-  a scaled isometry of the plane.  Since scaled isometries preserve
-  Reock scores and therefore their ordering, a Reock score
-  order-preserving projection from the sphere to the plane cannot exist
-  if the stereographic projection does not preserve the ordering.  By
-  the constructed counterexample, it does not, and therefore there is no
-  such Reock score ordering map projection.
-\end{proof}
-}
 Piecing this together yields:
 \begin{theorem}
   There is no map projetion from the sphere to the plane which preserves the ordering of Reock scores.

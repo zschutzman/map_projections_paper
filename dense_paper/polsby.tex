@@ -1,8 +1,6 @@
 \section{Polsby-Popper}\label{sec:pp}
 The first compactness score we analyze is the \textit{Polsby-Popper
-score}, which takes the form of an \textit{isoperimetric quotient},
-meaning it measures how much area a region's perimeter encloses,
-relative to all other regions with the same perimeter.
+score}, which takes the form of an \textit{isoperimetric quotient}:
 
 \begin{definition}\label{def:pp}
   The Polsby-Popper score of a region $\Omega$ is defined to be
@@ -16,13 +14,7 @@ relative to all other regions with the same perimeter.
 The ancient Greeks were first to observed that if $\Omega$ is a region
 in the plane, then $4\pi\cdot\mathrm{area}(\Omega)\leq
 \mathrm{perim}(\Omega)^2$, with equality if and only if $\Omega$ is
-a circle. This seemingly obvious fact took a long time to prove%
-\abn{TODO: find a good reference on the history of the isoperimetric
-ratio}, and became known as the \textit{isoperimetric inequality} in
-the plane.  This means that $0\le \mathrm{PP}_{\R^2}(\Omega)\le 1$,
-where the Polsby-Popper score is equal to $1$ only in the case of
-a circle. In particular, the Polsby-Popper score is scale-invariant in
-the plane. An isoperimetric inequality for the sphere exists, and we
+a circle. An isoperimetric inequality for the sphere exists, and we
 state it as the following lemma.  For a more detailed treatment of
 isoperimetry in general, see \cite{osserman1979bonnesen}, and for
 a proof of this inequality for the sphere, see \cite{rado}.
@@ -32,29 +24,13 @@ a proof of this inequality for the sphere, see \cite{rado}.
   $A$ and perimeter $P$, then $P^2\geq A^2-4\pi A$ with equality if
   and only if $\Omega$ is a spherical cap.
 \end{lemma}
-A consequence of this is that among all regions on the sphere with
-a fixed area $A$, a spherical cap with area $A$ has the shortest
-perimeter. However, the key difference between the isoperimetric 
-quotient in the plane and on the sphere is that on the 
-sphere, there is no scale invariance.
-\lsn{ It feels weird to  me to call this theorem a "lemma"}
-\zs{I stated it as a lemma because I don't think we need to or even
-should be proving isoperimetric inequalities in here.  We can talk
-a little more about the audience, but it's one of those things that's
-intuitively true, but in order to get a rigorous proof, you need
-a few pages of symbol chasing and worrying about edge cases.  Maybe
-we can put a proof in an appendix if we feel like we need to include
-it?}
 
 \begin{lemma}\label{lem:ppscale}
-  Let $S$ be the unit sphere, and let $\kappa(h)$ be the cap at height
-  $h$ (i.e. the region comprised of all points whose $z$-coordinate is
-  greater than $1-h$, where we imagine the sphere as being embedded in
-  $\R^3$, centered at the origin) Then $\mathrm{PP}(\kappa(h))$ is
+  Let $\mbb{S}^2$ be the unit sphere in $\R^3$, and let 
+  $\kappa(h) = \{(x,y,z)\in \mbb{S}^2:z\ge h\}$ be a cap. 
+  Then $\mathrm{PP}(\kappa(h))$ is
   a monotonically increasing function of $h$.
 \end{lemma}
-\zs{$A$ was a little overloaded, so I changed it to $\kappa$ \smiley{}}
-
 
 \begin{proof}
   Let $r(h)$ be the radius of the circle bounding $\kappa(h)$. We
@@ -73,14 +49,6 @@ it?}
   \left(\frac{x}{\sqrt{x^2+y^2}},\frac{y}{\sqrt{x^2+y^2}}, z\right)$ 
   to compute $\mathrm{area}_S(\kappa(h)) = 2\pi h$ and plug it in to 
   get:
-  \zs{i think there's a better explanation than just asserting the
-  existence of a projection that does this.  What about `Archimedes
-  showed that the lateral surface area of a cylinder with radius $1$
-  and height $2$ is the same as the surface area of the spher, and
-  that the lateral projection (do figure) from the sphere onto the
-  cylinder preserves area.  Using this, we have that the area of
-  a spherical cap at height $h$ is'}
-  \abn{I wrote something shorter and possibly more useful}
   \begin{align*}
     \mathrm{PP}_S(\kappa(h)) = \frac{4\pi (2\pi h) }{4 \pi^2 (2h-h^2)}
     = \frac{2}{2-h}
@@ -89,7 +57,7 @@ it?}
 \end{proof}
 \begin{corollary}\label{cor:capscale}
   On the sphere, Polsby-Popper scores of caps are monotonically
-  increasing with area
+  increasing with area.
 \end{corollary}
 Using this, we can show the main theorem of this section, that no map
 projection from the half-sphere to the plane can preserve the ordering
@@ -162,13 +130,4 @@ Polsby-Popper scores is because the score itself is constructed from
 the \textit{planar} notion of isoperimetry, and there is no reason to
 expect this formula to move nicely back and forth between the sphere
 and the plane.  This proof crucially exploits a scale invariance
-present in the plane but not the sphere.  If we consider any circle in
-the plane, it's Polsby-Popper score is definitionally equal to one,
-but that is not true of every cap in the sphere.  This naturally
-raises the question of whether being more careful, and defining
-a compactness score which uses the isoperimetric quotient of the
-surface the region is actually in will evade this problem.  We show
-later that it does resolve the issue of scale-noninvariance, but it is
-still induces an ordering which is not preserved by any map
-projection.  We address this in Section~\ref{sec:isoper}, as it uses
-on machinery we develop in the interceding sections.
+present in the plane but not the sphere.
