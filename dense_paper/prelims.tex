@@ -1,0 +1,99 @@
+\section{Preliminaries, Definitions}\label{sec:prelims}
+
+We begin by introducing the necessary definitions and terminology, as
+well as a few observations about the mathematical objects of interest
+which will be of use later.  We carefully lay out these definitions so
+as to align with an intuitive understanding of the concepts and to
+appease the astute reader who may be concerned with edge cases,
+geometric weirdness, and nonmeasurability.
+
+\begin{definition}
+  A \textbf{region} $\Omega$ in $\mathbb{S}^2$ or 
+  in $\R^2$ is an non-empty open set together with its
+  boundary such that the region is measurable, its boundary is
+  measurable, and it is connected.
+\end{definition}
+
+We choose this definition so that concepts of the `area' and
+`perimeter' of a region are well-defined concepts.  Throughout, we
+restrict our attention to the plane $\mathbb{R}^2$ \cut{(or $\C$ if one
+prefers) }and the surface of the unit sphere $\mathbb{S}^2$ equipped
+with the standard measures and metrics.  We leave the consideration of
+other surfaces, measures, and metrics to future work.
+
+\begin{definition}
+  A \textbf{compactness score function} $\mathcal{C}$ is a function from
+  the set of all regions to the positive real numbers.  We adopt the
+  convention that a region with a \textit{higher} compactness score is
+  \textit{more} compact, and this naturally induces a partial order over
+  the set of all regions, where $A$ is at least as compact as $B$ if and
+  only if $\mathcal{C}(A)\geq \mathcal{C}(B)$.
+\end{definition}
+
+The final major definition we need is that of a \textit{map
+projection}.  In reality, the regions we are interested in comparing
+sit on the surface of the Earth (i.e. a sphere), but these regions are
+often examined as being projected onto a flat sheet of paper or
+computer screen, and which means that the regions drawn in any flat
+map object are subject to such a projection.
+
+\begin{definition}
+  A \textbf{map projection} $\varphi$ is a locally defined 
+  diffeomorphism from a region on the sphere to a region on the 
+  plane. \cut{This means that $\varphi$ is continuous,
+  $\varphi^{-1}$ exists and is also continuous.}
+\end{definition}
+
+\abn{condensed these definitions}
+\begin{definition}
+  We use the word \textbf{transformation} [of the plane/sphere] to mean
+  to a diffeomorphism from the plane or sphere to itself.
+\end{definition}
+\mute{
+\begin{definition}
+  \textbf{Linear transformations} of the plane are those parametrized by
+  invertible $2{\times}2$ matrices, and \textbf{affine linear
+  transformations} are those transformations which are the composition
+  of a linear transformation and a translation of the plane.
+\end{definition}
+We also briefly recall the definition of an \textit{affine subspace}:
+\abn{condensed definition}
+\begin{definition}
+  An \textbf{affine subspace} $W$ of a vector space $V$ 
+  \mute{(such as $\mathbb{R}^n$)} is a subset $S$ of $V$ such 
+  that $S = \vert W + a$ for some $a\in V$.
+  \mute{there exists a vector $a\in V$ such 
+  that the set $\{w-a \vert w\in W \}$ is a vector (sub)space of $V$.}
+\end{definition}
+}
+Since the image of a region under a map projection $\varphi$ is also
+a region, we can examine the compactness score of that region both 
+before and after applying $\varphi$, and this is the heart of the
+problem we address in this paper.  We demonstrate, for several
+standard choices of compactness scores $\mathcal{C}$, that the order
+induced by $\mathcal{C}$ is different than the order induced by
+$\mathcal{C}\circ\varphi$ for \textit{any} choice of map projection
+$\varphi$.
+
+\begin{definition}
+  We say that a map projection $\vphi$ \textbf{preserves} a 
+  compactness score $\mc{C}$ if for any regions 
+  $\Omega,\Omega'$, $\mc{C}(\Omega)\ge \mc{C}(\Omega')$ 
+  if and only if $\mc{C}(\vphi(\Omega)) \ge \mc{C}(\vphi(\Omega'))$.
+\end{definition}
+\begin{remark}
+  $\vphi$ preserves a compactness score $\mc{C}$ 
+  if and only if $\vphi^{-1}$ does.
+\end{remark}
+\begin{definition}
+  Let $\mbb{S}^2\subset \R^3$ be the unit sphere. A 
+  \textbf{cap} on the sphere is a region of the 
+  form $\kappa(h) = \{(x,y,z)\in \mbb{S}^2: z\ge h\}$.
+\end{definition}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.3\textwidth]{figs/spherecapschema}\\[1.5em]
+  \caption{ The height and radius of a spherical cap. }
+  \label{fig:caphr}
+\end{figure}
