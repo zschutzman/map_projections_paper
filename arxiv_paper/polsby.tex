@@ -1,34 +1,34 @@
 \section{Polsby-Popper}\label{sec:pp}
-The first compactness score we analyze is the \textit{Polsby-Popper
+The final compactness score we analyze is the \textit{Polsby-Popper
 score}, which takes the form of an \textit{isoperimetric quotient},
 meaning it measures how much area a region's perimeter encloses,
 relative to all other regions with the same perimeter.
 
 \begin{definition}\label{def:pp}
   The Polsby-Popper score of a region $\Omega$ is defined to be
-  $$\mathrm{PP}_X(\Omega) = \frac{4\pi
-  \cdot\mathrm{area}_X(\Omega)}{\mathrm{perim}_X(\Omega)^2}$$ 
-  Where $X$ is either the sphere $S$ or the plane $\R^2$, and
-  $\mathrm{area}_X$ and $\mathrm{perim}_X$ are the area and perimeter
-  respectively of $A$ in $X$.
+  $$\mathrm{PP}(\Omega) = \frac{4\pi
+  \cdot\mathrm{area}(\Omega)}{\mathrm{perim}(\Omega)^2}$$ 
+in either the sphere or the plane, and
+  $\mathrm{area}$ and $\mathrm{perim}$ are the area and perimeter of
+    $\Omega$, respectively.
 \end{definition}
 
-The ancient Greeks were first to observed that if $\Omega$ is a region
+The ancient Greeks were first to observe that if $\Omega$ is a region
 in the plane, then $4\pi\cdot\mathrm{area}(\Omega)\leq
 \mathrm{perim}(\Omega)^2$, with equality if and only if $\Omega$ is
-a circle. This seemingly obvious fact took a long time to prove%
-\abn{TODO: find a good reference on the history of the isoperimetric
-ratio}, and became known as the \textit{isoperimetric inequality} in
-the plane.  This means that $0\le \mathrm{PP}_{\R^2}(\Omega)\le 1$,
+a circle. This became known as the \textit{isoperimetric inequality} in
+the plane.  This means that, in the plane, $0\le \mathrm{PP}(\Omega)\le 1$,
 where the Polsby-Popper score is equal to $1$ only in the case of
-a circle. In particular, the Polsby-Popper score is scale-invariant in
-the plane. An isoperimetric inequality for the sphere exists, and we
+a circle. We can observe that the Polsby-Popper score is scale-invariant in
+the plane. 
+
+An isoperimetric inequality for the sphere exists, and we
 state it as the following lemma.  For a more detailed treatment of
 isoperimetry in general, see \cite{osserman1979bonnesen}, and for
 a proof of this inequality for the sphere, see \cite{rado}.
 
 \begin{lemma}
-  If $\Omega$ is a region on the \mute{half-sphere} sphere with area
+  If $\Omega$ is a region on the sphere with area
   $A$ and perimeter $P$, then $P^2\geq A^2-4\pi A$ with equality if
   and only if $\Omega$ is a spherical cap.
 \end{lemma}
@@ -40,10 +40,8 @@ sphere, there is no scale invariance.
 
 
 \begin{lemma}\label{lem:ppscale}
-  Let $S$ be the unit sphere, and let $\kappa(h)$ be the cap at height
-  $h$ (i.e. the region comprised of all points whose $z$-coordinate is
-  greater than $1-h$, where we imagine the sphere as being embedded in
-  $\R^3$, centered at the origin) Then $\mathrm{PP}(\kappa(h))$ is
+  Let $S$ be the unit sphere, and let $\kappa(h)$ be a cap of height
+  $h$.  Then $\mathrm{PP}(\kappa(h))$ is
   a monotonically increasing function of $h$.
 \end{lemma}
 
@@ -78,15 +76,15 @@ sphere, there is no scale invariance.
   increasing with area
 \end{corollary}
 Using this, we can show the main theorem of this section, that no map
-projection from the half-sphere to the plane can preserve the ordering
+projection from a region on the sphere to the plane can preserve the ordering
 of Polsby-Popper scores for all regions.  
 
 \begin{theorem}\label{thm:dpp}
-  If $\varphi$ is a map projection from the half-sphere to the plane,
-  then there are two regions $A$ and $C$ in the half sphere such that
-  the Polsby-Popper score of $C$ is greater than that of $A$ in the
+  If $\varphi$ is a map projection from the sphere to the plane,
+  then there are two regions $A$ and $B$ contained in some half-sphere such that
+  the Polsby-Popper score of $B$ is greater than that of $A$ in the
   sphere, but the Polsby-Popper score of $\varphi(A)$ is greater than
-  that of $\varphi(C)$ in the plane.
+  that of $\varphi(B)$ in the plane.
 \end{theorem}
 \begin{figure}[h]\label{fig:dpp}
   \centering
@@ -96,12 +94,12 @@ of Polsby-Popper scores for all regions.
     \draw[thick,->] (1,-0.3) -- (-1,-0.3)%
     node[midway,below] {$\vphi^{-1}$}; 
     \draw[line width=1, RedViolet] (-2.5,0) circle (1);
-    \draw node at (-2.5,1.2) {\color{RedViolet} $C$};
+    \draw node at (-2.5,1.2) {\color{RedViolet} $B$};
     \draw[line width=1, RedViolet] plot [smooth cycle, tension=0.5]%
     coordinates { (2.5,-0.8) (2.6,-0.5) (2.9,-0.7) (3,-0.3) (3.3,-0.1)% 
     (3.3,0.5) (3.1,0.8) (3,0.4) (2.7,0) (2.5,0.3) (2.3,0.4)%
     (2.1,0.1) (1.6,0) (1.7,-0.3) (1.9, -0.6) (2,-0.3)};
-    \draw node at (2.5,0.6) {\color{RedViolet} $\vphi(C)$};
+    \draw node at (2.5,0.6) {\color{RedViolet} $\vphi(B)$};
 
     \draw[thick, NavyBlue] (2.4,-0.16) circle (0.25);
     \draw node at (2.4,-0.16) {\color{NavyBlue} $\Sigma$};
@@ -110,14 +108,14 @@ of Polsby-Popper scores for all regions.
     (-2,0.3) (-1.8,0) (-2,-0.1)};
     \draw node at (-2.5,0.1) {\color{NavyBlue} $A=\vphi^{-1}(\Sigma)$};
   \end{tikzpicture}
-  \caption{The construction of regions $A$, $C$, and $\hat{A}$ in the
+  \caption{The construction of regions $A$, $B$, and $\hat{A}$ in the
   proof of Theorem~\ref{thm:dpp}.} 
 \end{figure}
 
 \begin{proof}
-  Let $\varphi$ be a map projection, and take $C$ to be a cap in the
+  Let $\varphi$ be a map projection, and take $B$ to be a cap contained in in some
   half-sphere. Let $\Sigma$ be a circle in the plane such that $\Sigma
-  \subsetneq \varphi(C)$ and let $A=\varphi^{-1}(\Sigma)$ (see
+  \subsetneq \varphi(B)$ and let $A=\varphi^{-1}(\Sigma)$ (see
   Figure~\ref{fig:dpp}).
 
   We now use the isoperimetric inequality for the sphere 
@@ -128,13 +126,13 @@ of Polsby-Popper scores for all regions.
   area equal to that of $A$. By the isoperimetric 
   inequality of the sphere, $\mathrm{PP}_S(\hat{A})\geq
   \mathrm{PP}_S(A)$. Since map projections preserve containment,
-  $\Sigma\subsetneq \varphi(C)$ implies that $A\subsetneq C$, 
+  $\Sigma\subsetneq \varphi(B)$ implies that $A\subsetneq B$, 
   meaning that $\mathrm{area}(\hat A) = \mathrm{area}(A)\lneq 
-  \mathrm{area}(C)$. By Corollary~\ref{cor:capscale}, we know that
-  $\mathrm{PP_S}(\hat{A})< \mathrm{PP_S}(C)$, and combining this with
+  \mathrm{area}(B)$. By Corollary~\ref{cor:capscale}, we know that
+  $\mathrm{PP_S}(\hat{A})< \mathrm{PP_S}(B)$, and combining this with
   the earlier inequality, we get
   \begin{align*}
-    \mathrm{PP_S}({A})\leq \mathrm{PP_S}(\hat{A})< \mathrm{PP_S}(C)
+    \mathrm{PP_S}({A})\leq \mathrm{PP_S}(\hat{A})< \mathrm{PP_S}(B)
   \end{align*}
 
   Since $\Sigma = \varphi(A)$ maximizes the Polsby-Popper score in the
@@ -156,5 +154,4 @@ a compactness score which uses the isoperimetric quotient of the
 surface the region is actually in will evade this problem.  We show
 later that it does resolve the issue of scale-noninvariance, but it is
 still induces an ordering which is not preserved by any map
-projection.  We address this in Section~\ref{sec:isoper}, as it uses
-on machinery we develop in the interceding sections.
+projection.  We discuss this further in \Cref{sec:generalz}.

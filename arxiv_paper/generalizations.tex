@@ -1,10 +1,10 @@
 \section{Generalizations}
-
-In the previous sections, we proved our non-preservation results for particular compactness scores which appear frequently in the context of electoral redistricting.  However, we remark here that the machinery and techniques can be applied to a wide range of plausible compactness measures.  We briefly present some of these other scores here and leave as exercises to the interested reader the proofs of non-preservation of score ordering.
+\label{sec:generalz}
+In the body of the paper, we proved our non-preservation results for particular compactness scores which appear frequently in the context of electoral redistricting.  However, we remark here that the machinery and techniques can be applied to a wide range of plausible compactness measures.  We briefly present some of these other scores here and leave as exercises to the interested reader the proofs of non-preservation of score ordering.
 
 \paragraph{Perimeter} 
 
-The state of Iowa has in its laws \footnote{Iowa Code \S42.4(4)} the following as a measure of compactness:
+In the introduction, we discussed that the state of Iowa\footnote{Iowa Code \S42.4(4)} uses the following as a measure of compactness:
 
 \begin{displayquote}
 	
@@ -13,11 +13,41 @@ The state of Iowa has in its laws \footnote{Iowa Code \S42.4(4)} the following a
 	the district. The compactness of a district based on this measure is greatest when
 	the distance needed to traverse the boundary is as short as possible. 
 	
-	\end{displayquote}
+\end{displayquote}
 
-Prove that the compactness score defined by $\mathrm{Perim}(\Omega)$ does not have its ordering preserved by any map projection.
+Prove that the ordering of regions  under the compactness score $\mathrm{Perim}(\Omega)$ is not preserved by any map projection.
 
 
 
-	
-	
+
+\paragraph{Bounding Regions}
+
+Several other compactness scores are defined analogously to the convex hull and Reock scores, where the score is the ratio of the area of the district to that of the smallest bounding shape of a certain kind.
+
+Prove that if we let this shape be the smallest bounding triangle, rectangle, square, or ellipse that the ordering of regions under these compactness scores are not preserved by any map projection.
+
+\paragraph{Inscribed Regions}
+
+Rather than a bounding region, we can look at \textit{inscribed regions}, which is the largest area shape of a particular kind which can be drawn entirely within the district.  Then, we can define a compactness score by taking the ratio of the area of this shape to the area of the district.  For example, if we consider inscribed circles, this is called the \textit{Ehrenberg score}, defined as
+
+$$\mathrm{Ehr}(\Omega) = \frac{\mathrm{Area}(\mathrm{incirc}(\Omega))}{\mathrm{Area}(\Omega)}$$
+
+where $\mathrm{incirc}(\Omega)$ is the largest inscribed circle of $\Omega$.
+
+We can similarly use inscribed triangles, squares, rectangles, ellipses, or convex regions.  Prove that for any of these, as well as circles, that the ordering of regions under these compactness scores are not preserved by any map projection.
+
+
+
+\paragraph{Polsby-Popper, Redux}
+We remarked at the end of Section~\ref{sec:pp} that a more principled version of an isoperimetric quotient may avoid the failure of the ordinary Polsby-Popper score to induce an ordering which can be preserved by some map projection.
+
+We define the \textbf{isoperimetric quotient score} of a region $\Omega$ to be$$
+\mathrm{IPQ}(\Omega)=
+\begin{cases}
+\frac{4\pi \ \mathrm{area}(\Omega)}{\mathrm{perim}(\Omega)^2} \text{ in the plane},\\[10pt]
+\frac{\mathrm{area}(\Omega)^2 - 4\pi \ \mathrm{area}(\Omega)}{\mathrm{perim}(\Omega)^2}\text{ on the sphere}
+\end{cases}
+$$
+
+Prove that the ordering of regions  under the compactness score $\mathrm{IPQ}(\Omega)$ is not preserved by any map projection.\\ (\textit{Hint: the maximizers of this score are caps on the sphere and circles in the plane})
+
