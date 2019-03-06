@@ -35,10 +35,18 @@ If we can show that the stereographic projection does not preserve Reock scores,
 \begin{proof}
 
 
-  We prove this constructively.  Fix a half-great circle passing through the north and south poles of the sphere (i.e. a \textit{line of longitude} on the Earth).  Each of the figures described will be constructed from spherical caps with their centers on this half-great circle.  Furthermore, observe that we can specify any point on this half-great circle by giving its polar angle $\theta$, which is the angle formed by the line (in $\R^3$) connecting the north pole to this point and the polar axis of the sphere.
+  We prove this constructively.  Fix a half-great circle passing through the north and south poles of the sphere (i.e. a \textit{line of longitude} on the Earth).  Each of the figures described will be constructed from spherical caps with their centers on this half-great circle.  Furthermore, observe that we can specify any point on this half-great circle by giving its polar angle $\theta$, which is the angle formed by the lines (in $\R^3$) which are the polar axis of the sphere and the line passing through the center of the sphere and our point of interest.
   We prove this in the case of the unit sphere, and the general result for the sphere of radius $\mc{R}$ follows from applying a scaling factor at the end.
   
-  Choose two angles $\theta_S$ and $\theta_N$ such that $0\leq\theta_S<\theta_N<\tfrac{\pi}{2}$.  These two angles identify a cap $\kappa$ centered on our half-great circle where $\theta_S$ is the polar angle which gives the point on the cap closest to the south pole and $\theta_N$ the north pole.  Choose another angle $\theta_D <\tfrac{\theta_N-\theta_S}{2}$.  We can similarly construct two more caps $\kappa_N$ using the angles $\theta_N$ and $\theta_N - \theta_D$ and $\kappa_S$ using the angles $\theta_S$ and $\theta_S+\theta_D$.  Each of these two caps is fully contained in $\kappa$ and are tangent to it at the shared boundary point.
+  Choose two angles $\theta_S$ and $\theta_N$ such that $0\leq\theta_S<\theta_N<\tfrac{\pi}{2}$.  These two angles identify a cap $\kappa$ centered on our half-great circle where $\theta_S$ is the polar angle which gives the point on the cap closest to the south pole and $\theta_N$ the north pole.  Choose another angle $\theta_D <\tfrac{\theta_N-\theta_S}{2}$.  We can similarly construct two more caps $\kappa_N$ using the angles $\theta_N$ and $\theta_N - \theta_D$ and $\kappa_S$ using the angles $\theta_S$ and $\theta_S+\theta_D$.  Each of these two caps is fully contained in $\kappa$ and are tangent to it at the shared boundary point.  A cross-section along our line of longitude is shown in \Cref{fig:reock_sphere_schema}.
+  
+  
+  \begin{figure}[h]
+  	\centering
+  	\includegraphics[width=.3\textwidth]{figs/reock_sph_schema.png}
+  	\caption{The points along the line of longitude corresponding to $\theta_N$, $\theta_S$, $\theta_N-\theta_D$ and $\theta_S+\theta_D$.}
+  	\label{fig:reock_sphere_schema}
+  \end{figure}
   
   We define the region $\kappa_N'$ as $\kappa\ssm\kappa_N$ and $\kappa_S'$ as $\kappa\ssm\kappa_S$.  That is, each of these is formed by deleting the corresponding smaller cap from $\kappa$.  Since $\kappa_N$ and $\kappa_S$ have the same area and the smallest bounding cap of $\kappa_N'$ and $\kappa_S'$ is just $\kappa$ itself, these two regions have identical Reock scores on the sphere.  Indeed, one can observe that $\kappa_N'$ is the $\ang{180}$ rotation of $\kappa_S'$ about the center of $\kappa$.
   
