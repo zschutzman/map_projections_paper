@@ -1,0 +1,158 @@
+\section{Stereographic Projection}
+In this section, we'll present some results a common
+projection from the sphere to the plane: the \textit{stereographic} projection.  
+We build these results to 
+later show that the  ordering of regions under   the Reock score is not preserved
+by any map projection.
+
+
+\begin{definition}
+	The \textbf{stereograpic projection} from the north pole $N$ is
+	defined by placing a copy $\R^2$ tangent to the sphere at the south
+	pole, and sending any $p\in \mbb{S}^2\ssm \{N\}$ to 
+	the unique point $q$ in $\R^2$ such that is on the line in $\R^3$ passing 
+	through $p$ and $N$.
+	
+	If $(x,y,z)$ is a point on the sphere, then the action of the
+	stereographic projection is
+	\begin{align*}
+	(x,y,z)\mapsto \left(\frac{x}{1-z},\frac{y}{1-z}\right)
+	\end{align*}
+	and its inverse, for $(u,v)$ in the plane:
+	\begin{align*}
+	(u,v)\mapsto \left( \frac{2u}{1+u^2+v^2},\frac{2v}{1+u^2+v^2},
+	\frac{u^2+v^2-1}{1+u^2+v^2}   \right)
+	\end{align*}
+	
+\end{definition}
+
+We now prove a lemma which is an important result about the stereographic projection.
+
+
+\begin{lemma}
+	\label{lem:stereocirc}
+  The stereographic projection sends every cap which does not pass
+  through the north pole to a circle in the plane.
+\end{lemma}
+
+\begin{proof}
+  We proceed algebraically.  Since a cap on the sphere can be
+  identified by the plane in $\R^3$ which intersects the sphere along
+  its boundary, we can parametrize such a cap by writing the equation
+  for its corresponding plane, $ax+by+cz=d$, restricting $(x,y,z)$ to
+  be points on the sphere.  The image in the plane of this cap is some
+  set of $(u,v)$ points, and we can explicitly write this by
+  substituting in for $x$, $y$, and $z$ the corresponding values for
+  the inverse stereographic projection.  We write
+  $\mathcal{W}=u^2+v^2$ for the ease of presentation. 
+
+  \begin{align*}
+    d&=ax+by+cz\\
+    d&=a\left(\frac{2u}{1+u^2+v^2}\right)+b\left(\frac{2v}{1+u^2+v^2}\right)+c\left(\frac{u^2+v^2-1}{1+u^2+v^2}\right)\\
+    d&=a\left(\frac{2u}{1+\mathcal{W}}\right)+b\left(\frac{2v}{1+\mathcal{W}}\right)+c\left(\frac{\mathcal{W}-1}{1+\mathcal{W}}\right)\\
+    d\left(1+\mathcal{W}\right)&=2au+2bv+c\left(\mathcal{W}-1\right)\\ 
+    0 &=    (c-d)\mathcal{W} + 2au +2bv - c - d\\
+    0 &= (c-d)(u^2+v^2)+2au+2bv - c - d
+  \end{align*}
+
+  This last step is the equation of a circle in the plane if $c\neq d$
+  and a line otherwise.  Since $c=d$ if and only if the point
+  $(x,y,z)=(0,0,1)$ (i.e. the north pole) is on the plane, and we
+  assumed that this is not the case, we have shown that the image
+  under the stereographic projection of every cap which does not pass
+  through the north pole is a circle in the plane.
+
+\end{proof}
+
+We have in-hand a circle-preserving map projection, and we now
+turn to demonstrating that the stereographic projection is essentially
+the unique map projection with this property.  We can observe that if
+we perform stereographic projection and compose it with
+a transformation of the plane which sends every circle to a circle,
+then this composition is a circle-preserving map projection.  The next
+lemma demonstrates that the class of transformations of the plane
+which preserve circles is actually quite narrow.
+
+
+We introduce the \textit{M\"obius transformations}, which have several characterizations.  Here we present an algebraic one to match the derivation in \Cref{lem:stereocirc}.  To make the presentation clearer, we will work with the complex numbers $\C$ rather than $\R^2$.
+
+\begin{definition}
+A \textbf{M\"obius transformation} of the extended complex numbers (the complex numbers together with a point at infinity) is a one which can be written as the composition of the following three types of elementary transformations:
+
+
+\begin{enumerate}
+	\item[] Translation: $z\mapsto z+b$ for some $b\in \C$
+	\item[] Scaling: $z\mapsto az$ for some $a\in \R$
+	\item[] Rotation: $z\mapsto e^{i\theta}z$ for some $\theta\in [0,2\pi)$
+	\item[] Inversion: $z \mapsto \tfrac{-1}{z}$
+	
+\end{enumerate}
+
+
+\textbf{Reflection} is not technically a M\"obius transformation, but we will make reference to it.  We therefore additionally allow composition with the transformation
+\begin{enumerate}
+	\item[] Reflection: $z\mapsto \bar{z}$, where $\bar{z}$ is the complex conjugate.
+\end{enumerate}
+
+
+\end{definition}
+
+
+Translation, scaling, rotation, and reflection should be familiar operations, but inversion can be tricky to visualize.  In a sense, inversion turns all of the circles `inside out' in a way that somehow preserves geometric structure.  Instead, it might be easier to model the extended complex numbers as the \textit{Riemann sphere}, where the south pole is zero and the north pole is the point at infinity.  If we imagine this sphere as being embedded naturally in $\R^3$, then the translation action rotates the sphere through some axis in the equatorial plane, the rotation action rotates the sphere through the polar axis, the scaling action makes the sphere bigger or smaller, and inversion is a reflection about the equatorial plane. 
+
+
+If we think of lines as being circles which `pass through' infinity, it can be shown that any M\"obius transformation preserves what we might call \textit{generalized circles}, meaning that a M\"obius transformation will send every circle to a circle or a line and every line to a circle or a line.  We do not prove this here, but verifying this for the first three kinds of transformations as well as reflections is straightforward, and that inversion does so as well can be verified algebraically. 
+
+Interestingly, this characterization goes both directions -- the class of transformations which preserve generalized circles is exactly the set of M\"obius transformations and their reflections.
+
+
+
+
+
+\begin{lemma}
+  Let $f:\Omega\to V$ be a bijection between two planar regions 
+  which sends any line, circle, or circular arc to some line, circle, or circular arc. 
+  Then $f$ is a M\"{o}bius transformation composed with a 
+  reflection.
+\end{lemma}
+\begin{proof}
+	
+This follows from a result of
+Carath\'{e}odory \cite{caratheodory}, which states
+
+\begin{displayquote}
+\textit{  Every arbitrary bijection of a disc $D$ to a bounded set $D'$ under which
+  circles lying completely in $D$ are transformed into circles 
+  lying in $D'$ must be a M\"obius transformation $M$ or its reflection $\bar M$.
+}
+\end{displayquote}
+
+We refer the reader to Carath\'{e}odory's paper for a thorough treatment.
+
+\end{proof}
+
+This gives us the desired characterization.  
+
+
+\begin{theorem}\label{thm:stereographic_mobius}
+  The map projections from the sphere to the plane which send every
+  cap to a circle are exactly those which can be written as the
+  composition of the stereographic projection followed by a 
+  M\"{o}bius transformation and a reflection.
+\end{theorem}
+\begin{proof}
+  Let $\varphi$ and $\psi$ be two map projections which preserve
+  circles, and without loss of generality let $\varphi$ be the
+  standard stereographic projection.  Then the composition
+  $M^{-1}=\psi\circ\varphi^{-1}$ is a transformation of 
+  the plane which preserves circles, so by the previous lemma, 
+  $M^{-1}$ is a M\"{o}bius transformation composed with a reflection. 
+  Then, we can write $\psi= M\varphi$, which is the
+  composition of the stereographic projection and a scaled isometry.
+\end{proof}
+
+
+
+The intuitive explanation for why this is true is that because we can model the extended complex numbers as the Riemann sphere rather than as the plane with an extra point at infinity.  Then, we can think about what M\"obius transformations of the Riemann sphere actually look like.  
+
+If we imagine this sphere as being embedded naturally in $\R^3$, then the translation action rotates the sphere through some axis in the equatorial plane, the rotation action rotates the sphere through the polar axis, the scaling action makes the sphere bigger or smaller, and inversion is a reflection about the equatorial plane. 

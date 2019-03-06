@@ -1,4 +1,4 @@
-\section{Organization of Paper}
+\section{Organization}
 This paper contains multiple results about compactness 
 scores, all of which require similar mathematical 
 backgrounds. An overview of the required preliminaries 
@@ -7,31 +7,43 @@ is found in section~\ref{sec:prelims}.
 For each of the compactness scores we analyze, our proof that no map
 projection can preserve their order follows a similar recipe. We
 first use the fact that any map projection which preserves an ordering
-must preserve the \textit{maximizers} of that ordering\cut{, meaning that
-if $\Omega$ is a region for which $\mathcal{C}(\Omega)\geq
-\mathcal{C}(\Sigma)$ for all regions $\Sigma$, then it must at the
-very least be the case that $\mathcal{C}(\varphi(\Omega))\geq
-\mathcal{C}(\varphi(\Sigma))$ if $\varphi$ preserves $\mathcal{C}$'s
-ordering.}
+must preserve the \textit{maximizers} in that ordering.  In other words,
+if there is some shape which a score says is `the most compact' on the sphere 
+but this is not the case in the plane after applying a projection, then whatever 
+shape \textit{does} get sent to `the most compact' shape in the plane leapfrogs 
+the first shape in the induced ordering.
 
-Using this fact, we can restrict our attention to those map
+Using this observation, we can restrict our attention to those map
 projections which preserve the maximizers in the induced ordering,
 then argue that any projection in this restricted set must permute the
 order of scores of some pair of regions.
 
-We spend some time developing background related to 
-the gnomonic and stereographic projections, and showing 
-that, in fact, any map preserving maximizers 
-of convex-hull scores must be the gnomonic projection, 
-and any map preserving maximizers of Reock must be stereographic. 
-This analysis can be found in section~\ref{sec:gnom_stereo}.
+\paragraph{Reock}
+We  develop some mathematical background related to 
+the   stereographic projection, and showing 
+that, in fact, any projection preserving maximizers 
+ of the Reock score ordering must be stereographic. 
+Then, we show that the  stereographic 
+projection does not preserve the ordering induced Reock scores. 
 
-Finally, we show that the gnomonic and stereographic 
-projections do not preserve the ordering induced by convex 
-hull or Reock scores respectively. We do this in 
-sections~\ref{sec:ch} (for convex hull) and~\ref{sec:reock} (for Reock). 
 
-Being a slightly different argument, we dedicate 
-section~\ref{sec:pp} to the analysis of Polsby-Popper scores.
+\paragraph{Convex Hull}
+For the convex hull score, we take a slightly different approach.  We first 
+show that any projection which preserves the maximizers of the convex hull score 
+ordering must maintain certain geometric properties of shapes and line segments 
+between the sphere and the plane.  Using this, we use some spherical geometry demonstrate that no 
+map projection from the sphere to the plane can preserve these properties, and therefore 
+no such convex hull score order preserving projection exists.
 
-\abn{Still need to summarize sections 7 and 8}
+
+\paragraph{Polsby-Popper}
+To demonstrate that there is no projection which maintains the score ordering induced by the Polsby-Popper score, we again use properties of spherical geometry.  In this setting, we leverage the 
+difference between the \textit{isoperimetric inequalities} on the sphere and in the plane in order to 
+demonstrate that the Polsby-Popper score, as given, is not scale-free on the sphere.  We then readjust 
+our definition to a more robust version of the isoperimetric quotient and use the machinery developed 
+in the Reock section to demonstrate that no map projection exists which preserves the ordering induced by this score, either.
+
+\paragraph{Discussion}
+Finally, we discuss some generalizations of our work. While we prove our results in the contexts of three specific scores, the machinery we develop along the way can be broadly applied to other kinds of compactness scores.  We defer to the appendix a further generalization of these results which apply to projections between surfaces of \textit{constant curvature}, rather than simply between the sphere and the plane.
+
+

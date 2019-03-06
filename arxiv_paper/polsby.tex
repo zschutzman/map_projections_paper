@@ -37,14 +37,7 @@ a fixed area $A$, a spherical cap with area $A$ has the shortest
 perimeter. However, the key difference between the isoperimetric 
 quotient in the plane and on the sphere is that on the 
 sphere, there is no scale invariance.
-\lsn{ It feels weird to  me to call this theorem a "lemma"}
-\zs{I stated it as a lemma because I don't think we need to or even
-should be proving isoperimetric inequalities in here.  We can talk
-a little more about the audience, but it's one of those things that's
-intuitively true, but in order to get a rigorous proof, you need
-a few pages of symbol chasing and worrying about edge cases.  Maybe
-we can put a proof in an appendix if we feel like we need to include
-it?}
+
 
 \begin{lemma}\label{lem:ppscale}
   Let $S$ be the unit sphere, and let $\kappa(h)$ be the cap at height
@@ -53,7 +46,7 @@ it?}
   $\R^3$, centered at the origin) Then $\mathrm{PP}(\kappa(h))$ is
   a monotonically increasing function of $h$.
 \end{lemma}
-\zs{$A$ was a little overloaded, so I changed it to $\kappa$ \smiley{}}
+
 
 
 \begin{proof}
@@ -73,14 +66,7 @@ it?}
   \left(\frac{x}{\sqrt{x^2+y^2}},\frac{y}{\sqrt{x^2+y^2}}, z\right)$ 
   to compute $\mathrm{area}_S(\kappa(h)) = 2\pi h$ and plug it in to 
   get:
-  \zs{i think there's a better explanation than just asserting the
-  existence of a projection that does this.  What about `Archimedes
-  showed that the lateral surface area of a cylinder with radius $1$
-  and height $2$ is the same as the surface area of the spher, and
-  that the lateral projection (do figure) from the sphere onto the
-  cylinder preserves area.  Using this, we have that the area of
-  a spherical cap at height $h$ is'}
-  \abn{I wrote something shorter and possibly more useful}
+
   \begin{align*}
     \mathrm{PP}_S(\kappa(h)) = \frac{4\pi (2\pi h) }{4 \pi^2 (2h-h^2)}
     = \frac{2}{2-h}

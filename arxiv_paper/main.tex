@@ -21,6 +21,10 @@
 \usepackage[caption=false]{subfig}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{siunitx}
+
+\usepackage{csquotes}
+
 \usepackage{tikz-3dplot}
 \newtheorem{claim}{Claim}
 \newtheorem{fact}{Fact}
@@ -61,8 +65,9 @@
 \newcommand{\R}{\ensuremath{\mathbb{R}}\xspace}
 \newcommand{\C}{\ensuremath{\mathbb{C}}\xspace}
 \newcommand{\K}{\ensuremath{\mathbb{K}}\xspace}
-\newcommand{\ssm}{\ensuremath{\smallsetminus}\xspace}
+\newcommand{\ssm}{\ensuremath{{\smallsetminus}}\xspace}
 \newcommand{\A}{\ensuremath{\cA}\xspace}
+\newcommand{\eps}{\ensuremath\varepsilon}
 % \renewcommand{\D}{\mathcal{D}}
 \newcommand{\B}{\ensuremath{\cB}\xspace}
 \newcommand{\regret}[1]{\textrm{Regret}(#1)}
@@ -80,7 +85,7 @@
 \newcommand{\mean}[2]{\ensuremath{\hat{\mu}_{#2}^{#1}}}
 \newcommand{\up}[2]{\ensuremath{u_{#2}^{#1}}}
 \newcommand{\low}[2]{\ensuremath{\ell_{#2}^{#1}}}
-\newcommand{\num}[2]{\ensuremath{n_{#2}^{#1}}}
+%\newcommand{\num}[2]{\ensuremath{n_{#2}^{#1}}}
 \newcommand{\interval}[2]{\ensuremath{[\ell_{#2}^{#1}, u_{#2}^{#1}]}}
 \newcommand{\unfair}{\textrm{unfair}}
 \newcommand{\fairbandits}{\textsc{FairBandits}\xspace}
@@ -126,21 +131,29 @@
 \input{organization}
 \input{prelims}
 
-
-\zs{new section who dis?}
-\input{gnom_stereo}
-
 \input{convex}
+
+\input{stereo}
+
+
 \input{reock}
 \input{polsby}
-\abn{muted newer sections}
-\mute{
-\input{isoper}
-\input{experiments}
+
+
+
+
+
+
 \input{future}
-}
+
 
 \bibliographystyle{plainnat}
 \bibliography{bib.bib}
+
+\pagebreak
+\appendix
+\input{generalizations}
+\input{curvature}
+
 
 \end{document}

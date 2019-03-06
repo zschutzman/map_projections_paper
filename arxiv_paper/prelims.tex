@@ -16,10 +16,15 @@ geometric weirdness, and nonmeasurability.
 
 We choose this definition so that concepts of the `area' and
 `perimeter' of a region are well-defined concepts.  Throughout, we
-restrict our attention to the plane $\mathbb{R}^2$ \cut{(or $\C$ if one
-prefers) }and the surface of the unit sphere $\mathbb{S}^2$ equipped
+restrict our attention to the plane $\mathbb{R}^2$ 
+and the surface of the unit sphere $\mathbb{S}^2$ equipped
 with the standard measures and metrics.  We leave the consideration of
 other surfaces, measures, and metrics to future work.
+
+\begin{definition}
+	In a metric space, a \textbf{geodesic} between two points is the shortest path connecting them with respect to the metric.
+	In the plane, geodesics are line segments, and on the surface of the sphere, geodesics are segments of great circles.
+\end{definition}
 
 \begin{definition}
   A \textbf{compactness score function} $\mathcal{C}$ is a function from
@@ -40,32 +45,17 @@ map object are subject to such a projection.
 \begin{definition}
   A \textbf{map projection} $\varphi$ is a locally defined 
   diffeomorphism from a region on the sphere to a region on the 
-  plane. \cut{This means that $\varphi$ is continuous,
-  $\varphi^{-1}$ exists and is also continuous.}
+  plane. This means that $\varphi$ is continuous,
+  $\varphi^{-1}$ exists and is also continuous, and sends regions on the sphere to regions in the plane.
 \end{definition}
 
-\abn{condensed these definitions}
+Intuitively, a map projection is a well-defined, invertible function between the sphere and the plane which sends regions on the sphere to regions in the plane.
+
 \begin{definition}
   We use the word \textbf{transformation} [of the plane/sphere] to mean
   to a diffeomorphism from the plane or sphere to itself.
 \end{definition}
-\mute{
-\begin{definition}
-  \textbf{Linear transformations} of the plane are those parametrized by
-  invertible $2{\times}2$ matrices, and \textbf{affine linear
-  transformations} are those transformations which are the composition
-  of a linear transformation and a translation of the plane.
-\end{definition}
-We also briefly recall the definition of an \textit{affine subspace}:
-\abn{condensed definition}
-\begin{definition}
-  An \textbf{affine subspace} $W$ of a vector space $V$ 
-  \mute{(such as $\mathbb{R}^n$)} is a subset $S$ of $V$ such 
-  that $S = \vert W + a$ for some $a\in V$.
-  \mute{there exists a vector $a\in V$ such 
-  that the set $\{w-a \vert w\in W \}$ is a vector (sub)space of $V$.}
-\end{definition}
-}
+
 Since the image of a region under a map projection $\varphi$ is also
 a region, we can examine the compactness score of that region both 
 before and after applying $\varphi$, and this is the heart of the
@@ -77,7 +67,7 @@ $\varphi$.
 
 \begin{definition}
   We say that a map projection $\vphi$ \textbf{preserves} a 
-  compactness score $\mc{C}$ if for any regions 
+  compactness score ordering $\mc{C}$ if for any regions 
   $\Omega,\Omega'$, $\mc{C}(\Omega)\ge \mc{C}(\Omega')$ 
   if and only if $\mc{C}(\vphi(\Omega)) \ge \mc{C}(\vphi(\Omega'))$.
 \end{definition}

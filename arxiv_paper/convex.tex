@@ -1,7 +1,15 @@
 \section{Convex Hull}\label{sec:ch}
-A commonly used compactness score is the \textit{convex hull
+We next consider the \textit{convex hull
 score}.  We briefly recall the definition of a convex set and then
 define this score function.
+
+
+\begin{definition}
+	A set in a metric space is \textbf{convex} if the shortest geodesic segment between any two points in the set is entirely 
+	contained within that set.
+\end{definition}
+
+
 
 \begin{definition}
   Let $\mathrm{conv}(\Omega)$ denote the \textit{convex hull} of
@@ -13,122 +21,138 @@ define this score function.
     \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{conv}(\Omega))}
   \end{align*}
 \end{definition}
-\cut{
-The convex hull score of a region $\Omega$  will be equal to one if
-and only if $\Omega$ is itself convex.  We note that the convex hull
-and Polsby-Popper scores agree when $\Omega$ is a circle, provide
-a similar score when $\Omega$ is roughly circluar, and differ greatly
-if $\Omega$ is a highly non-circular but convex region, such as
-a long, thin rectangle.}
 
-To demonstrate that any map projection cannot preserve
-the orders of convex hull scores we note that  
-order-preserving map must, in particular, preserve the 
-maximizers in the ordering. This means that convex
-regions on the sphere are mapped to convex regions in the plane.
 
-By Theorem~\ref{thm:convex_to_convex}, such a map 
-must be the gnomonic projection up to a linear transformaion. 
-We first show that the gnomonic projection does not preserve 
-convex-hull score orderings on any region of the sphere.
 
-\abn{mute this and write it in later:
-This lemma lets us prove our theorem in two steps.  We can first show
-that the gnomonic projection does not preserve the ordering of convex
-hull scores, then argue that this misordering cannot be corrected by
-any affine linear transformation of the plane.  This first part we
-will prove by explicitly constructing two regions whose convex hull
-scores are permuted under the gnomonic projection, and to facilitate
-this construction, we make the following observation:}
+Throughout this section, let $\vphi:\Omega \to \R^2$ be a 
+map projection defined on a patch of the sphere $\Omega\subset \mbb{S}^2$.
 
-We finally have the tools to prove the main result of this section,
-which is a direct consequence of the four previous lemmas.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=.2\textwidth]{figs/differentkappa}\\[1.5em]
-	\caption{ The construction used in \Cref{thm:convhull}. }
-	\label{fig:caphr}
-\end{figure}
-
-\begin{theorem}
-  \label{thm:convhull}
-  Let $\Omega$ be a region on the sphere.  Then there exist two regions
-  $\kappa'_N,\kappa'_S\subset \Omega$ such that the convex hull scores of
-  $\kappa'_N$ and $\kappa'_S$ are equal on the sphere, but under the
-  gnomonic projection $\varphi$, the convex hull score of $\kappa'_S$ is
-strictly greater than that of $\kappa'_N$.  
-\end{theorem}
-
-\begin{proof}
-  First, since $\Omega$ is a region, we can find some cap $\kappa$ inside
-  of $\Omega$ such that the center of $\kappa$ is not the south pole of the
-  sphere, and the north pole is exterior to $\kappa$.  This cap is
-  bisected by a line of longitude, in particular the great circle
-  which passes through the two poles and the center of $\kappa$.  This
-  line of longitude meets $\kappa$ at exactly two points, and we call
-  $p_N$ the point closer to the north pole and $p_S$ the point closer
-  to the south pole.
-
-  Choose some $r$ strictly less the radius of $\kappa$ and let
-  $\kappa'_S$ be the region constructed by deleting a cap of radius
-  $r$ from the interior of $\kappa$ tangent at $p_S$.  Construct
-  $\kappa'_N$ analogously by deleting a cap of radius $r$ tangent at
-  $p_n$. Observe that the convex hull scores of $\kappa'_N$ and
-  $\kappa'_S$ are identical, since each has the boundary of $\kappa$
-  as its smallest bounding cap and both convex hulls have the same
-  area.
-
-  We now consider the images of $\kappa'_N$ and $\kappa'_S$ under the
-  gnomonic projection $\varphi$.  Since $\varphi$ preserves points of
-  tangency, containment, and sends every cap to an ellipse, the images
-  $\varphi(\kappa'_N)$ and $\varphi(\kappa'_S)$ are both regions which
-  are ellipses with a smaller ellipse, tangent to a point on the
-  circumference, deleted.  Furthermore, since the boundary of $\kappa$
-  was the smallest bounding cap of both regions on the sphere, the
-  image of the boundary of $\kappa$ under $\varphi$ is the smallest
-  bounding circle of the images of these regions in the plane.
-
-  We can now observe that these two regions in the plane do not have
-  the same convex hull score.  Both have the same bounding ellipse,
-  which is their convex hulls, but $\varphi(\kappa'_N)$ is strictly
-  smaller than $\varphi(\kappa'_S)$.  This is because the gnomonic
-  projection distorts areas in a way such that regions further from
-  the south pole have their areas magnified more than the same region
-  closer to the south pole.  If the regions in question are
-  sufficiently small, letting $\theta$ denote the polar angle at which
-  we consider a small cap on the sphere, a cap of radius $r$ will be
-  sent to an ellipse with a major axis (along the line through the
-  center of the ellipse and the origin) of length roughly
-  $r/\sin^2{\theta}$\zs{check  this}, and a minor axis of length
-  $r/\sin{\theta}$, and a straightforward examination of this as
-  a function of $\theta$ shows that it grows faster as $\theta$
-  increases.
-
-  Since $\varphi(\kappa'_N)$ fills a smaller fraction of the bounding
-  ellipse than $\varphi(\kappa'_N)$ does, its convex hull score is
-  strictly worse, and the gnomonic projection does not preserve convex
-  hull scores.
-\end{proof}
-
-Now that we've shown that the gnomonic projection alone cannot
-preserve convex hull scores, to complete the argument, we must now
-show that there is no affine linear transformation of the plane which
-can correct for this.
-
-\begin{lemma}\label{lem:noafflin}
-  Let $L$ be an affine linear transformation of the plane.  Then $L$
-  preserves the convex hull scores of all figures in the plane.
+We begin by observing that such a projection must preserve certain geometric properties within these patches.
+\begin{lemma}~\label{lem:CH_prep}
+	If $\vphi$ preserves the ordering of regions induced by their convex hull scores, then the following must 
+	hold:
+	\begin{enumerate}
+		\item $\vphi$ and $\vphi^{-1}$ send convex regions to convex regions
+		\item $\vphi$ sends every segment of a great circle on the sphere to a line segment in the plane.  That is, it preserves geodesics.
+		\item There exists a region $U$ in our patch
+		such that for any regions $A,B\subset U$, if 
+		$A$ and $B$ have equal area on the sphere, then 
+		$\vphi(A)$ and $\vphi(B)$ have equal area in the plane.  The same holds 
+		for $\vphi^{-1}$ for all pairs of regions inside of $\vphi(U)$.
+	\end{enumerate}
 \end{lemma}
 \begin{proof}
-  Since affine linear transformations map lines to lines, they preserve
-  convexity, and since they also preserve the containment of regions in
-  other regions, if $\Omega$ is a region in the plane, then it must be
-  the case that the convex hull of $\Omega$ is mapped to the convex hull
-  of $L(\Omega)$ by $L$.  In other words, the image of the convex hull
-  of $\Omega$ is the convex hull of the image of $\Omega$.  Finally,
-  since affine linear transformations preserve the ratio of the areas of
-  any two regions, $L$ must, in particular, preserve the ratio of the
-  areas of $\Omega$ and its convex hull, so the convex hull score is
-  preserved.
+	\ \\
+	
+	\vspace*{-2em}
+	\begin{enumerate}
+		\item[] The proof of (1) follows from the idea that any projection which preserves the convex hull score ordering of regions must 
+		preserve the maximizers in that ordering.   Here, the maximizers are convex sets.
+		
+		\item[]  Suppose, for the sake of contradiction, that there is some geodesic segment $s$ on the sphere such that $\vphi(s)$ is not a line segment. Take $s$ and 
+		consider its $\eps$-thickening, which is the region defined by the union of $\eps$ caps centered at each point 
+		along the segment.  We can observe that since $\vphi(s)$ is not a line segment, there is some small $\delta$ such that the $\delta$-thickening of $\vphi(s)$ is not convex.  
+		
+		The $\eps$-thickening of $s$ is convex for all $\eps$, so by (1), $\vphi$ will send this to a convex region.  However, there must be some $\eps'$ such that the $\eps'$-thickening of $s$ is sent to the $\delta$-thickening of $\vphi(s)$, which contradicts the fact that the image of these thickenings are convex.
+		
+		The proof that $\vphi^{-1}$ sends line segments in the plane to great circle segments on the sphere is analogous.  
+		
+		This proves (2).
+		
+		
+		
+\item[] To show (3), let our region $U\subset\Omega$ be a cap, without loss of generality.  Take $A,B$ to be regions of equal area such that $A$ and $B$ are properly contained in the interior of $U$.  Define two new regions $X=U\ssm A$ and $Y=U\ssm B$, i.e. these regions are equal to $U$ with $A$ or $B$ deleted, respectively.  
+
+The cap $U$ is itself the convex hull of both $X$ and $Y$, and since $A$ and $B$ have equal area, we have that $\mathrm{CH}(X) = \mathrm{CH}(Y)$.  Since $U$ is a cap, it is convex, so by (1), $\vphi(U)$ is also convex.  Since $\vphi$ preserves the ordering of convex hull scores and $X$ and $Y$ had equal scores on the sphere, $\vphi$ must send $X$ and $Y$ to regions in the plane which also have the same convex hull score.  Furthermore, the convex hulls of $\vphi(X)$ and $\vphi(Y)$ are $\vphi(U)$.
+
+We can then write 
+\begin{align*}
+\mathrm{CH}(X) &= \mathrm{CH}(Y)\\
+\ &\\
+\frac{\mathrm{Area}(\vphi(X))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(Y))}{\mathrm{Area}(\vphi(U))}\\
+\ &\\
+\frac{\mathrm{Area}(\vphi(U)) - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(U)) - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(U))}\\
+\ &\\
+\mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B))
+\end{align*}
+ which is what we wanted to show.  The proof that $\vphi^{-1}$ also has this property is analogous.  This proves (3).
+\end{enumerate}
 \end{proof}
+
+We can now show that no map projection can preserve the convex hull score ordering of regions by proving that there is no projection from a patch on the sphere to the plane which has all three of the properties described above in \Cref{lem:CH_prep}. 
+
+
+\begin{theorem}
+	There does not exist a map projection satisfying the 
+	conditions in Lemma~\ref{lem:CH_prep}
+\end{theorem}
+\begin{proof}
+	Assume that such a map, $\vphi$, exists, and restrict 
+	it to $U$ as above. Let $T\subset U$ be a 
+	spherical equilateral triangle with 
+	$\mathrm{Diam}(T)<\frac{\mathrm{Diam}(U)}{3}$, centered at 
+	the center of $U$. Let $T_1$ and $T_2$ be two 
+	congruent triangles meeting at a point and 
+	each sharing a face with $T$, as in \Cref{fig:sphtris}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.25\textwidth]{figs/spheretri.png}
+	\caption{The spherical regions $T,T_1,T_2$.}
+	\label{fig:sphtris}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+We first argue that the images of $T\cup T_1$ and $T\cup T_2$ are parallelograms.
+
+Without loss of generality, consider. $T\cup T_1$.  By construction, it is a 
+convex spherical quadrilateral. By symmetry, its geodesic 
+diagonals on the sphere divide it into four triangles of equal area, since the long diagonal splits $T$ and $T_1$ in 
+half, and $T$ and $T_1$ have the same area.
+
+
+		Since $\vphi$ sends spherical geodesics to line segments in the plane, it must send 
+		$T\cup T_1$ to a Euclidean quadrilateral $Q$ whose diagonals 
+		are the images of the diagonals of the spherical quadrilateral $T\cup T_1$.
+		
+		 Since 
+		$\vphi$ sends equal area regions to equal area 
+		regions, it follows that the diagonals 
+		of $Q$ split it into four equal area triangles.
+		
+		We now argue that this implies that $Q$ is a Euclidean parallelogram by showing that its diagonals bisect each other.  Since the four triangles 
+		formed by the diagonals of $Q$ are all the same area, we can pick two of these triangles which share a side 
+		and consider the larger triangle formed by their union.  One side of this triangle is a diagonal $d_1$ of $Q$ and its area is 
+		bisected by the other diagonal $d_2$, which passes through $d_1$ and its opposite angle.  This area bisector passes through the midpoint of the side $d_1$, meaning that the diagonal $d_2$ bisects the diagonal $d_1$.  Since this holds for any choice of two adjacent triangles in $Q$, the diagonals must bisect each other, so $Q$ is a parallelogram.
+		
+		
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.25\textwidth]{figs/spheretri_plane.png}
+	\caption{The image under $\vphi$ of $T,T_1,T_2$.}
+	\label{fig:sphtris_pl}
+\end{figure}
+
+Since $T\cup T_1$ and $T\cup T_2$ are both spherical quadrilaterals which overlap on the spherical triangle $T$, the images of $T\cup T_1$ and $T\cup T_2$ are Euclidean parallelograms of equal area which overlap on a shared triangle $\vphi(T)$.
+	Therefore, the image of $T\cup T_1\cup T_2$ must 
+	consist of two parallelograms, one of whose 
+	edges is the diagonal of the other. In other words, 
+	$\vphi(T\cup T_1\cup T_2)$ is a Euclidean trapezoid 
+	whose boundary consists of four Euclidean geodesic 
+	segments, as in \Cref{fig:sphtris_pl}.
+	
+	To find the contradiction, consider the point on the sphere at which $T$, $T_1$, and $T_2$ meet.  Since these triangles are all equilateral spherical triangles, the three angles at this point are each at least $\tfrac{\pi}{3}$ radians, so their total measure is at least $\pi$.  Therefore, the two geodesic segments which are part of the boundaries of $T_1$ and $T_2$ meet at this point at an angle of measure at least $\pi$, so together they do not form a geodesic.  Therefore, on the sphere, the region $T\cup T_1\cup T_2$ has a boundary consisting of five geodesic segments whereas its image has a boundary consisting of four, which contradicts the assumption that $\vphi$ and $\vphi^{-1}$ preserve geodesics.
+\end{proof}
+
+
