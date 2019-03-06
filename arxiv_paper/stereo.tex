@@ -10,7 +10,7 @@ by any map projection.
 	The \textbf{stereograpic projection} from the north pole $N$ is
 	defined by placing a copy $\R^2$ tangent to the sphere at the south
 	pole, and sending any $p\in \mbb{S}^2\ssm \{N\}$ to 
-	the unique point $q$ in $\R^2$ such that is on the line in $\R^3$ passing 
+	the unique point $q$ in $\R^2$ on the line in $\R^3$ passing 
 	through $p$ and $N$.
 	
 	If $(x,y,z)$ is a point on the sphere, then the action of the
@@ -64,7 +64,7 @@ We now prove a lemma which is an important result about the stereographic projec
 
 \end{proof}
 
-We have in-hand a circle-preserving map projection, and we now
+We have an example of a  circle-preserving map projection, and we now
 turn to demonstrating that the stereographic projection is essentially
 the unique map projection with this property.  We can observe that if
 we perform stereographic projection and compose it with
@@ -74,17 +74,17 @@ lemma demonstrates that the class of transformations of the plane
 which preserve circles is actually quite narrow.
 
 
-We introduce the \textit{M\"obius transformations}, which have several characterizations.  Here we present an algebraic one to match the derivation in \Cref{lem:stereocirc}.  To make the presentation clearer, we will work with the complex numbers $\C$ rather than $\R^2$.
+We introduce the \textit{M\"obius transformations}, which have several characterizations.  Here we present an algebraic one formally and relate it intuitively to a geometric one.  To make the presentation clearer, we will work with the complex numbers $\C$ rather than $\R^2$.
 
 \begin{definition}
-A \textbf{M\"obius transformation} of the extended complex numbers (the complex numbers together with a point at infinity) is a one which can be written as the composition of the following three types of elementary transformations:
+A \textbf{M\"obius transformation} of the extended complex numbers (the complex numbers together with a point at infinity) is a one which can be written as the composition of the following four types of elementary transformations:
 
 
 \begin{enumerate}
 	\item[] Translation: $z\mapsto z+b$ for some $b\in \C$
 	\item[] Scaling: $z\mapsto az$ for some $a\in \R$
 	\item[] Rotation: $z\mapsto e^{i\theta}z$ for some $\theta\in [0,2\pi)$
-	\item[] Inversion: $z \mapsto \tfrac{-1}{z}$
+	\item[] Inversion: $z \mapsto \tfrac{1}{z}$
 	
 \end{enumerate}
 
@@ -123,7 +123,7 @@ Carath\'{e}odory \cite{caratheodory}, which states
 \begin{displayquote}
 \textit{  Every arbitrary bijection of a disc $D$ to a bounded set $D'$ under which
   circles lying completely in $D$ are transformed into circles 
-  lying in $D'$ must be a M\"obius transformation $M$ or its reflection $\bar M$.
+  lying in $D'$ must be a M\"obius transformation $M$ or its reflection.
 }
 \end{displayquote}
 
