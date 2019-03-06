@@ -11,6 +11,13 @@ define this score function.
 
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{figs/ch_example.png}
+	\caption{A region $\Omega$ and its convex hull.}
+	\label{fig:ch_example}
+\end{figure}
+
 \begin{definition}
   Let $\mathrm{conv}(\Omega)$ denote the \textit{convex hull} of
   a region $\Omega$ in either the sphere or the plane, which is the
@@ -42,6 +49,16 @@ We begin by observing that such a projection must preserve certain geometric pro
 		for $\vphi^{-1}$ for all pairs of regions inside of $\vphi(U)$.
 	\end{enumerate}
 \end{lemma}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.25\textwidth]{figs/ch_sphere_schema.png}
+	\caption{Two equal area regions $A$ and $B$ removed from $U$.}
+	\label{fig:ch_schema}
+\end{figure}
+
+
+
 \begin{proof}
 	\ \\
 	
@@ -62,7 +79,7 @@ We begin by observing that such a projection must preserve certain geometric pro
 		
 		
 		
-\item[] To show (3), let our region $U\subset\Omega$ be a cap, without loss of generality.  Take $A,B$ to be regions of equal area such that $A$ and $B$ are properly contained in the interior of $U$.  Define two new regions $X=U\ssm A$ and $Y=U\ssm B$, i.e. these regions are equal to $U$ with $A$ or $B$ deleted, respectively.  
+\item[] To show (3), let our region $U\subset\Omega$ be a cap, without loss of generality.  Take $A,B$ to be regions of equal area such that $A$ and $B$ are properly contained in the interior of $U$, as in \Cref{fig:ch_schema}.  Define two new regions $X=U\ssm A$ and $Y=U\ssm B$, i.e. these regions are equal to $U$ with $A$ or $B$ deleted, respectively.  
 
 The cap $U$ is itself the convex hull of both $X$ and $Y$, and since $A$ and $B$ have equal area, we have that $\mathrm{CH}(X) = \mathrm{CH}(Y)$.  Since $U$ is a cap, it is convex, so by (1), $\vphi(U)$ is also convex.  Since $\vphi$ preserves the ordering of convex hull scores and $X$ and $Y$ had equal scores on the sphere, $\vphi$ must send $X$ and $Y$ to regions in the plane which also have the same convex hull score.  Furthermore, the convex hulls of $\vphi(X)$ and $\vphi(Y)$ are $\vphi(U)$.
 
