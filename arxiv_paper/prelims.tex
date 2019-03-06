@@ -45,8 +45,7 @@ map object are subject to such a projection.
 \begin{definition}
   A \textbf{map projection} $\varphi$ is a locally defined 
   diffeomorphism from a region on the sphere to a region on the 
-  plane. This means that $\varphi$ is continuous,
-  $\varphi^{-1}$ exists and is also continuous, and sends regions on the sphere to regions in the plane.
+  plane. 
 \end{definition}
 
 Intuitively, a map projection is a well-defined, invertible function between the sphere and the plane which sends regions on the sphere to regions in the plane.
@@ -66,15 +65,15 @@ $\mathcal{C}\circ\varphi$ for \textit{any} choice of map projection
 $\varphi$.
 
 \begin{definition}
-  We say that a map projection $\vphi$ \textbf{preserves} a 
-  compactness score ordering $\mc{C}$ if for any regions 
-  $\Omega,\Omega'$, $\mc{C}(\Omega)\ge \mc{C}(\Omega')$ 
-  if and only if $\mc{C}(\vphi(\Omega)) \ge \mc{C}(\vphi(\Omega'))$.
+  We say that a map projection $\vphi$ \textbf{preserves the  
+  compactness score ordering} of a score $\mc{C}$ if for any regions 
+  $\Omega,\Omega'$ in the sphere, $\mc{C}(\Omega)\ge \mc{C}(\Omega')$ 
+  if and only if $\mc{C}(\vphi(\Omega)) \ge \mc{C}(\vphi(\Omega'))$ in the plane.
 \end{definition}
-\begin{remark}
-  $\vphi$ preserves a compactness score $\mc{C}$ 
+
+  We observe that this is a weaker condition than simply preserving the raw compactness scores.  Additionally, $\vphi$ preserves a compactness score $\mc{C}$ 
   if and only if $\vphi^{-1}$ does.
-\end{remark}
+
 \begin{definition}
   Let $\mbb{S}^2\subset \R^3$ be the unit sphere. A 
   \textbf{cap} on the sphere is a region of the 
