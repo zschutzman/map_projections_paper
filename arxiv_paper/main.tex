@@ -1,6 +1,6 @@
 
 
-\newif\ifarxiv\arxivfalse
+\newif\ifarxiv\arxivtrue
 
 \documentclass{article}
 \ifarxiv
@@ -10,6 +10,7 @@
 \usepackage{amsfonts}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{fullpage}
+\usepackage{url}
 
 \else
 \usepackage{maa-monthly}
@@ -19,19 +20,12 @@
 
 \usepackage{cleveref}
 \usepackage{blindtext}
-
-
-\usepackage{url}
-
-
-
-\usepackage{xcolor}
-\usepackage{tikz}
-%\usepackage{siunitx}
-
 \usepackage{csquotes}
-
+\usepackage{tikz}
 \usepackage{tikz-3dplot}
+
+
+
 \newtheorem{claim}{Claim}
 \newtheorem{fact}{Fact}
 \newtheorem{observation}{Observation}
@@ -45,48 +39,6 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{obs}{Observation}
 
-
-\makeatletter
-\def\thanks#1{\protected@xdef\@thanks{\@thanks
-        \protect\footnotetext{#1}}}
-\makeatother
-
-
-\newcommand{\app}[1]{Appendix~\ref{#1}}
-\newcommand{\mute}[1]{}
-%\newcommand{\mathmath}{$$ }
-\newcommand{\cX}{\mathcal{X}\xspace}
-\newcommand{\cA}{\mathcal{A}\xspace}
-\newcommand{\cB}{\mathcal{B}\xspace}
-\newcommand{\OPT}{\mathrm{OPT}}
-
-\newcommand{\xnohatb}{\langle x, \beta \rangle}
-\newcommand{\xb}{\langle \hat{x}, \beta \rangle}
-\newcommand{\xbb}{\langle \hat{x}(\beta), \beta \rangle}
-\newcommand{\bgb}{\beta^T G^{-1} \beta}
-\newcommand{\Rd}{\mathbb{R}^d}
-
-\newcommand{\mc}[1]{\mathcal{#1}}
-\newcommand{\mbb}[1]{\mathbb{#1}}
-\newcommand{\R}{\ensuremath{\mathbb{R}}\xspace}
-\newcommand{\C}{\ensuremath{\mathbb{C}}\xspace}
-\newcommand{\K}{\ensuremath{\mathbb{K}}\xspace}
-\newcommand{\ssm}{\ensuremath{{\smallsetminus}}\xspace}
-\newcommand{\A}{\ensuremath{\cA}\xspace}
-\newcommand{\eps}{\ensuremath\varepsilon}
-% \renewcommand{\D}{\mathcal{D}}
-\newcommand{\B}{\ensuremath{\cB}\xspace}
-\newcommand{\regret}[1]{\textrm{Regret}(#1)}
-\newcommand{\reg}[1]{R(#1)}
-\newcommand{\pp}[2]{\pi^{#1}_{#2}}
-\newcommand{\ppc}[3]{\pp{#1}{#2|#3}}
-\newcommand{\rew}[2]{r^{#1}_{#2}}
-\newcommand{\Rew}[2]{\D^{#1}_{#2}}
-\newcommand{\bt}{\ensuremath{\bot}\xspace}
-
-\newcommand{\innprod}[2]{\langle{#1},{#2}\rangle}
-\newcommand{\vphi}{\varphi}
-
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \theoremstyle{remark}
@@ -94,13 +46,38 @@
 \newtheorem{example}{Example}
 
 
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}
-\newcommand{\E}[1]{\mathbb{E}\left[ #1 \right]}
-\newcommand{\Ex}[2]{\mathbb{E}_{#1}\left[ #2 \right]}
-\newcommand{\I}[1]{\mathbb{I}\left[ #1 \right]}
-\newcommand{\pr}[1]{\mathbb{P}\left[ #1 \right]}
-\renewcommand{\Pr}[2]{\mathbb{P}_{#1}\left[ #2 \right]}
+\makeatletter
+\def\thanks#1{\protected@xdef\@thanks{\@thanks
+        \protect\footnotetext{#1}}}
+\makeatother
+
+
+
+\newcommand{\mute}[1]{}
+%\newcommand{\mathmath}{$$ }
+\newcommand{\cX}{\mathcal{X}\xspace}
+\newcommand{\cA}{\mathcal{A}\xspace}
+\newcommand{\cB}{\mathcal{B}\xspace}
+
+
+
+
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mbb}[1]{\mathbb{#1}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}\xspace}
+\newcommand{\C}{\ensuremath{\mathbb{C}}\xspace}
+
+\newcommand{\ssm}{\ensuremath{{\smallsetminus}}\xspace}
+\newcommand{\A}{\ensuremath{\cA}\xspace}
+\newcommand{\eps}{\ensuremath\varepsilon}
+\newcommand{\B}{\ensuremath{\cB}\xspace}
+
+
+
+
+\newcommand{\vphi}{\varphi}
+
+
 
 
 \newif \ifdraft \drafttrue
@@ -108,7 +85,6 @@
 \newcommand{\abn}[1]{\ifdraft \textcolor{Green}{[Assaf: #1]} \fi}
 \newcommand{\lsn}[1]{\ifdraft \textcolor{Blue}{[Lorenzo: #1]} \fi}
 \newcommand{\cut}[1]{\ifdraft \textcolor{Red}{[cut: #1]}\fi}
-%\newcommand{\cut}[1]{}%\textcolor{Red}{[cut: #1]}}
 \newcommand{\cit}[1]{\textcolor{Orange}{[citation needed]}}
 
 

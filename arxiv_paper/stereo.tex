@@ -43,19 +43,18 @@ We now prove a lemma which is an important result about the stereographic projec
   be points on the sphere.  The image in the plane of this cap is some
   set of $(u,v)$ points, and we can explicitly write this by
   substituting in for $x$, $y$, and $z$ the corresponding values for
-  the inverse stereographic projection.  We write
-  $\mathcal{W}=u^2+v^2$ for the ease of presentation. 
+  the inverse stereographic projection.  
 
   \begin{align*}
     d&=ax+by+cz\\
     d&=a\left(\frac{2u}{1+u^2+v^2}\right)+b\left(\frac{2v}{1+u^2+v^2}\right)+c\left(\frac{u^2+v^2-1}{1+u^2+v^2}\right)\\
-    d&=a\left(\frac{2u}{1+\mathcal{W}}\right)+b\left(\frac{2v}{1+\mathcal{W}}\right)+c\left(\frac{\mathcal{W}-1}{1+\mathcal{W}}\right)\\
+    \mute{d&=a\left(\frac{2u}{1+\mathcal{W}}\right)+b\left(\frac{2v}{1+\mathcal{W}}\right)+c\left(\frac{\mathcal{W}-1}{1+\mathcal{W}}\right)\\
     d\left(1+\mathcal{W}\right)&=2au+2bv+c\left(\mathcal{W}-1\right)\\ 
-    0 &=    (c-d)\mathcal{W} + 2au +2bv - c - d\\
+    0 &=    (c-d)\mathcal{W} + 2au +2bv - c - d\\}
     0 &= (c-d)(u^2+v^2)+2au+2bv - c - d
   \end{align*}
 
-  This last step is the equation of a circle in the plane if $c\neq d$
+  This  is the parametrization of a circle in the plane if $c\neq d$
   and a line otherwise.  Since $c=d$ if and only if the point
   $(x,y,z)=(0,0,1)$ (i.e. the north pole) is on the plane, and we
   assumed that this is not the case, we have shown that the image
