@@ -1,27 +1,33 @@
-\documentclass[11pt]{article}
+
+
+\newif\ifarxiv\arxivfalse
+
+\documentclass{article}
+\ifarxiv
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{amssymb,amsmath,amsthm,amsfonts}
 \usepackage{amsfonts}
 \usepackage[usenames,dvipsnames]{color}
-% \usepackage{kpfont}
-\usepackage{algorithm}
-\usepackage[noend]{algorithmic}
+\usepackage{fullpage}
+
+\else
+\usepackage{maa-monthly}
+\fi
 \usepackage[square, comma, numbers,sort&compress]{natbib}
+\bibliographystyle{plainnat}
+
 \usepackage{cleveref}
 \usepackage{blindtext}
-\usepackage{comment}
-\newcommand{\INDSTATE}[1][1]{\STATE\hspace{#1\algorithmicindent}}
+
+
 \usepackage{url}
-\usepackage{comment}
-\usepackage{fullpage}
-\usepackage{wasysym}
-\usepackage{float}
-\usepackage{microtype}
-\usepackage[caption=false]{subfig}
+
+
+
 \usepackage{xcolor}
 \usepackage{tikz}
-\usepackage{siunitx}
+%\usepackage{siunitx}
 
 \usepackage{csquotes}
 
@@ -77,20 +83,7 @@
 \newcommand{\rew}[2]{r^{#1}_{#2}}
 \newcommand{\Rew}[2]{\D^{#1}_{#2}}
 \newcommand{\bt}{\ensuremath{\bot}\xspace}
-% commands for the UCB alg
-\newcommand{\ist}{\ensuremath{i_{*}^t}}
-\newcommand{\uit}{\ensuremath{u_{i}^t}}
-\newcommand{\lit}{\ensuremath{\ell_{i}^t}}
-\renewcommand{\mit}{\ensuremath{\mu_{i}^t}}
-\newcommand{\mean}[2]{\ensuremath{\hat{\mu}_{#2}^{#1}}}
-\newcommand{\up}[2]{\ensuremath{u_{#2}^{#1}}}
-\newcommand{\low}[2]{\ensuremath{\ell_{#2}^{#1}}}
-%\newcommand{\num}[2]{\ensuremath{n_{#2}^{#1}}}
-\newcommand{\interval}[2]{\ensuremath{[\ell_{#2}^{#1}, u_{#2}^{#1}]}}
-\newcommand{\unfair}{\textrm{unfair}}
-\newcommand{\fairbandits}{\textsc{FairBandits}\xspace}
-\newcommand{\kwikfair}{\textsc{KWIKToFair}\xspace}
-\newcommand{\fairkwik}{\textsc{FairToKWIK}\xspace}
+
 \newcommand{\innprod}[2]{\langle{#1},{#2}\rangle}
 \newcommand{\vphi}{\varphi}
 
@@ -119,7 +112,7 @@
 \newcommand{\cit}[1]{\textcolor{Orange}{[citation needed]}}
 
 
-\title{Order-Reversal of Compactness Scores under Map Projections [DRAFT]}
+\title{Order-Reversal of Compactness Scores under Map Projections}
 \author{Assaf Bar-Natan \and Lorenzo Najt \and Zachary Schutzman }
 \begin{document}
 \maketitle
@@ -146,8 +139,19 @@
 
 \input{future}
 
+
+\ifarxiv
+\subsection*{Acknowledgments}
 \input{acknowledgements}
-\bibliographystyle{plainnat}
+
+\else
+
+\begin{acknowledgment}{Acknowledgments}
+\input{acknowledgements}
+\end{acknowledgment}
+\fi
+
+
 \bibliography{bib.bib}
 
 \pagebreak
