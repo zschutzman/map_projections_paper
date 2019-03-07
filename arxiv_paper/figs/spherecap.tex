@@ -1,0 +1,17 @@
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-4.493355050909743,-1.2748355780287404) rectangle (4.462150807191927,4.785872976331056);
+\draw [shift={(0,0)},line width=3.2pt]  plot[domain=0:3.141592653589793,variable=\t]({1*4*cos(\t r)+0*4*sin(\t r)},{0*4*cos(\t r)+1*4*sin(\t r)});
+\draw [shift={(0.0016366799970421299,9.441278259356354)},line width=2pt]  plot[domain=4.286394541961201:5.138764290071874,variable=\t]({1*7.708897306730456*cos(\t r)+0*7.708897306730456*sin(\t r)},{0*7.708897306730456*cos(\t r)+1*7.708897306730456*sin(\t r)});
+\draw [shift={(0.019848790872865698,-6.481795867514522)},line width=2pt,dotted]  plot[domain=1.22830273729039:1.9174384984929125,variable=\t]({1*9.441973016351305*cos(\t r)+0*9.441973016351305*sin(\t r)},{0*9.441973016351305*cos(\t r)+1*9.441973016351305*sin(\t r)});
+\draw [line width=2pt,color=ccqqqq] (0,2.4033620491027756)-- (0,4);
+\draw [line width=2pt,color=qqqqff] (0,2.4033620491027756)-- (3.2001911763834157,2.3997450770024993);
+\begin{scriptsize}
+\draw [fill=ududff] (0.0016366799970421299,9.441278259356354) circle (2.5pt);
+\draw [fill=ududff] (0.019848790872865698,-6.481795867514522) circle (2.5pt);
+\draw[color=ccqqqq] (0.26805571312169243,3.3034918797019284) node {\LARGE$h$};
+\draw[color=qqqqff] (1.6285727817769453,2.167711482419824) node {\LARGE $r$};
+\end{scriptsize}
+\end{tikzpicture}
