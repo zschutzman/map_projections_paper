@@ -1,5 +1,5 @@
 \section{Convex Hull}\label{sec:ch}
-We next consider the \textit{convex hull
+We first consider the \textit{convex hull
 score}.  We briefly recall the definition of a convex set and then
 define this score function.
 
@@ -11,13 +11,7 @@ define this score function.
 
 
 
-\begin{figure}[h]
-	\centering
-	%\includegraphics[width=.35\textwidth]{figs/ch_example.png}
-	\input{figs/ch_example}
-	\caption{A region $\Omega$ and its convex hull.}
-	\label{fig:ch_example}
-\end{figure}
+
 
 \begin{definition}
   Let $\mathrm{conv}(\Omega)$ denote the \textit{convex hull} of
@@ -34,7 +28,13 @@ define this score function.
 
 Throughout this section, let $\vphi:\Omega \to \R^2$ be a 
 map projection defined on a patch of the sphere $\Omega\subset \mbb{S}^2$.
-
+\begin{figure}[htb]
+	\centering
+	%\includegraphics[width=.35\textwidth]{figs/ch_example.png}
+	\input{figs/ch_example}
+	\caption{A region $\Omega$ and its convex hull.}
+	\label{fig:ch_example}
+\end{figure}
 
 We begin by observing that such a projection must preserve certain geometric properties within these patches.
 \begin{lemma}~\label{lem:CH_prep}
@@ -115,7 +115,7 @@ We can now show that no map projection can preserve the convex hull score orderi
 	congruent triangles meeting at a point and 
 	each sharing a face with $T$, as in \Cref{fig:sphtris}.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 	\centering
 	%\includegraphics[width=.25\textwidth]{figs/spheretri.png}
 	\input{figs/spheretri}
@@ -156,14 +156,14 @@ half, and $T$ and $T_1$ have the same area.
 		and consider the larger triangle formed by their union.  One side of this triangle is a diagonal $d_1$ of $Q$ and its area is 
 		bisected by the other diagonal $d_2$, which passes through $d_1$ and its opposite angle.  This area bisector passes through the midpoint of the side $d_1$, meaning that the diagonal $d_2$ bisects the diagonal $d_1$.  Since this holds for any choice of two adjacent triangles in $Q$, the diagonals must bisect each other, so $Q$ is a parallelogram.
 		
+		\begin{figure}[h]
+			\centering
+			%\includegraphics[width=.25\textwidth]{figs/spheretri_plane.png}
+			\input{figs/spheretri_plane}
+			\caption{The image under $\vphi$ of $T,T_1,T_2$.}
+			\label{fig:sphtris_pl}
+		\end{figure}
 		
-\begin{figure}[h]
-	\centering
-	%\includegraphics[width=.25\textwidth]{figs/spheretri_plane.png}
-	\input{figs/spheretri_plane}
-	\caption{The image under $\vphi$ of $T,T_1,T_2$.}
-	\label{fig:sphtris_pl}
-\end{figure}
 
 Since $T\cup T_1$ and $T\cup T_2$ are both spherical quadrilaterals which overlap on the spherical triangle $T$, the images of $T\cup T_1$ and $T\cup T_2$ are Euclidean parallelograms of equal area which overlap on a shared triangle $\vphi(T)$.
 	Therefore, the image of $T\cup T_1\cup T_2$ must 
