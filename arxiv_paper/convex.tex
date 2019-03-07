@@ -85,14 +85,14 @@ We begin by observing that such a projection must preserve certain geometric pro
 
 The cap $U$ is itself the convex hull of both $X$ and $Y$, and since $A$ and $B$ have equal area, we have that $\mathrm{CH}(X) = \mathrm{CH}(Y)$.  Since $U$ is a cap, it is convex, so by (1), $\vphi(U)$ is also convex.  Since $\vphi$ preserves the ordering of convex hull scores and $X$ and $Y$ had equal scores on the sphere, $\vphi$ must send $X$ and $Y$ to regions in the plane which also have the same convex hull score.  Furthermore, the convex hulls of $\vphi(X)$ and $\vphi(Y)$ are $\vphi(U)$.
 
-We can then write 
+By definition, we have
 \begin{align*}
 \mathrm{CH}(X) &= \mathrm{CH}(Y)\\
-\ &\\
-\frac{\mathrm{Area}(\vphi(X))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(Y))}{\mathrm{Area}(\vphi(U))}\\
-\ &\\
+\frac{\mathrm{Area}(\vphi(X))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(Y))}{\mathrm{Area}(\vphi(U))}
+\end{align*}
+and by the construction of $X$ and $Y$, we have 
+\begin{align*}
 \frac{\mathrm{Area}(\vphi(U)) - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(U)) - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(U))}\\
-\ &\\
 \mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B))
 \end{align*}
  which is what we wanted to show.  The proof that $\vphi^{-1}$ also has this property is analogous.  This proves (3).
