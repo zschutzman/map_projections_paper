@@ -5,7 +5,7 @@ define this score function.
 
 
 \begin{definition}
-	A set in a metric space is \textbf{convex} if the shortest geodesic segment between any two points in the set is entirely 
+	A set in a metric space is \textbf{convex} if every shortest geodesic segment between any two points in the set is entirely 
 	contained within that set.
 \end{definition}
 
@@ -20,14 +20,16 @@ define this score function.
   \textit{convex hull score} of $\Omega$ as 
   \begin{align*}
     \mathrm{CH}(\Omega)=
-    \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{conv}(\Omega))}
+    \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{conv}(\Omega)).}
   \end{align*}
+  
+  Since the intersection of convex sets is a convex set, there is a unique smallest (by area) convex hull for any region $\Omega$.
 \end{definition}
 
 
 
 Throughout this section, let $\vphi:\Omega \to \R^2$ be a 
-map projection defined on a patch of the sphere $\Omega\subset \mbb{S}^2$.
+map projection.
 \begin{figure}[htb]
 	\centering
 	%\includegraphics[width=.35\textwidth]{figs/ch_example.png}
@@ -36,7 +38,7 @@ map projection defined on a patch of the sphere $\Omega\subset \mbb{S}^2$.
 	\label{fig:ch_example}
 \end{figure}
 
-We begin by observing that such a projection must preserve certain geometric properties within these patches.
+Suppose that $\vphi$ does in reality preserve the ordering of regions under the convex hull scores of all regions in a patch on the sphere and a patch in the plane.  We begin by observing that such a projection must preserve certain geometric properties of regions within these patches.
 \begin{lemma}~\label{lem:CH_prep}
 	If $\vphi$ preserves the ordering of regions induced by their convex hull scores, then the following must 
 	hold:
@@ -69,11 +71,7 @@ We begin by observing that such a projection must preserve certain geometric pro
 		\item[] The proof of (1) follows from the idea that any projection which preserves the convex hull score ordering of regions must 
 		preserve the maximizers in that ordering.   Here, the maximizers are convex sets.
 		
-		\item[]  Suppose, for the sake of contradiction, that there is some geodesic segment $s$ on the sphere such that $\vphi(s)$ is not a line segment. Take $s$ and 
-		consider its $\eps$-thickening, which is the region defined by the union of $\eps$ caps centered at each point 
-		along the segment.  We can observe that since $\vphi(s)$ is not a line segment, there is some small $\delta$ such that the $\delta$-thickening of $\vphi(s)$ is not convex.  
-		
-		The $\eps$-thickening of $s$ is convex for all $\eps$, so by (1), $\vphi$ will send this to a convex region.  However, there must be some $\eps'$ such that the $\eps'$-thickening of $s$ is sent to the $\delta$-thickening of $\vphi(s)$, which contradicts the fact that the image of these thickenings are convex.
+		\item[]  Suppose, for the sake of contradiction, that there is some geodesic segment $s$ on the sphere such that $\vphi(s)$ is not a line segment. Construct two convex spherical polygons $L$ and $M$ which both have $s$ as a side. \zs{do picture} By (1), $\vphi$ must send both of these polygons to convex regions in the plane, but this is not the case.  All of the points along $\vphi(s)$ belong to both $\vphi(L)$ and $\vphi(M)$, but since $\vphi(s)$ is not a line segment, we can find two points along it which are joined by some line segment which contains points which only belong to $\vphi(L)$ or $\vphi(M)$, which means that at least one of these convex spherical polygons is sent to something non-convex in the plane, which contradicts our assumption.		
 		
 		The proof that $\vphi^{-1}$ sends line segments in the plane to great circle segments on the sphere is analogous.  
 		
@@ -103,14 +101,12 @@ We can now show that no map projection can preserve the convex hull score orderi
 
 
 \begin{theorem}
-	There does not exist a map projection satisfying the 
-	conditions in Lemma~\ref{lem:CH_prep}
+	There does not exist a map projection with the three properties in Lemma~\ref{lem:CH_prep}
 \end{theorem}
 \begin{proof}
 	Assume that such a map, $\vphi$, exists, and restrict 
 	it to $U$ as above. Let $T\subset U$ be a 
-	spherical equilateral triangle with 
-	$\mathrm{Diam}(T)<\frac{\mathrm{Diam}(U)}{3}$, centered at 
+	small equilateral spherical  triangle with centered at 
 	the center of $U$. Let $T_1$ and $T_2$ be two 
 	congruent triangles meeting at a point and 
 	each sharing a face with $T$, as in \Cref{fig:sphtris}.
@@ -160,7 +156,7 @@ half, and $T$ and $T_1$ have the same area.
 			\centering
 			%\includegraphics[width=.25\textwidth]{figs/spheretri_plane.png}
 			\input{figs/spheretri_plane}
-			\caption{The image under $\vphi$ of $T,T_1,T_2$.}
+			\caption{The image under $\vphi$ of $T,T_1,T_2$ which form the quadrilateral $Q$.}
 			\label{fig:sphtris_pl}
 		\end{figure}
 		
@@ -173,7 +169,7 @@ Since $T\cup T_1$ and $T\cup T_2$ are both spherical quadrilaterals which overla
 	whose boundary consists of four Euclidean geodesic 
 	segments, as in \Cref{fig:sphtris_pl}.
 	
-	To find the contradiction, consider the point on the sphere at which $T$, $T_1$, and $T_2$ meet.  Since these triangles are all equilateral spherical triangles, the three angles at this point are each at least $\tfrac{\pi}{3}$ radians, because the sum of interior angles on a triangle is at least $\pi$.  Therefore, the total measure of the three angles at this point is at least $\pi$.  Therefore, the two geodesic segments which are part of the boundaries of $T_1$ and $T_2$ meet at this point at an angle of measure at least $\pi$, so together they do not form a geodesic.  Therefore, on the sphere, the region $T\cup T_1\cup T_2$ has a boundary consisting of five geodesic segments whereas its image has a boundary consisting of four, which contradicts the assumption that $\vphi$ and $\vphi^{-1}$ preserve geodesics.
+	To find the contradiction, consider the point on the sphere at which $T$, $T_1$, and $T_2$ meet.  Since these triangles are all equilateral spherical triangles, the three angles at this point are each strictly greater than $\tfrac{\pi}{3}$ radians, because the sum of interior angles on a triangle is strictly greater than $\pi$.  Therefore, the total measure of the three angles at this point is greater than $\pi$.  Therefore, the two geodesic segments which are part of the boundaries of $T_1$ and $T_2$ meet at this point at an angle of measure strictly greater than $\pi$, so together they do not form a geodesic.  Therefore, on the sphere, the region $T\cup T_1\cup T_2$ has a boundary consisting of five geodesic segments whereas its image has a boundary consisting of four, which contradicts the assumption that $\vphi$ and $\vphi^{-1}$ preserve geodesics.
 \end{proof}
 
 This implies that no map projection can preserve the ordering of regions by their convex hull scores, which is what we aimed to show.

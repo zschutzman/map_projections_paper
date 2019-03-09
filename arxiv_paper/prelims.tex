@@ -5,21 +5,34 @@ well as a few observations about the mathematical objects of interest
 which will be of use later.  We carefully lay out these definitions so
 as to align with an intuitive understanding of the concepts and to
 appease the astute reader who may be concerned with edge cases,
-geometric weirdness, and nonmeasurability.
+geometric weirdness, and nonmeasurability.  We use $\R^2$ to denote the 
+Euclidean plane with its usual metric $d(((x_1,y_1),(x_2,y_2))) = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$. 
+Similarly, $\R^3$ denotes Euclidean 3-space.  We use $\mbb{S}^2$ to denote the \textit{unit 2-sphere}, which can be 
+thought of as the set of points in $\R^3$ at Euclidean distance one from the origin.  In notation, $\mbb{S}^2=\{ (x,y,z)\in \R^3\vert  x^2+y^2+z^2=1\}$.  When we refer to the sphere's \textit{natural embedding} in  $\R^3$, this is the definition we refer to.
+
+This surface also has a `usual metric', but it is tricky to write down as a formula.   Intuitively, the distance between two points on the sphere can be found by drawing the \textit{great circle} which passes through these points and then using a circular arc length formula to compute the length of the shorter of the two segments which join the points. \zs{do a picture to show great circles and stuff}
+
+
+We leave the consideration of
+other surfaces, measures, and metrics to future work.
+
 
 \begin{definition}
   A \textbf{region} $\Omega$ in $\mathbb{S}^2$ or 
-  in $\R^2$ is an non-empty open set together with its
-  boundary such that the region is measurable, its boundary is
-  measurable, and it is connected.
+  in $\R^2$ is a non-empty open set together with its
+  boundary, such that $\Omega$ is compact and the boundary can be described piecewise as 
+  a finite collection of smooth curves.
 \end{definition}
 
-We choose this definition so that concepts of the `area' and
-`perimeter' of a region are well-defined concepts.  Throughout, we
-restrict our attention to the plane $\mathbb{R}^2$ 
-and the surface of the unit sphere $\mathbb{S}^2$ equipped
-with the standard measures and metrics.  We leave the consideration of
-other surfaces, measures, and metrics to future work.
+This definition is highly technical to allow us to assume away any annoying edge 
+cases that might crop up.  Piece-by-piece, a \textit{non-empty open set} lets us 
+talk about the \textit{area} of a region in a sensible way. Specifying that a region 
+must be \textit{compact} gets rid of cases where we have to worry about regions having 
+infinite area.  The entire plane should not be considered a `region'.  Finally, the 
+\textit{piecewise-smooth boundary} condition gives us a way to talk about the \textit{perimeter} 
+of a region.  We don't want to have to worry about fractal-like shapes which have well-defined 
+area but an infinite perimeter.
+
 
 \begin{definition}
 	In a metric space, a \textbf{geodesic} between two points is the shortest path connecting them with respect to the metric.
@@ -38,12 +51,11 @@ other surfaces, measures, and metrics to future work.
 The final major definition we need is that of a \textit{map
 projection}.  In reality, the regions we are interested in comparing
 sit on the surface of the Earth (i.e. a sphere), but these regions are
-often examined as being projected onto a flat sheet of paper or
-computer screen, and which means that the regions drawn in any flat
-map object are subject to such a projection.
+often examined after being projected onto a flat sheet of paper or
+computer screen, and so have been subject to such a projection.
 
 \begin{definition}
-  A \textbf{map projection} $\varphi$ is a locally defined 
+  A \textbf{map projection} $\varphi$ is a 
   diffeomorphism from a region on the sphere to a region on the 
   plane. 
 \end{definition}
@@ -71,14 +83,16 @@ $\varphi$.
   if and only if $\mc{C}(\vphi(\Omega)) \ge \mc{C}(\vphi(\Omega'))$ in the plane.
 \end{definition}
 
-  We observe that this is a weaker condition than simply preserving the raw compactness scores.  Additionally, $\vphi$ preserves a compactness score $\mc{C}$ 
+  We remark that this is a weaker condition than simply preserving the raw compactness scores.  Additionally, $\vphi$ preserves a compactness score ordering $\mc{C}$ 
   if and only if $\vphi^{-1}$ does.
 
 \begin{definition}
   Let $\mbb{S}^2\subset \R^3$ be the unit sphere. A 
-  \textbf{cap} on the sphere is a region of the 
+  \textbf{cap} on the sphere is a region on the sphere
   form $\kappa(h) = \{(x,y,z)\in \mbb{S}^2: z\ge h\}$.
 \end{definition}
+
+Caps are to the sphere what circles are to the plane, and we will make use of several of their properties throughout this paper. See \Cref{fig:caphr} for a diagram of a cap on the sphere.
 
 \begin{figure}[h]
   \centering
