@@ -6,15 +6,17 @@ which will be of use later.  We carefully lay out these definitions so
 as to align with an intuitive understanding of the concepts and to
 appease the astute reader who may be concerned with edge cases,
 geometric weirdness, and nonmeasurability.  We use $\R^2$ to denote the 
-Euclidean plane with its usual metric $d(((x_1,y_1),(x_2,y_2))) = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$. 
-Similarly, $\R^3$ denotes Euclidean 3-space.  We use $\mbb{S}^2$ to denote the \textit{unit 2-sphere}, which can be 
-thought of as the set of points in $\R^3$ at Euclidean distance one from the origin.  In notation, $\mbb{S}^2=\{ (x,y,z)\in \R^3\vert  x^2+y^2+z^2=1\}$.  When we refer to the sphere's \textit{natural embedding} in  $\R^3$, this is the definition we refer to.
+Euclidean plane with its usual metric;
+similarly, $\R^3$ denotes Euclidean 3-space.  We use $\mbb{S}^2$ to denote the \textit{unit 2-sphere}, which can be 
+thought of as the set of points in $\R^3$ at Euclidean distance one from the origin.  In notation.
 
-This surface also has a `usual metric', but it is tricky to write down as a formula.   Intuitively, the distance between two points on the sphere can be found by drawing the \textit{great circle} which passes through these points and then using a circular arc length formula to compute the length of the shorter of the two segments which join the points. \zs{do a picture to show great circles and stuff}
+This surface also has a `usual metric', but it is tricky to write down as a formula.   Intuitively, the distance between two points on the sphere can be found by drawing the \textit{great circle} which passes through these points and then using a circular arc length formula to compute the length of the shorter of the two segments which join the points. 
 
 
 We leave the consideration of
 other surfaces, measures, and metrics to future work.
+
+Before diving into the proofs, we present a quick gauntlet of definitions to establish the some working vocabulary.
 
 
 \begin{definition}
@@ -60,7 +62,8 @@ computer screen, and so have been subject to such a projection.
   plane. 
 \end{definition}
 
-Intuitively, a map projection is a well-defined, invertible function between the sphere and the plane which sends regions on the sphere to regions in the plane.
+Intuitively, a map projection is a well-defined, invertible function between the sphere and the plane which sends regions on the sphere to regions in the plane.  Throughout, we use $\vphi$ to denote such a function from a region of the sphere 
+to a region of the plane and $\vphi^{-1}$ its inverse, which goes from a region of the plane to a region of the sphere.
 
 \begin{definition}
   We use the word \textbf{transformation} [of the plane/sphere] to mean
@@ -71,7 +74,7 @@ Since the image of a region under a map projection $\varphi$ is also
 a region, we can examine the compactness score of that region both 
 before and after applying $\varphi$, and this is the heart of the
 problem we address in this paper.  We demonstrate, for several
-standard choices of compactness scores $\mathcal{C}$, that the order
+examples of compactness scores $\mathcal{C}$, that the order
 induced by $\mathcal{C}$ is different than the order induced by
 $\mathcal{C}\circ\varphi$ for \textit{any} choice of map projection
 $\varphi$.
@@ -83,16 +86,19 @@ $\varphi$.
   if and only if $\mc{C}(\vphi(\Omega)) \ge \mc{C}(\vphi(\Omega'))$ in the plane.
 \end{definition}
 
-  We remark that this is a weaker condition than simply preserving the raw compactness scores.  Additionally, $\vphi$ preserves a compactness score ordering $\mc{C}$ 
+   This is a weaker condition than simply preserving the raw compactness scores. 
+   If there is some map projection which results in adding $.1$ to the score of each region, the raw scores are certainly not preserved, but the ordering of regions by their scores is. Additionally, $\vphi$ preserves a compactness score ordering 
   if and only if $\vphi^{-1}$ does.
 
+
+\zs{this should be moved to the geometry section}
 \begin{definition}
-  Let $\mbb{S}^2\subset \R^3$ be the unit sphere. A 
-  \textbf{cap} on the sphere is a region on the sphere
-  form $\kappa(h) = \{(x,y,z)\in \mbb{S}^2: z\ge h\}$.
+  A 
+  \textbf{cap} on the sphere  $\mbb{S}^2$ is a region on the sphere
+ which can be described as all of the points on the sphere to one side of some plane 
+ in $\R^3$.  A cap has a \textit{height}, which is the largest distance between this cutting plane and the cap, and a \textit{radius}, which is the radius of the circle formed by the intersection of the plane and the sphere.  See \Cref{fig:caphr} for an illustration.
 \end{definition}
 
-Caps are to the sphere what circles are to the plane, and we will make use of several of their properties throughout this paper. See \Cref{fig:caphr} for a diagram of a cap on the sphere.
 
 \begin{figure}[h]
   \centering

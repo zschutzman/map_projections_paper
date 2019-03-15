@@ -1,33 +1,35 @@
 \section{Introduction}
 Striving for the \textit{geometric compactness} of legislative
-districts is a traditional principle of redistricting, and, to that
+districts is a traditional principle of redistricting \cite{altman_1998}, and, to that
 end, many jurisdictions have included the criterion of compactness in
-their legal code for drawing districts.  Legally ensconced definitions include Iowa's\footnote{Iowa Code \S42.4(4)} measuring the perimeter of districts, Maine's\footnote{Maine Statute \S1206-A} minimizing travel time within a district, and Idaho's\footnote{Idaho Statute 72-1506(4)} avoiding 
-drawing districts which are `oddly shaped'.  These and others vary widely in their 
-precision, both mathematical and otherwise.  Measuring the perimeter of districts is a very clear definition, minimizing travel time is less so, and what makes a district oddly shaped or not seems not far from being a matter of opinion. 
+their legal code for drawing districts.  Some of these include Iowa's\footnote{Iowa Code \S42.4(4)} measuring the perimeter of districts, Maine's\footnote{Maine Statute \S1206-A} minimizing travel time within a district, and Idaho's\footnote{Idaho Statute 72-1506(4)} avoiding 
+drawing districts which are `oddly shaped'.  Such measures can vary widely in their 
+precision, both mathematical and otherwise.  Computing the perimeter of districts is a very clear definition, minimizing travel time is less so, and what makes a district oddly shaped or not seems rather challenging to consider from a rigorous standpoint. 
 
 
-Mathematically, geographic compactness has been studied for nearly two hundred years, and several formulas to compute the compactness of legislative districts have emerged.
+Mathematicians have studied geographic compactness for nearly two hundred years, and over that period, scientists and legal scholars have developed many formulas to compute the `compactness' of regions such as legislative districts \cite{young_compactness}.
  Three of the most commonly discussed formulations are the \textit{Polsby-Popper score}, which
 measures the ratio of a district's area to the square of its
 perimeter, the \textit{convex hull score}, which measures the ratio
 of the area of a district to the smallest convex region containing it,
 and the \textit{Reock score}, which measures the ratio of the area of
 a district to the smallest circle containing it.  Each of these
-measures is appealing at an intuitive level, since they each assign to
-a district a single scalar value between zero and one, allowing easy
-comparisons between proposed redistricting plans. Additionally, the
+measures is appealing at an intuitive level, since they assign to
+a district a single scalar value between zero and one, which presents a simple 
+method to compare the relative compactness of two or more districts. 
+Additionally, the
 mathematics underpinning each is widely understandable by the relevant
 parties, including lawmakers, judges, advocacy groups, and the general
-public.  However, none of these measures truly discerns which districts are `compact' and which are not. 
+public.  
+
+However, none of these measures truly discerns which districts are `compact' and which are not. 
 For each score, we can construct a 
 mathematical counterexample for which
 a human's intuition and the score's evaluation of a shape's
-compactness differ, such as a circle with slightly perturbed boundary
-for the Polsby-Popper measure and a very long, thin rectangle for the
-convex hull measure. Additionally, these scores often do not agree.
-The long, thin rectangle has a very good convex hull score, but a very
-poor Polsby-Popper score.  These issues are well-studied by political
+compactness differ.  A region which is roughly circular but has a jagged boundary 
+may appear compact to a human's eye, but such a shape has a very poor Polsby-Popper score.  Similarly, a very long, thin rectangle appears non-compact to a person, but has a perfect convex hull score.  Additionally, these scores often do not agree.
+The long, thin rectangle has a  very
+poor Polsby-Popper score, and the ragged circle has an excellent convex hull score.  These issues are well-studied by political
 scientists and mathematicians alike
 \cite{polsby1991third,frolov1975shape,maceachren1985compact}.
 
@@ -46,9 +48,11 @@ paper or the screen of a computer.
 Therefore, when a shape is assigned a compactness score,
 it is implicitly done with respect to some choice of map projection.
 We prove that this may have
-serious consequences for the evaluation of compactness.  In
-particular, we define the analogues of the Polsby-Popper, convex hull,
+serious consequences for the evaluation of these scores.  In
+particular, we consider the Polsby-Popper, convex hull,
 and Reock scores on the sphere, and demonstrate that for any choice of
 map projection, there are two regions, $A$ and $B$, such that $A$ is
 more compact than $B$ on the sphere but $B$ is more compact than $A$
 when projected to the plane.
+
+\zs{i think the org section should be a subsection of the Intro}

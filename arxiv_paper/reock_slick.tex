@@ -7,13 +7,13 @@ $\Omega$.  Then the \textit{Reock score} of $\Omega$ is
 $$\mathrm{Reock}(\Omega)=
 \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{circ}(\Omega))}.$$
 
-We again let $\vphi:\Omega\rightarrow \R^2$  be a map projection and consider what properties $\vphi$ must have in order to preserve the ordering of regions by their Reock scores.  
+We again consider what properties a map projection $\vphi$ must have in order to preserve the ordering of regions by their Reock scores.  
 
 \begin{lemma}\label{lem:reock_prep}
   If $\vphi$ preserves the ordering of regions induced by their convex hull scores, then the following must hold:
   \begin{enumerate}
-    \item $\vphi$ sends spherical caps in $\Omega$ to Euclidean circles in the plane,  and $\vphi^{-1}$ does the opposite 
-    \item There exists a region $U$ in $\Omega$ such that for any regions $A,B\subset U$, if $A$ and $B$ have equal area on the sphere, then $\vphi(A)$ and $\vphi(B)$ have equal area in the plane.  The same holds for $\vphi^{-1}$ for all pairs of regions inside of $\vphi(U)$.
+    \item $\vphi$ sends spherical caps in its domain to Euclidean circles in the plane,  and $\vphi^{-1}$ does the opposite 
+    \item There exists a region $U$ in the domain of $\vphi$ such that for any regions $A,B\subset U$, if $A$ and $B$ have equal area on the sphere, then $\vphi(A)$ and $\vphi(B)$ have equal area in the plane.  The same holds for $\vphi^{-1}$ for all pairs of regions inside of $\vphi(U)$.
   \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -24,7 +24,7 @@ We again let $\vphi:\Omega\rightarrow \R^2$  be a map projection and consider wh
   To show (2), let $\kappa$ be a cap in the domain of $\vphi$, and let 
   $A,B\subset \kappa$ be two regions of equal area properly contained in the interior of
   $\kappa$. Then, define two new regions $X=\kappa\ssm A$ and $Y=\kappa\ssm B$, which can be 
-  thought of as $\kappa$ with $A$ and $B$ delete, respectively. 
+  thought of as $\kappa$ with $A$ and $B$ deleted, respectively. 
   
   Since $\kappa$ is the smallest bounding cap of $X$ and $Y$ and since $A$ and $B$ have equal areas, $\mathrm{Reock}(X)=\mathrm{Reock}(Y)$.  Furthermore, by (1), $\vphi$ must send $\kappa$ to some circle in the plane, 
   which is the smallest bounding circle of $\vphi(X)$ and $\vphi(Y)$.    
@@ -39,7 +39,7 @@ We again let $\vphi:\Omega\rightarrow \R^2$  be a map projection and consider wh
   and by the construction of $X$ and $Y$, we have 
   \begin{align*}
   \frac{\mathrm{Area}(\vphi(\kappa)) - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(\kappa)) - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(\kappa))}\\
-  \mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B))
+  \mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B)),
   \end{align*}
   
   
@@ -62,11 +62,12 @@ We again let $\vphi:\Omega\rightarrow \R^2$  be a map projection and consider wh
   
 }
   
-  Meaning that $\mathrm{Area}(\vphi(A) = \mathrm{Area}(\vphi(B))$. 
-  Thus, restricting $\vphi$ to $\kappa$, we get that 
-  $\vphi$ preserves area equality.
+  meaning that $\mathrm{Area}(\vphi(A) = \mathrm{Area}(\vphi(B))$. 
+  Thus, for all pairs of regions of the same area inside of $\kappa$, the images 
+  under $\vphi$ of those regions will have the same area as well.
+  
   The same construction works in reverse, which demonstrates that  $\vphi^{-1}$ also sends 
-  regions of equal area in the plane to regions of  equal area in the sphere.
+  regions of equal area in some circle in the plane to regions of  equal area in the sphere.
   
  \end{proof} 
 

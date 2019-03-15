@@ -28,8 +28,6 @@ define this score function.
 
 
 
-Throughout this section, let $\vphi:\Omega \to \R^2$ be a 
-map projection.
 \begin{figure}[htb]
 	\centering
 	%\includegraphics[width=.35\textwidth]{figs/ch_example.png}
@@ -38,14 +36,14 @@ map projection.
 	\label{fig:ch_example}
 \end{figure}
 
-Suppose that $\vphi$ does in reality preserve the ordering of regions under the convex hull scores of all regions in a patch on the sphere and a patch in the plane.  We begin by observing that such a projection must preserve certain geometric properties of regions within these patches.
+Suppose that our map projection $\vphi$ does  preserve the ordering of regions under the convex hull scores of all regions in a patch on the sphere and a patch in the plane.  We begin by observing that such a projection must preserve certain geometric properties of regions within these patches.
 \begin{lemma}~\label{lem:CH_prep}
 	If $\vphi$ preserves the ordering of regions induced by their convex hull scores, then the following must 
 	hold:
 	\begin{enumerate}
 		\item $\vphi$ and $\vphi^{-1}$ send convex regions to convex regions
 		\item $\vphi$ sends every segment of a great circle on the sphere to a line segment in the plane.  That is, it preserves geodesics.
-		\item There exists a region $U$ in $\Omega$
+		\item There exists a region $U$ in the domain of $\vphi$
 		such that for any regions $A,B\subset U$, if 
 		$A$ and $B$ have equal area on the sphere, then 
 		$\vphi(A)$ and $\vphi(B)$ have equal area in the plane.  The same holds 
@@ -73,13 +71,13 @@ Suppose that $\vphi$ does in reality preserve the ordering of regions under the 
 		
 		\item[]  Suppose, for the sake of contradiction, that there is some geodesic segment $s$ on the sphere such that $\vphi(s)$ is not a line segment. Construct two convex spherical polygons $L$ and $M$ which both have $s$ as a side. \zs{do picture} By (1), $\vphi$ must send both of these polygons to convex regions in the plane, but this is not the case.  All of the points along $\vphi(s)$ belong to both $\vphi(L)$ and $\vphi(M)$, but since $\vphi(s)$ is not a line segment, we can find two points along it which are joined by some line segment which contains points which only belong to $\vphi(L)$ or $\vphi(M)$, which means that at least one of these convex spherical polygons is sent to something non-convex in the plane, which contradicts our assumption.		
 		
-		The proof that $\vphi^{-1}$ sends line segments in the plane to great circle segments on the sphere is analogous.  
+		That $\vphi^{-1}$ sends line segments in the plane to great circle segments on the sphere is shown analogously.  
 		
-		This proves (2).
+		This completes the proof of (2).
 		
 		
 		
-\item[] To show (3), let our region $U\subset\Omega$ be a cap, without loss of generality.  Take $A,B$ to be regions of equal area such that $A$ and $B$ are properly contained in the interior of $U$, as in \Cref{fig:ch_schema}.  Define two new regions $X=U\ssm A$ and $Y=U\ssm B$, i.e. these regions are equal to $U$ with $A$ or $B$ deleted, respectively.  
+\item[] To show (3), let our region $U$ be a cap, without loss of generality.  Take $A,B$ to be regions of equal area such that $A$ and $B$ are properly contained in the interior of $U$, as in \Cref{fig:ch_schema}.  Define two new regions $X=U\ssm A$ and $Y=U\ssm B$, i.e. these regions are equal to $U$ with $A$ or $B$ deleted, respectively.  
 
 The cap $U$ is itself the convex hull of both $X$ and $Y$, and since $A$ and $B$ have equal area, we have that $\mathrm{CH}(X) = \mathrm{CH}(Y)$.  Since $U$ is a cap, it is convex, so by (1), $\vphi(U)$ is also convex.  Since $\vphi$ preserves the ordering of convex hull scores and $X$ and $Y$ had equal scores on the sphere, $\vphi$ must send $X$ and $Y$ to regions in the plane which also have the same convex hull score.  Furthermore, the convex hulls of $\vphi(X)$ and $\vphi(Y)$ are $\vphi(U)$.
 
@@ -97,7 +95,7 @@ and by the construction of $X$ and $Y$, we have
 \end{enumerate}
 \end{proof}
 
-We can now show that no map projection can preserve the convex hull score ordering of regions by proving that there is no projection from a patch on the sphere to the plane which has all three of the properties described above in \Cref{lem:CH_prep}. 
+We can now show that no map projection can preserve the convex hull score ordering of regions by demonstrating that there is no projection from a patch on the sphere to the plane which has all three of the properties described  in \Cref{lem:CH_prep}. 
 
 
 \begin{theorem}
@@ -150,7 +148,7 @@ half, and $T$ and $T_1$ have the same area.
 		We now argue that this implies that $Q$ is a Euclidean parallelogram by showing that its diagonals bisect each other.  Since the four triangles 
 		formed by the diagonals of $Q$ are all the same area, we can pick two of these triangles which share a side 
 		and consider the larger triangle formed by their union.  One side of this triangle is a diagonal $d_1$ of $Q$ and its area is 
-		bisected by the other diagonal $d_2$, which passes through $d_1$ and its opposite angle.  This area bisector passes through the midpoint of the side $d_1$, meaning that the diagonal $d_2$ bisects the diagonal $d_1$.  Since this holds for any choice of two adjacent triangles in $Q$, the diagonals must bisect each other, so $Q$ is a parallelogram.
+		bisected by the other diagonal $d_2$, which passes through $d_1$ and its opposite vertex.  This area bisector passes through the midpoint of the side $d_1$, meaning that the diagonal $d_2$ bisects the diagonal $d_1$.  Since this holds for any choice of two adjacent triangles in $Q$, the diagonals must bisect each other, so $Q$ is a parallelogram.
 		
 		\begin{figure}[h]
 			\centering
@@ -169,7 +167,10 @@ Since $T\cup T_1$ and $T\cup T_2$ are both spherical quadrilaterals which overla
 	whose boundary consists of four Euclidean geodesic 
 	segments, as in \Cref{fig:sphtris_pl}.
 	
-	To find the contradiction, consider the point on the sphere at which $T$, $T_1$, and $T_2$ meet.  Since these triangles are all equilateral spherical triangles, the three angles at this point are each strictly greater than $\tfrac{\pi}{3}$ radians, because the sum of interior angles on a triangle is strictly greater than $\pi$.  Therefore, the total measure of the three angles at this point is greater than $\pi$.  Therefore, the two geodesic segments which are part of the boundaries of $T_1$ and $T_2$ meet at this point at an angle of measure strictly greater than $\pi$, so together they do not form a geodesic.  Therefore, on the sphere, the region $T\cup T_1\cup T_2$ has a boundary consisting of five geodesic segments whereas its image has a boundary consisting of four, which contradicts the assumption that $\vphi$ and $\vphi^{-1}$ preserve geodesics.
+	To find the contradiction, consider the point on the sphere shared by $T$, $T_1$, and $T_2$.  Since these triangles are all equilateral spherical triangles, the three angles at this point are each strictly greater than $\tfrac{\pi}{3}$ radians, because the sum of interior angles on a triangle is strictly greater than $\pi$.  
+	so, the total measure of the three angles at this point is greater than $\pi$,  Therefore, the two geodesic segments which are part of the boundaries of $T_1$ and $T_2$ meet at this point at an angle of measure strictly greater than 
+	$\pi$. Therefore, together they do not form a single geodesic.  On the sphere, the region $T\cup T_1\cup T_2$ has a boundary consisting of five geodesic segments whereas its image has a boundary consisting of four, which contradicts the assumption that $\vphi$ and $\vphi^{-1}$ preserve geodesics.
 \end{proof}
 
 This implies that no map projection can preserve the ordering of regions by their convex hull scores, which is what we aimed to show.
+\zs{add more discusssion}
