@@ -9,6 +9,15 @@ Throughout, we work with respect to the \textit{unit sphere} embedded naturally 
 
 First, we need to define the concept of a \textit{spherical line}.  
 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.5\textwidth]{figs/sph-1pl.pdf}
+	\caption{A great circle on the sphere with its identifying plane.}
+	\label{fig:sphereline}
+\end{figure}
+
+
 \begin{definition}
 On the sphere, the lines are \textit{great circles}, which are the circles of the largest possible radius on the surface of the sphere.  Equivalently, they are the intersections of the surface of the sphere with a plane passing through the center of the sphere.
 \end{definition}  
@@ -20,13 +29,22 @@ Since spherical geometry can be hard to visualize, it helps to have an example i
 
 
 
-We now present the observations which majorly differentiate spherical from planar geometry.
+
+We now present the observations which majorly differentiate spherical and planar geometry.
 
 \begin{claim}
 	Given any two points $p$ and $q$ on the sphere which are not antipodal (meaning that our points aren't of the form $p=(x,y,z)$ and $q=(-x,-y,-z)$), there is a unique great circle through $p$ and $q$. 
 \end{claim}
 
 To see this, consider the characterization of great circles as the intersections of the surface of the sphere with planes through the center of the sphere.  Since $p$ and $q$ are not antipodes, they are not both collinear with $(0,0,0)$ and so these three points uniquely determine a plane.  This plane intersects the sphere along a great circle which contains $p$ and $q$.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.35\textwidth]{figs/2gc.pdf}
+	\caption{Two great circles meet at antipodal points.}
+	\label{fig:2gc}
+\end{figure}
+
 
 \begin{claim}
 	Any pair of distinct great circles on the sphere intersect exactly twice, and the points of intersection are antipodes.
@@ -46,6 +64,14 @@ Unlike in the plane, the sum of the interior angles of a spherical triangle is n
 In order to  show \Cref{lem:sphtri}, we need some way to translate between \textit{angles} and \textit{area}.  To do that, we'll use a shape which doesn't even exist in the plane: the \textit{diangle} or \textit{lune}.  Consider two distinct great circles.  We know they intersect at two antipodal points, and we can also see that they cut the surface of the sphere into four regions.  Consider one of these regions.  Its boundary is a pair of great circle segments which connect antipodal points, and meet at some angle $\theta$ at both of these points, so this shape is like a polygon with two sides, hence the name `diangle'.  The name `lune' refers to the crescent moon-shape of this kind of region, and is the term we will use going forward.  On the Earth, a lune is the region between any two lines of longitude, for example.
 
 The area of a lune with angle $\theta$ is easy to compute.
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.35\textwidth]{figs/lune.pdf}
+	\caption{A lune }
+	\label{fig:lune}
+\end{figure}
 
 \begin{claim}
 	Consider a lune whose boundary segments meet at angle $\theta$.  Then the area of this lune is $2\theta$.
@@ -71,7 +97,16 @@ The sum of the interior angles of a spherical triangle is strictly greater than 
 \end{lemma}
 
 \begin{proof}
-	Consider a triangle on the sphere with angles $\theta_1$, $\theta_2$, and $\theta_3$.  Let $T$ denote the area of this triangle. If we extend the sides of the triangle to their entire great circles, each pair intersects at the vertices of our triangle as well as the three points antipodal to the vertices of our triangle, and at the same angles at both sets of points.  This triangle is congruent to our triangle, so its area is also $T$.  Each pair of lines cuts the sphere into four lunes, one of which contains our triangle, one which contains the antipodal triangle, and two which do not contain either triangle.  We are interested in the three pairs of lunes which do contain the triangles.  We will label these lunes by their angles, so we have a lune $L(\theta_1)$ and its antipodal lune $L'(\theta_1)$, and we can similarly define $L(\theta_2)$, $L'(\theta_2)$, $L(\theta_3)$, and $L'(\theta_3)$.
+	Consider a triangle on the sphere with angles $\theta_1$, $\theta_2$, and $\theta_3$.  Let $T$ denote the area of this triangle. If we extend the sides of the triangle to their entire great circles, each pair intersects at the vertices of our triangle as well as the three points antipodal to the vertices of our triangle, and at the same angles at both sets of points.  This triangle is congruent to our triangle, so its area is also $T$.  Each pair of lines cuts the sphere into four lunes, one which contains our triangle, one which contains the antipodal triangle, and two which do not contain either triangle.  We are interested in the three pairs of lunes which do contain the triangles.  We will label these lunes by their angles, so we have a lune $L(\theta_1)$ and its antipodal lune $L'(\theta_1)$, and we can similarly define $L(\theta_2)$, $L'(\theta_2)$, $L(\theta_3)$, and $L'(\theta_3)$.
+	
+	
+	\begin{figure}[htb]
+		\centering
+		\includegraphics[width=.35\textwidth]{figs/trilune.pdf}
+		\caption{A spherical triangle and the antipodal triangle define six lunes.}
+		\label{fig:trilune}
+	\end{figure}
+	
 	
 	We have six lunes.  In total, they cover the sphere, but they do overlap.  If we remove our triangle from two of the three which contain it and the antipodal triangle from two of the three which contain it, then we have six non-overlapping regions which cover the sphere, so the area of the sphere must be equal to the sum of the areas of these six regions.  We can write
 	

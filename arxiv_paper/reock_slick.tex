@@ -1,56 +1,100 @@
 \section{Reock}\label{sec:reock}
+
 Let $\mathrm{circ}(\Omega)$ denote the \textit{smallest bounding
 circle} (smallest bounding \textit{cap} on the sphere) of a region
 $\Omega$.  Then the \textit{Reock score} of $\Omega$ is 
 
 $$\mathrm{Reock}(\Omega)=
 \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{circ}(\Omega))}.$$
-\begin{lemma}
-  Let $\vphi:S^2\to\R^2$ be a map projection preserving the 
-  ordering of Reock scores. Then, after 
-  possibly restricting its domain, $\vphi$ must
+
+We again let $\vphi:\Omega\rightarrow \R^2$  be a map projection and consider what properties $\vphi$ must have in order to preserve the ordering of regions by their Reock scores.  
+
+\begin{lemma}\label{lem:reock_prep}
+  If $\vphi$ preserves the ordering of regions induced by their convex hull scores, then the following must hold:
   \begin{enumerate}
-    \item Send spherical caps to Euclidean balls
-    \item Preserve area equality
+    \item $\vphi$ sends spherical caps in $\Omega$ to Euclidean circles in the plane,  and $\vphi^{-1}$ does the opposite 
+    \item There exists a region $U$ in $\Omega$ such that for any regions $A,B\subset U$, if $A$ and $B$ have equal area on the sphere, then $\vphi(A)$ and $\vphi(B)$ have equal area in the plane.  The same holds for $\vphi^{-1}$ for all pairs of regions inside of $\vphi(U)$.
   \end{enumerate}
 \end{lemma}
 \begin{proof}
-  Since $\vphi$ preserves the ordering of Reock scores, it must 
-  send maximizers of this score on the sphere to corresponding 
-  maximizers in the plane, giving the first condition.
+  Similarly to the convex hull setting, the proof of (1) follows from the requirement that $\vphi$ preserves the maximizers in the compactness score ordering.  In the case of the Reock score, the maximizers are caps in the sphere and circles in the plane.
 
-  Next, let $\kappa$ be a cap on the sphere, and let 
-  $X,Y\subset \kappa$ be two sets properly contained in 
-  $\kappa$ of equal area. Then:
+  
+
+  To show (2), let $\kappa$ be a cap in the domain of $\vphi$, and let 
+  $A,B\subset \kappa$ be two regions of equal area properly contained in the interior of
+  $\kappa$. Then, define two new regions $X=\kappa\ssm A$ and $Y=\kappa\ssm B$, which can be 
+  thought of as $\kappa$ with $A$ and $B$ delete, respectively. 
+  
+  Since $\kappa$ is the smallest bounding cap of $X$ and $Y$ and since $A$ and $B$ have equal areas, $\mathrm{Reock}(X)=\mathrm{Reock}(Y)$.  Furthermore, by (1), $\vphi$ must send $\kappa$ to some circle in the plane, 
+  which is the smallest bounding circle of $\vphi(X)$ and $\vphi(Y)$.    
+  Since $\vphi$ preserves the ordering of Reock scores, it must be that $\vphi(X)$ and $\vphi(Y)$ have identical Reock 
+  scores in the plane.
+  
+  By definition, we have
   \begin{align*}
-    \mathrm{Reock}(\kappa\ssm X) 
-    = 1-\frac{\mathrm{Area}(X)}{\mathrm{Area}(\kappa)} 
-    = 1-\frac{\mathrm{Area}(Y)}{\mathrm{Area}(\kappa)}
-    = \mathrm{Reock}(\kappa\ssm Y)
+  \mathrm{Reock}(X) &= \mathrm{Reock}(Y)\\
+  \frac{\mathrm{Area}(\vphi(X))}{\mathrm{Area}(\vphi(\kappa))} &= \frac{\mathrm{Area}(\vphi(Y))}{\mathrm{Area}(\vphi(\kappa))}
+  \end{align*}
+  and by the construction of $X$ and $Y$, we have 
+  \begin{align*}
+  \frac{\mathrm{Area}(\vphi(\kappa)) - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(\kappa)) - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(\kappa))}\\
+  \mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B))
+  \end{align*}
+  
+  
+\mute{  
+  \begin{align*}
+    \mathrm{Reock}(X) 
+    = 1-\frac{\mathrm{Area}(A)}{\mathrm{Area}(\kappa)} 
+    = 1-\frac{\mathrm{Area}(B)}{\mathrm{Area}(\kappa)}
+    = \mathrm{Reock}(Y)
   \end{align*}
   Note that $\kappa$ is sent to a circle in the plane, so 
   the minimal bounding circle of $\vphi(\kappa)$ is itself. Thus, 
   since $\vphi$ preserves equality of Reock scores,
   \begin{align*}
-    1-\frac{\mathrm{Area}(\vphi(X))}{\mathrm{Area}(\vphi(\kappa))} 
-    = \mathrm{Reock}(\vphi(\kappa\ssm X)) 
-    = \mathrm{Reock}(\kappa\ssm Y)
-    = 1-\frac{\mathrm{Area}(\vphi(Y))}{\mathrm{Area}(\vphi(\kappa))}
+    1-\frac{\mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(\kappa))} 
+    = \mathrm{Reock}(\vphi(X)) 
+    = \mathrm{Reock}(Y)
+    = 1-\frac{\mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(\kappa))}
   \end{align*}
-  Meaning that $\mathrm{Area}(\vphi(X)) = \mathrm{Area}(\vphi(Y))$. 
+  
+}
+  
+  Meaning that $\mathrm{Area}(\vphi(A) = \mathrm{Area}(\vphi(B))$. 
   Thus, restricting $\vphi$ to $\kappa$, we get that 
   $\vphi$ preserves area equality.
-\end{proof}
-\begin{remark}
-  The above proof also holds for $\vphi^{-1}$
-\end{remark}
-\begin{lemma}
-  Let $V\subset S^2$ and $U\subset \R^2$ be open. There does not exist a 
-  diffeomorphism $\vphi:U\to V$ which sends spherical caps 
-  to Euclidean balls and preserves area equality.
-\end{lemma}
+  The same construction works in reverse, which demonstrates that  $\vphi^{-1}$ also sends 
+  regions of equal area in the plane to regions of  equal area in the sphere.
+  
+ \end{proof} 
+
+
+
+We can now show that no such $\vphi$ exists.  Rather than constructing a figure on the sphere and examining its image under $\vphi$, it will be more convenient to construct a figure in the plane and reason about $\vphi^{-1}$.
+ 
+\begin{theorem}\label{thm:reockbad}
+  There does not exist a map projection with the two properties in \Cref{lem:reock_prep}.
+\end{theorem}
 \begin{proof}
-  We consider the following configuration of equal-radius circles in $U$:
+	
+	Assume that such a $\vphi$ does exist and restrict its domain to a cap $\kappa$ as above.  This corresponds to a restriction of the domain of $\vphi^{-1}$ to a circle in the plane.  Inside of this circle, draw seven smaller circles of equal area tangent to each other as in \Cref{fig:sevencircles}.
+	
+	
+	
+  \begin{figure}[!htb]
+	\label{fig:sevencircles}
+	
+	\centering
+
+	\input{figs/reock_construct}
+	\caption{Seven circles arranged as in the construction for \Cref{thm:reockbad}.}
+\end{figure}	
+	
+\mute{
+  \begin{figure}[!htb]
+  	\label{fig:sevencircles}
   \begin{center}
     \begin{tikzpicture}
       \draw (0,0) circle (0.5);
@@ -62,17 +106,21 @@ $$\mathrm{Reock}(\Omega)=
       \draw ({cos(300)},{sin(300)}) circle (0.5);
     \end{tikzpicture}
   \end{center}
-  Under $\vphi$, they must be sent to an equivalent configuration 
-  of caps on the sphere of equal area. Since the radius 
-  of a spherical cap is uniquelty determined by its area, it follows 
-  that each of these circles is sent to a cap of equal radius. Thus, 
-  the midpoints of these caps form six equallateral triangles 
-  in $S^2$ meeting at a point, which cannot happen, as each triangle 
-  has angles larger than $\frac{\pi}{3}$.
+\caption{Seven circles arranged as in the construction for \Cref{thm:reockbad}.}
+\end{figure}
+}
+
+  Under $\vphi^{-1}$, they must be sent to an similar configuration 
+  of equal-area caps on the sphere .  
+  
+  However, the radius of a
+  of a spherical cap is determined by its area, so since the areas of these caps
+  are all the same, their radii must be as well. Thus, 
+  the midpoints of these caps form six equilateral triangles on the sphere
+   which meet at a point.  However, this is impossible, as the three 
+  angles of an equilateral triangle on the sphere must all be greater than $\tfrac{\pi}{3}$, 
+  but the total measure of all the angles at a point must be equal to $2\pi$, which contradicts 
+  the assumption that such a $\vphi$ exists.
 \end{proof}
-Piecing the above lemmas together yields:
-\begin{theorem}
-  Let $U\subset S^2$ be some open region, and let 
-  $\vphi:U\to \R^2$ be a map projection. Then 
-  $\vphi$ does not preserve the ordering of Reock scores.
-\end{theorem}
+
+This shows that no map projection exists which preserves the ordering of regions by their Reock scores.
