@@ -17,33 +17,42 @@ We again consider what properties a map projection $\vphi$ must have in order to
   \end{enumerate}
 \end{lemma}
 \begin{proof}
-  Similarly to the convex hull setting, the proof of (1) follows from the requirement that $\vphi$ preserves the maximizers in the compactness score ordering.  In the case of the Reock score, the maximizers are caps in the sphere and circles in the plane.
-
-  
+  Similarly to the convex hull setting, the proof of (1) follows from
+  the requirement that $\vphi$ preserves the maximizers in the
+  compactness score ordering.  In the case of the Reock score, the
+  maximizers are caps in the sphere and circles in the plane.  
 
   To show (2), let $\kappa$ be a cap in the domain of $\vphi$, and let 
-  $A,B\subset \kappa$ be two regions of equal area properly contained in the interior of
-  $\kappa$. Then, define two new regions $X=\kappa\ssm A$ and $Y=\kappa\ssm B$, which can be 
-  thought of as $\kappa$ with $A$ and $B$ deleted, respectively. 
-  
-  Since $\kappa$ is the smallest bounding cap of $X$ and $Y$ and since $A$ and $B$ have equal areas, $\mathrm{Reock}(X)=\mathrm{Reock}(Y)$.  Furthermore, by (1), $\vphi$ must send $\kappa$ to some circle in the plane, 
-  which is the smallest bounding circle of $\vphi(X)$ and $\vphi(Y)$.    
-  Since $\vphi$ preserves the ordering of Reock scores, it must be that $\vphi(X)$ and $\vphi(Y)$ have identical Reock 
-  scores in the plane.
-  
+  $A,B\subset \kappa$ be two regions of equal area properly 
+  contained in the interior of $\kappa$. Then, define two new regions
+  $X=\kappa\ssm A$ and $Y=\kappa\ssm B$, which can be thought of as
+  $\kappa$ with $A$ and $B$ deleted, respectively. 
+
+  Since $\kappa$ is the smallest bounding cap of $X$ and $Y$ and since
+  $A$ and $B$ have equal areas, $\mathrm{Reock}(X)=\mathrm{Reock}(Y)$.
+  Furthermore, by (1), $\vphi$ must send $\kappa$ to some circle in
+  the plane, which is the smallest bounding circle of $\vphi(X)$ and
+  $\vphi(Y)$.    
+  Since $\vphi$ preserves the ordering of Reock scores, it must be
+  that $\vphi(X)$ and $\vphi(Y)$ have identical Reock scores in the
+  plane.
+
   By definition, we have
   \begin{align*}
-  \mathrm{Reock}(X) &= \mathrm{Reock}(Y)\\
-  \frac{\mathrm{Area}(\vphi(X))}{\mathrm{Area}(\vphi(\kappa))} &= \frac{\mathrm{Area}(\vphi(Y))}{\mathrm{Area}(\vphi(\kappa))}
+    \mathrm{Reock}(X) &= \mathrm{Reock}(Y)\\
+    \frac{\mathrm{Area}(\vphi(X))}{\mathrm{Area}(\vphi(\kappa))} &= \frac{\mathrm{Area}(\vphi(Y))}{\mathrm{Area}(\vphi(\kappa))}
   \end{align*}
   and by the construction of $X$ and $Y$, we have 
   \begin{align*}
-  \frac{\mathrm{Area}(\vphi(\kappa)) - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(\kappa)) - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(\kappa))}\\
-  \mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B)),
+    \frac{\mathrm{Area}(\vphi(\kappa))
+    - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &=
+    \frac{\mathrm{Area}(\vphi(\kappa))
+    - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(\kappa))}\\
+    \mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B)),
   \end{align*}
-  
-  
-\mute{  
+
+
+  \mute{  
   \begin{align*}
     \mathrm{Reock}(X) 
     = 1-\frac{\mathrm{Area}(A)}{\mathrm{Area}(\kappa)} 
@@ -59,69 +68,71 @@ We again consider what properties a map projection $\vphi$ must have in order to
     = \mathrm{Reock}(Y)
     = 1-\frac{\mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(\kappa))}
   \end{align*}
-  
-}
-  
+
+  }
+
   meaning that $\mathrm{Area}(\vphi(A) = \mathrm{Area}(\vphi(B))$. 
-  Thus, for all pairs of regions of the same area inside of $\kappa$, the images 
-  under $\vphi$ of those regions will have the same area as well.
-  
-  The same construction works in reverse, which demonstrates that  $\vphi^{-1}$ also sends 
-  regions of equal area in some circle in the plane to regions of  equal area in the sphere.
-  
- \end{proof} 
+  Thus, for all pairs of regions of the same area inside of $\kappa$,
+  the images under $\vphi$ of those regions will have the same area as
+  well.
 
-
+  The same construction works in reverse, which demonstrates that
+  $\vphi^{-1}$ also sends regions of equal area in some circle in the
+  plane to regions of  equal area in the sphere.
+\end{proof} 
 
 We can now show that no such $\vphi$ exists.  Rather than constructing a figure on the sphere and examining its image under $\vphi$, it will be more convenient to construct a figure in the plane and reason about $\vphi^{-1}$.
- 
+
 \begin{theorem}\label{thm:reockbad}
-  There does not exist a map projection with the two properties in \Cref{lem:reock_prep}.
+  There does not exist a map projection with the two properties in
+  \Cref{lem:reock_prep}.  
 \end{theorem}
 \begin{proof}
-	
-	Assume that such a $\vphi$ does exist and restrict its domain to a cap $\kappa$ as above.  This corresponds to a restriction of the domain of $\vphi^{-1}$ to a circle in the plane.  Inside of this circle, draw seven smaller circles of equal area tangent to each other as in \Cref{fig:sevencircles}.
-	
-	
-	
+
+  Assume that such a $\vphi$ does exist and restrict its domain to
+  a cap $\kappa$ as above.  This corresponds to a restriction of the
+  domain of $\vphi^{-1}$ to a circle in the plane.  Inside of this
+  circle, draw seven smaller circles of equal area tangent to each
+  other as in \Cref{fig:sevencircles}.
+
   \begin{figure}[!htb]
-	\label{fig:sevencircles}
-	
-	\centering
+    \label{fig:sevencircles}
 
-	\input{figs/reock_construct}
-	\caption{Seven circles arranged as in the construction for \Cref{thm:reockbad}.}
-\end{figure}	
-	
-\mute{
+    \centering
+
+    \input{figs/reock_construct}
+    \caption{Seven circles arranged as in the construction for \Cref{thm:reockbad}.}
+  \end{figure}	
+  \mute{
   \begin{figure}[!htb]
-  	\label{fig:sevencircles}
-  \begin{center}
-    \begin{tikzpicture}
-      \draw (0,0) circle (0.5);
-      \draw (1,0) circle (0.5);
-      \draw ({cos(60)},{sin(60)}) circle (0.5);
-      \draw ({cos(120)},{sin(120)}) circle (0.5);
-      \draw ({cos(180)},{sin(180)}) circle (0.5);
-      \draw ({cos(240)},{sin(240)}) circle (0.5);
-      \draw ({cos(300)},{sin(300)}) circle (0.5);
-    \end{tikzpicture}
-  \end{center}
-\caption{Seven circles arranged as in the construction for \Cref{thm:reockbad}.}
-\end{figure}
-
-
+    \label{fig:sevencircles}
+    \begin{center}
+      \begin{tikzpicture}
+        \draw (0,0) circle (0.5);
+        \draw (1,0) circle (0.5);
+        \draw ({cos(60)},{sin(60)}) circle (0.5);
+        \draw ({cos(120)},{sin(120)}) circle (0.5);
+        \draw ({cos(180)},{sin(180)}) circle (0.5);
+        \draw ({cos(240)},{sin(240)}) circle (0.5);
+        \draw ({cos(300)},{sin(300)}) circle (0.5);
+      \end{tikzpicture}
+    \end{center}
+    \caption{Seven circles arranged as in the construction for
+    \Cref{thm:reockbad}.}
+  \end{figure}
+  }
   Under $\vphi^{-1}$, they must be sent to an similar configuration 
   of equal-area caps on the sphere .  
-  
+
   However, the radius of a
-  of a spherical cap is determined by its area, so since the areas of these caps
-  are all the same, their radii must be as well. Thus, 
+  of a spherical cap is determined by its area, so since the areas of
+  these caps are all the same, their radii must be as well. Thus, 
   the midpoints of these caps form six equilateral triangles on the sphere
-   which meet at a point.  However, this is impossible, as the three 
-  angles of an equilateral triangle on the sphere must all be greater than $\tfrac{\pi}{3}$, 
-  but the total measure of all the angles at a point must be equal to $2\pi$, which contradicts 
-  the assumption that such a $\vphi$ exists.
+  which meet at a point.  However, this is impossible, as the three 
+  angles of an equilateral triangle on the sphere must all be greater
+  than $\tfrac{\pi}{3}$, but the total measure of all the angles at
+  a point must be equal to
+  $2\pi$, which contradicts the assumption that such a $\vphi$ exists.
 \end{proof}
 
 This shows that no map projection exists which preserves the ordering of regions by their Reock scores.
