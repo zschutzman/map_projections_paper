@@ -170,9 +170,9 @@ We will need one more fact about spherical triangles before we conclude this sec
 
 While \textit{Elements} is a compendium of facts about planar geometry, these two propositions do not rely on the assumption that parallel lines exist, and so they hold on the surface of the sphere as well.  
 \begin{proof}
-	To show them, first suppose that we have a triangle with vertices $a$, $b$, and $c$ and suppose that the length of the side $ab$ is equal to that of $bc$, and let $m$ be the midpoint of the segment $bc$.  Consider the segment $am$. This splits the triangle $abc$ into two triangles $amb$ and $amc$ which have equal side lengths and are therefore congruent.  By this congruence, the angle opposite $a$ is equal to the angle opposite $c$.
+	To see this, first suppose that we have a triangle with vertices $a$, $b$, and $c$ and suppose that the length of the side $ab$ is equal to that of $bc$, and let $m$ be the midpoint of the segment $bc$.  Consider the segment $am$. This splits the triangle $abc$ into two triangles $amb$ and $amc$.  These three triangles have the same side lengths and are therefore congruent.  By this congruence, the angle opposite vertex $a$ is equal to the angle opposite vertex $c$.  To show that either of these is also equal to the angle opposite vertex $b$, take $m$ to be the midpoint of segment $ac$.
 	
-	To see the converse, suppose that the angles opposite $a$ and $c$ are equal.  Then the triangles $abc$ and $acb$ are congruent, since \Cref{lem:sphtri} implies that if there are two triangles with the same angles, then their areas are equal as well and they are therefore congruent.
+	To see the converse, suppose that the angles at vertices $b$ and $c$ are equal.  Then the triangle $abc$ is congruent to the triangle $acb$ because they both share side $bc$ and the angle at vertex $a$, and the angle at vertex $b$ is equal to that at $c$.\footnote{This is sometimes called the ``side-side-angle'' congruence theorem.}  Since the triangles are congruent, the sides $ac$ and $ab$ have equal length.  To show that either of these is also equal to the length of side $bc$, consider angles $a$ and $c$ instead.
 \end{proof}
 
 
