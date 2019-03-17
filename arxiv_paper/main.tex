@@ -1,8 +1,13 @@
 
 
 \newif\ifarxiv\arxivtrue
-
 \documentclass{article}
+\iffalse
+\documentclass[17pt]{extarticle}
+\usepackage{extsizes}
+\usepackage{setspace}
+\linespread{1.5}
+\fi
 \ifarxiv
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -108,28 +113,17 @@
 
 \zs{we should put the general curvature thing in the appendix for the arxiv version and leave it out of the magazine version, since the real impetus for putting it down is to not get scooped.}
 
-\zs{also, the generalization exercises would be good in the body for the magazine article, but probably belong in the appendix for the arxiv version}
+
 
 
 \input{intro}
 \input{organization}
 \input{prelims}
-\input{sphere_geom}
-
-\input{convex}
-
-%\input{stereo}
-
-
-%\input{reock}
+%\input{sphere_geom}
+%\input{convex}
 \input{reock_slick}
 \input{polsby}
-
-
-
 \input{generalizations}
-
-
 \input{future}
 
 
