@@ -84,7 +84,7 @@ Why is this weird? In the plane, it is always the case that any pair of distinct
 We will use this distinction to derive a result which we will use critically in the main theorems of this paper, namely\\
 
 \noindent\textbf{\Cref{lem:sphtri}.}
-\emph{The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.}
+\emph{The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.}\\
 
 Contrast this to the planar setting, where the sum of the interior angles of a triangle is equal to $\pi$ for any triangle, regardless of its area.  As a concrete example, we can construct a spherical triangle with three right angles.  The triangle formed by the north pole and two points on the equator, one a quarter of the way around the sphere from the other, form such a triangle.  Its area is one eighth of the whole sphere, or $\tfrac{\pi}{2}$, which is, not coincidentally, equal to $\tfrac{\pi}{2}+\tfrac{\pi}{2}+\tfrac{\pi}{2} - \pi$.
 
@@ -108,7 +108,7 @@ The area of a lune with angle $\theta$ is easy to compute.
 	This claim follows from observing that a lune with angle $\theta$ occupies a $\tfrac{2\pi}{\theta}$ portion of the sphere's surface area.  The total surface area of the sphere is $4\pi$, so a lune with angle $\theta$ has surface area $\tfrac{4\pi\theta}{2\pi}= 2\theta$.
 \end{proof}
 
-Now that we have a tool that lets us relate angles and areas, we can finally prove the main result of this section.
+Now that we have a tool that lets us relate angles and areas, we can finally prove \Cref{lem:sphtri}.
 
 
 
@@ -164,10 +164,14 @@ Now that we have a tool that lets us relate angles and areas, we can finally pro
 
 We will need one more fact about spherical triangles before we conclude this section.  It dates back to (at least) Euclid's \textit{Elements} \cite{elements} where it follows from Propositions I.6 and I.8.  
 
-\begin{claim}
+\begin{fact}
 	An equilateral triangle is equiangular, and vice versa.
-\end{claim}
+\end{fact}
+\zs{the proof of this is muted, if we want to include it}
 
+Since these propositions do not rely on the existence of parallel lines, they hold for triangles on the sphere as well as in the plane.
+
+\mute{
 \begin{proof}
 	To see this, first suppose that we have a triangle with vertices $a$, $b$, and $c$ and suppose that the length of the side $ab$ is equal to that of $bc$, and let $m$ be the midpoint of the segment $bc$.  Consider the segment $am$. This splits the triangle $abc$ into two triangles $amb$ and $amc$.  These three triangles have the same side lengths and are therefore congruent.  By this congruence, the angle opposite vertex $a$ is equal to the angle opposite vertex $c$.  To show that either of these is also equal to the angle opposite vertex $b$, take $m$ to be the midpoint of segment $ac$.
 	
@@ -177,7 +181,7 @@ We will need one more fact about spherical triangles before we conclude this sec
 
 
 A concerned reader may be wary that we have carelessly applied a result about planar geometry to the sphere while sweeping under the rug some critical difference in these settings.  While \textit{Elements} is indeed a compendium of facts about planar geometry, these two propositions do not rely on the assumption that parallel lines exist, and so they do indeed hold on the surface of the sphere.
-
+}
 Now that we have the necessary tools of spherical geometry, we will wrap up this section with a battery of definitions. 
 We carefully lay these out so
 as to align with an intuitive understanding of the concepts and to
@@ -267,7 +271,7 @@ $\varphi$.
   if and only if $\vphi^{-1}$ does.
 
 
-\zs{this should be moved to the geometry section}
+
 \begin{definition}
   A 
   \textbf{cap} on the sphere  $\mbb{S}^2$ is a region on the sphere
