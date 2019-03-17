@@ -46,7 +46,6 @@ sphere, there is no scale invariance.
 \end{lemma}
 
 
-
 \begin{proof}
   Let $r(h)$ be the radius of the circle bounding $\kappa(h)$. We
   compute: 
@@ -80,8 +79,8 @@ projection from a region on the sphere to the plane can preserve the ordering
 of Polsby-Popper scores for all regions.  
 
 \begin{theorem}\label{thm:dpp}
-  If $\varphi$ is a map projection from the sphere to the plane,
-  then there are two regions $A$ and $B$ contained in some half-sphere such that
+  If $\varphi:U\to V$ is a map projection from the sphere to the plane,
+  then there exist two regions $A,B\subset U$ such that
   the Polsby-Popper score of $B$ is greater than that of $A$ in the
   sphere, but the Polsby-Popper score of $\varphi(A)$ is greater than
   that of $\varphi(B)$ in the plane.
@@ -94,8 +93,11 @@ of Polsby-Popper scores for all regions.
 \end{figure}
 
 \begin{proof}
-  Let $\varphi$ be a map projection, and take $B$ to be a cap contained in in some
-  half-sphere. Let $\Sigma$ be a circle in the plane such that $\Sigma
+  Let $\varphi$ be a map projection, and let 
+  $\kappa \subset U$ be some cap. We will take our regions 
+  $A$ and $B$ to lie in $\kappa$. Set $B$ to be a cap 
+  contained in $\kappa$. Let $\Sigma$ be a circle in 
+  the plane such that $\Sigma
   \subsetneq \varphi(B)$ and let $A=\varphi^{-1}(\Sigma)$ (see
   Figure~\ref{fig:dpp}).
 
@@ -104,8 +106,12 @@ of Polsby-Popper scores for all regions.
   $A$ does not maximilze Polsby-Popper score in the sphere.
 
   To see this, take $\hat{A}$ to be a cap in the sphere with 
-  area equal to that of $A$. By the isoperimetric 
-  inequality of the sphere, $\mathrm{PP}_S(\hat{A})\geq
+  area equal to that of $A$. Note that since the 
+  area of $\hat {A}$ is less than the area of the cap $B$, it 
+  follows that we can choose $\hat{A}\subset B$. 
+  
+  By the isoperimetric inequality of the sphere, 
+  $\mathrm{PP}_S(\hat{A})\geq
   \mathrm{PP}_S(A)$. Since map projections preserve containment,
   $\Sigma\subsetneq \varphi(B)$ implies that $A\subsetneq B$, 
   meaning that $\mathrm{area}(\hat A) = \mathrm{area}(A)\lneq 
