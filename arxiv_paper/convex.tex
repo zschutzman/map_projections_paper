@@ -70,7 +70,18 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions u
 		\item[] The proof of (1) follows from the idea that any projection which preserves the convex hull score ordering of regions must 
 		preserve the maximizers in that ordering.   Here, the maximizers are convex sets.
 		
-		\item[]  Suppose, for the sake of contradiction, that there is some geodesic segment $s$ on the sphere such that $\vphi(s)$ is not a line segment. Construct two convex spherical polygons $L$ and $M$ which both have $s$ as a side. \zs{do picture} By (1), $\vphi$ must send both of these polygons to convex regions in the plane, but this is not the case.  All of the points along $\vphi(s)$ belong to both $\vphi(L)$ and $\vphi(M)$, but since $\vphi(s)$ is not a line segment, we can find two points along it which are joined by some line segment which contains points which only belong to $\vphi(L)$ or $\vphi(M)$, which means that at least one of these convex spherical polygons is sent to something non-convex in the plane, which contradicts our assumption.		
+		\item[]  Suppose, for the sake of contradiction, that there is some geodesic segment $s$ on the sphere such that $\vphi(s)$ is not a line segment. Construct two convex spherical polygons $L$ and $M$ which both have $s$ as a side. 
+		
+		
+\begin{figure}[h]
+	\centering
+	%\includegraphics[width=.25\textwidth]{figs/ch_sphere_schema.png}
+	\input{figs/nonconvex}
+	\caption{If $\vphi(s)$ is not a line segment, then one of $\vphi(M)$ or $\vphi(L)$ is not convex.}
+	\label{fig:lineconvexcont}
+\end{figure}
+		
+		 By (1), $\vphi$ must send both of these polygons to convex regions in the plane, but this is not the case.  All of the points along $\vphi(s)$ belong to both $\vphi(L)$ and $\vphi(M)$, but since $\vphi(s)$ is not a line segment, we can find two points along it which are joined by some line segment which contains points which only belong to $\vphi(L)$ or $\vphi(M)$, which means that at least one of these convex spherical polygons is sent to something non-convex in the plane, which contradicts our assumption.		See \Cref{fig:lineconvexcont} for an illustration.
 		
 		That $\vphi^{-1}$ sends line segments in the plane to great circle segments on the sphere is shown analogously.  
 		
