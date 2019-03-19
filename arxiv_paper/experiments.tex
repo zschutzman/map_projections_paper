@@ -1,0 +1,25 @@
+
+\section{Empirical Results}\label{sec:exper}
+
+
+
+
+While we have shown mathematically that the ordering of compactness scores can be permuted by any map 
+projection, the actual districts we wish to examine are relatively small compared to the surface of the Earth, 
+and we might ask whether this order reversal actually occurs in practice.
+We can extract the boundaries of the districts from a \textit{shapefile} from the U.S. Census Bureau\footnote{We use the U.S. Census Bureau's shapefile for the Congressional districts for the 115th Congress.} and compute the convex hull, Reock, and Polsby-Popper scores on the Earth and with respect to a common map projection\footnote{The code to compute the various compactness scores is based on Lee Hachadoorian's \textit{compactr} project \cite{hachadoorian2018reock}.} and examine the ordering of the districts with respect to both.
+
+The projection we use is the familiar \textit{Mercator} projection, which is commonly used in settings like Internet mapping applications and pulldown maps in school classrooms.  The Mercator projection presents latitudes and longitudes as equally-spaced horizontal and vertical lines, which causes small amounts of distortion near the equator, but large amounts outside of the tropics, with the areas of regions near the poles being dramatically inflated under the projection.
+
+
+
+
+
+
+
+
+We observe overall that the orderings of under the Polsby-Popper score and convex hull score are relatively undisturbed compared to that of the Reock score.  This is because the \textit{values} of those scores do not change by too much under different projections.  Intuitively, this is because while both projections distort shapes, they do so in a way that does not affect either of these scores by too much, since in the case of the Polsby-Popper score, the perimeter and area of the regions are changed in similar ways, and in the case of the convex hull score, the area of the convex hull of a region is distorted in the same way as the region itself, so the ratio of the areas is similar across projections.
+
+For regions in North America, such as our Congressional districts, the differences in the minimal bounding circle between the spherical and Mercator representation cause massive differences in both the raw values of the scores as well as the ordering.  The scores can change in either direction by upwards of $.1$ (recall that the value of the score is between zero and one) and there is almost no correlation in the ordering of the districts by their Reock scores on the sphere and under the Mercator projection. 
+
+

@@ -1,7 +1,12 @@
 
 
 \newif\ifarxiv\arxivtrue
+\newif\ifsmallfigs\smallfigsfalse
 \documentclass{article}
+\usepackage{comment}
+
+\usepackage{caption}
+\usepackage{subcaption}
 \iffalse
 \documentclass[17pt]{extarticle}
 \usepackage{extsizes}
@@ -111,7 +116,7 @@
 %{\small\paragraph{AMS Subject Classifications:} 	51N15	\ \ \  97A40}
 \fi
 
-\zs{we should put the general curvature thing in the appendix for the arxiv version and leave it out of the magazine version, since the real impetus for putting it down is to not get scooped.}
+
 
 
 
@@ -123,6 +128,7 @@
 \input{convex}
 \input{reock_slick}
 \input{polsby}
+\input{experiments}
 \input{generalizations}
 \input{future}
 
