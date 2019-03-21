@@ -21,7 +21,7 @@ In this paper, we only consider the sphere and the plane, and leave the consider
 
 
 \begin{definition}
-	In a metric space, a \textbf{geodesic} between two points is the shortest path connecting them with respect to the metric.
+	In a metric space, the \textbf{geodesic segment} between two points is the shortest path connecting them with respect to the metric.
 	In the plane, geodesics are line segments, and on the surface of the sphere, geodesics are segments of great circles.
 \end{definition}
 
@@ -29,20 +29,23 @@ In this paper, we only consider the sphere and the plane, and leave the consider
 
 
 
-Geodesics are intricately tied to the metric of the space we're working with, because one way to think of the metric distance between two points is as the length of the shortest geodesic connecting them.  We also note that in the plane, there is a \textit{unique} line segment between any two distinct points, whereas on the sphere, there are two such geodesic segments.  This leads to the definition of a \textit{spherical line}.
+Geodesics are intricately tied to the metric of the space we're working with, because one way to think of the metric distance between two points is as the length of the shortest geodesic connecting them.  In the plane, the geodesics are line segments.  On the sphere, they are segments of \textit{great circles}, which we define next.
 
 
 \begin{definition}
 	On the sphere, the lines are \textit{great circles}, which are the circles of the largest possible radius on the surface of the sphere.  Equivalently, they are the intersections of the surface of the sphere with a plane passing through the center of the sphere.
 \end{definition}  
 
+
+\ifsmallfigs
+\else
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=.5\textwidth]{figs/sph-1pl.pdf}
 	\caption{A great circle on the sphere with its identifying plane.}
 	\label{fig:sphereline}
 \end{figure}
-
+\fi
 
 In the plane, there is a unique line passing through any two distinct points.  This is almost the case on the sphere, except that we need to exclude one more case.
 
@@ -56,12 +59,34 @@ In the plane, there is a unique line passing through any two distinct points.  T
 
 If $p$ and $q$ \textit{are} antipodal, then any great circle containing one must contain the other as well, so there are infinitely many such great circles.
 
+\ifsmallfigs
+\begin{figure}
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\centering
+	\includegraphics[height=.58\linewidth]{figs/sph-1pl.pdf}
+		\captionof{figure}{A great circle on the sphere with its plane.}
+		\label{fig:test1}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+	\includegraphics[height=.58\linewidth]{figs/2gc.pdf}
+		\captionof{figure}{Two great circles meet at antipodal points.}
+	\label{fig:sphereline}
+	\end{minipage}
+\end{figure}
+\fi
+
+
+\ifsmallfigs
+\else
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=.35\textwidth]{figs/2gc.pdf}
 	\caption{Two great circles meet at antipodal points.}
 	\label{fig:2gc}
 \end{figure}
+\fi
 
 
 We now have enough terminology to show a very important fact about spherical geometry.  This  observation is one of the salient features which distinguishes it from the more familiar planar geometry.

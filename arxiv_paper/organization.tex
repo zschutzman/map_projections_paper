@@ -6,7 +6,7 @@ projection can preserve their order follows a similar recipe. We
 first use the fact that any map projection which preserves an ordering
 must preserve the \textit{maximizers} in that ordering.  In other words,
 if there is some shape which a score says is `the most compact' on the sphere 
-but this is not the case in the plane after applying a projection, then whatever 
+but the projection sends this to a shape in the plane which is not `the most compact', then whatever 
 shape \textit{does} get sent to `the most compact' shape in the plane leapfrogs 
 the first shape in the induced ordering.
 
@@ -18,7 +18,7 @@ order of scores of some pair of regions.
 
 \paragraph{Preliminaries}
 We first introduce some definitions and results which we will use to prove our 
-three main theorems.  Since spherical geometry differs from the familiar planar geometry, 
+three main theorems.  Since spherical geometry differs from the more familiar planar geometry, 
 we carefully describe a few properties of spherical lines and triangles to build some intuition 
 in this domain. 
 
@@ -45,9 +45,14 @@ and then demonstrating that such a map projection cannot exist.
 \paragraph{Polsby-Popper}
 To demonstrate that there is no projection which maintains the score ordering induced by the Polsby-Popper score, we again use properties of spherical geometry.  In this setting, we leverage the 
 difference between the \textit{isoperimetric inequalities} on the sphere and in the plane in order to 
-demonstrate that the Polsby-Popper score, as given, is not scale-free on the sphere.  We then readjust 
-our definition to a more robust version of the isoperimetric quotient and use the machinery developed 
-in the Reock section to demonstrate that no map projection exists which preserves the ordering induced by this score, either.
+demonstrate that the Polsby-Popper score, as given, is not scale-free on the sphere.  
+
+\paragraph{Empirical Results}
+We finally examine the impact of the Mercator map projection on the convex hull, Reock, and Polsby-Popper 
+scores and the ordering of regions under these scores.  While the impacts of the projection on the convex hull and 
+ Polsby-Popper scores are not severe, the Reock score and the Reock score ordering both change dramatically 
+ under the map projection.
+
 
 \paragraph{Generalizations and Discussion}
 While we prove our results in the contexts of three specific scores, the machinery we develop along the way can be broadly applied to other kinds of compactness scores.  Rather than present these as independent theorems, we offer them as exercises to an interested reader.  Most of the machinery needed to prove them is included in this paper; some follow almost immediately as corollaries and others require more careful digestion of the tools and techniques used for the three scores we dissect.
