@@ -4,7 +4,7 @@ We begin by introducing some necessary observations, definitions, and terminolog
 which will be of use later.  
 \subsection{Spherical Geometry}
 
-In this section, we present some basic results about spherical geometry with the goal of proving Girard's Theorem, which states that the area of a triangle on the unit sphere is $\pi$ minus the sum of its interior angles.  Readers familiar with this result should feel free to skip ahead.
+In this section, we present some basic results about spherical geometry with the goal of proving Girard's Theorem, which states that the area of a triangle on the unit sphere is the sum of its interior angles minus $\pi$.  Readers familiar with this result should feel free to skip ahead.
 
 
 
@@ -20,14 +20,19 @@ In this paper, we only consider the sphere and the plane, and leave the consider
 
 
 
+
 \begin{definition}
+{On the sphere, a \textbf{great circle} is the intersection of the sphere with a plane passing through the origin.} These are the circles on the sphere with radius equal to that of the sphere.  See \Cref{fig:sphereline} for an illustration.
+\end{definition}
+
+\begin{definition}
+
+Lines in the plane and great circles on the sphere are called \textbf{geodesics}.  A \textbf{geodesic segment} is a line segment in the plane and an arc of a great circle on the sphere.
 	
-	A \textbf{geodesic} is the locally-shortest curve in a metric space, and is the generalization of the notion of lines to other spaces.  
 \end{definition}  
 
 
-In the plane, the 
-geodesics are ordinary lines, and on the sphere, they are \textit{great circles}, which are the circles of the largest possible radius on the surface of the sphere.  Equivalently, they are the intersections of the surface of the sphere with a plane passing through the center of the sphere. 
+{The idea of {geodesics} generalizes the notion of `straight lines' in the plane to other settings.} One critical difference is that in the plane, there is a unique line passing through any two distinct points and a unique line segment joining them.  On the sphere, there will typically be a unique great circle and \textit{two} geodesic segments through a pair of points, with the exception of one case.
 
 
 
@@ -37,7 +42,7 @@ geodesics are ordinary lines, and on the sphere, they are \textit{great circles}
 
 
 
-
+{
 \ifsmallfigs
 \else
 \begin{figure}[htb]
@@ -47,19 +52,19 @@ geodesics are ordinary lines, and on the sphere, they are \textit{great circles}
 	\label{fig:sphereline}
 \end{figure}
 \fi
+}
 
-In the plane, there is a unique line passing through any two distinct points.  This is almost the case on the sphere, except that we need to exclude one more case.
 
 
 \begin{observation}
-	Given any two points $p$ and $q$ on the sphere which are not antipodal (meaning that our points aren't of the form $p=(x,y,z)$ and $q=(-x,-y,-z)$), there is a unique great circle through $p$ and $q$. 
+	Given any two points $p$ and $q$ on the sphere which are not antipodal (meaning that our points aren't of the form $p=(x,y,z)$ and $q=(-x,-y,-z)$), there is a unique great circle through $p$ and $q$ and therefore two geodesic segments joining them. 
 \end{observation}
 \mute{
 \begin{proof}
 	To see this, consider the characterization of great circles as the intersections of the surface of the sphere with planes through the center of the sphere.  Since $p$ and $q$ are not antipodes, they are not both collinear with $(0,0,0)$ and so these three points uniquely determine a plane.  This plane intersects the sphere along a great circle which contains $p$ and $q$.
 \end{proof}
 }
-If $p$ and $q$ \textit{are} antipodal, then any great circle containing one must contain the other as well, so there are infinitely many such great circles.  In general, this means that there are two geodesic segments connecting any two non-antipodal points on the sphere, whereas in the plane such a line segment is unique.  
+If $p$ and $q$ \textit{are} antipodal, then any great circle containing one must contain the other as well, so there are infinitely many such great circles. For any two non-antipodal points on the sphere, one of the geodesic segments will be shorter than the other.  {This shorter geodesic segment is the shortest path between the points and its length is the metric distance between $p$ and $q$}.
 
 \ifsmallfigs
 \begin{figure}
@@ -105,7 +110,7 @@ We now have enough terminology to show a very important fact about spherical geo
 
 
 
-Why is this weird? In the plane, it is always the case that any pair of distinct lines intersects exactly once or never, in which case we call them \textit{parallel}. Since distinct great circles on the sphere intersect exactly twice, there is no such thing as `parallel lines' on the sphere, and we have to be careful about discussing `the' intersection of two great circles since they do not meet at a unique point.  Furthermore, it is not the case that there is a unique segment of a great circle connecting any two points; there are two, but unless our two points are antipodes, one of the two segments will be shorter.  This shorter segment is the geodesic connecting those points.
+Why is this weird? In the plane, it is always the case that any pair of distinct lines intersects exactly once or never, in which case we call them \textit{parallel}. Since distinct great circles on the sphere intersect exactly twice, there is no such thing as `parallel lines' on the sphere, and we have to be careful about discussing `the' intersection of two great circles since they do not meet at a unique point.  Furthermore, it is not the case that there is a unique segment of a great circle connecting any two points; there are two, but unless our two points are antipodes, one of the two segments will be shorter. 
 
 
 
