@@ -1,6 +1,6 @@
 \section{Discussion and Future Directions}
 
-\zs{this needs some work, but I think it's muy importante to include some discussion}
+
 
 We have identified a major \textit{mathematical} weakness in the commonly discussed compactness scores in that no map projection can preserve the ordering over regions induced by these scores.  This leads to several important considerations in the mathematical and popular examinations of the detection of gerrymandering.
 
@@ -9,6 +9,11 @@ Alternatively, we can look to capturing the geometric information of a district 
 
 
 While compactness scores are not used critically in a \textit{legal} context, they appear frequently in the popular discourse about redistricting issues and frame the perception of the `fairness' of a plan.  For example, a 2014 Washington Post piece  \cite{ingraham2014solve} describes an algorithm which generates highly compact districts because it ignores all of the social and demographic data which are crucial to the process.  The equating of `solving' gerrymandering with generating highly compact districts presupposes that the mathematics used to evaluate the geometric features of districts are unbiased and unmanipulable, and we demonstrate here that this is certainly not the case.
+
+We proved our non-preservation results for three particular compactness scores which appear frequently in the context of electoral redistricting.  There are countless other scores proposed in legal codes and academic writing, such as definitions analogous to the Reock and convex hull scores which use different kinds of bounding regions, scores which measure the ratio of the area of the largest inscribed shape of some kind to the area of the district, and versions of these scores which replace the notion of `area' with the population of that landmass.  All of these and others suffer from similar flaws as the three scores we examined in this work and 
+
+
+we remark here that the machinery and techniques can be applied to a wide range of plausible compactness measures.  We briefly present some of these other scores here and leave as exercises to the interested reader the proofs of non-preservation of score ordering.
 
 
 This work opens several promising avenues for further investigation.  We prove strong results for the most common compactness scores, but the question remains what the most general mathematical result in this domain might be, such as giving a set of necessary and sufficient conditions for a compactness score to not induce a permuted order for some choice of map projection.  

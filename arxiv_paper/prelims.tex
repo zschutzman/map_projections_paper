@@ -2,13 +2,17 @@
 
 We begin by introducing some necessary observations, definitions, and terminology
 which will be of use later.  
- We use $\R^2$ to denote the 
+\subsection{Spherical Geometry}
+
+In this section, we present some basic results about spherical geometry with the goal of proving Girard's Theorem, which states that the area of a triangle on the unit sphere is $\pi$ minus the sum of its interior angles.  Readers familiar with this result should feel free to skip ahead.
+
+
+
+We use $\R^2$ to denote the 
 Euclidean plane with its usual metric;
 similarly, $\R^3$ denotes Euclidean 3-space.  We use $\mbb{S}^2$ to denote the \textit{unit 2-sphere}, which can be 
 thought of as the set of points in $\R^3$ at Euclidean distance one from the origin.  
-
-\zs{i think saying something like this is important but the way i've written it here it's not really saying anything....}
-This surface also has a `usual metric', but it is tricky to write down as a formula.   Intuitively, the distance between two points on the sphere can be found by drawing the \textit{great circle} which passes through these points and then using a circular arc length formula to compute the length of the shorter of the two segments which join the points.  
+ 
 In this paper, we only consider the sphere and the plane, and leave the consideration of other surfaces, measures, and metrics to future work.
 
 
@@ -16,25 +20,22 @@ In this paper, we only consider the sphere and the plane, and leave the consider
 
 
 
-
-
-
-
 \begin{definition}
-	In a metric space, the \textbf{geodesic segment} between two points is the shortest path connecting them with respect to the metric.
-	In the plane, geodesics are line segments, and on the surface of the sphere, geodesics are segments of great circles.
-\end{definition}
-
-
-
-
-
-Geodesics are intricately tied to the metric of the space we're working with, because one way to think of the metric distance between two points is as the length of the shortest geodesic connecting them.  In the plane, the geodesics are line segments.  On the sphere, they are segments of \textit{great circles}, which we define next.
-
-
-\begin{definition}
-	On the sphere, the lines are \textit{great circles}, which are the circles of the largest possible radius on the surface of the sphere.  Equivalently, they are the intersections of the surface of the sphere with a plane passing through the center of the sphere.
+	
+	A \textbf{geodesic} is the locally-shortest curve in a metric space, and is the generalization of the notion of lines to other spaces.  
 \end{definition}  
+
+
+In the plane, the 
+geodesics are ordinary lines, and on the sphere, they are \textit{great circles}, which are the circles of the largest possible radius on the surface of the sphere.  Equivalently, they are the intersections of the surface of the sphere with a plane passing through the center of the sphere. 
+
+
+
+
+
+
+
+
 
 
 \ifsmallfigs
@@ -53,11 +54,12 @@ In the plane, there is a unique line passing through any two distinct points.  T
 \begin{observation}
 	Given any two points $p$ and $q$ on the sphere which are not antipodal (meaning that our points aren't of the form $p=(x,y,z)$ and $q=(-x,-y,-z)$), there is a unique great circle through $p$ and $q$. 
 \end{observation}
+\mute{
 \begin{proof}
 	To see this, consider the characterization of great circles as the intersections of the surface of the sphere with planes through the center of the sphere.  Since $p$ and $q$ are not antipodes, they are not both collinear with $(0,0,0)$ and so these three points uniquely determine a plane.  This plane intersects the sphere along a great circle which contains $p$ and $q$.
 \end{proof}
-
-If $p$ and $q$ \textit{are} antipodal, then any great circle containing one must contain the other as well, so there are infinitely many such great circles.
+}
+If $p$ and $q$ \textit{are} antipodal, then any great circle containing one must contain the other as well, so there are infinitely many such great circles.  In general, this means that there are two geodesic segments connecting any two non-antipodal points on the sphere, whereas in the plane such a line segment is unique.  
 
 \ifsmallfigs
 \begin{figure}
@@ -95,10 +97,11 @@ We now have enough terminology to show a very important fact about spherical geo
 \begin{claim}
 	Any pair of distinct great circles on the sphere intersect exactly twice, and the points of intersection are antipodes.
 \end{claim}
+\mute{
 \begin{proof}
 	Any two distinct planes determine two distinct great circles, and these planes intersect along a line in $\R^3$ which passes through $(0,0,0)$ and therefore meets the sphere itself at exactly two points, which must be antipodes.
 \end{proof}
-
+}
 
 
 
@@ -108,7 +111,7 @@ Why is this weird? In the plane, it is always the case that any pair of distinct
 
 We will use this distinction to derive a result which we will use critically in the main theorems of this paper, namely\\
 
-\noindent\textbf{\Cref{lem:sphtri}.}
+\noindent\textbf{\Cref{lem:sphtri}.} [Girard's Theorem]
 \emph{The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.}\\
 
 Contrast this to the planar setting, where the sum of the interior angles of a triangle is equal to $\pi$ for any triangle, regardless of its area.  As a concrete example, we can construct a spherical triangle with three right angles.  The triangle formed by the north pole and two points on the equator, one a quarter of the way around the sphere from the other, form such a triangle.  Its area is one eighth of the whole sphere, or $\tfrac{\pi}{2}$, which is, not coincidentally, equal to $\tfrac{\pi}{2}+\tfrac{\pi}{2}+\tfrac{\pi}{2} - \pi$.
@@ -129,10 +132,11 @@ The area of a lune with angle $\theta$ is easy to compute.
 \begin{claim}
 	Consider a lune whose boundary segments meet at angle $\theta$.  Then the area of this lune is $2\theta$.
 \end{claim}
+\mute{
 \begin{proof}
 	This claim follows from observing that a lune with angle $\theta$ occupies a $\tfrac{2\pi}{\theta}$ portion of the sphere's surface area.  The total surface area of the sphere is $4\pi$, so a lune with angle $\theta$ has surface area $\tfrac{4\pi\theta}{2\pi}= 2\theta$.
 \end{proof}
-
+}
 Now that we have a tool that lets us relate angles and areas, we can finally prove \Cref{lem:sphtri}.
 
 
@@ -144,7 +148,7 @@ Now that we have a tool that lets us relate angles and areas, we can finally pro
 
 
 
-\begin{lemma}\label{lem:sphtri}
+\begin{lemma}(Girard's Theorem)\label{lem:sphtri}
 	
 	The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.
 \end{lemma}
@@ -161,30 +165,31 @@ Now that we have a tool that lets us relate angles and areas, we can finally pro
 	\end{figure}
 	
 	
-	We have six lunes.  In total, they cover the sphere, but share some overlap.  If we remove our triangle from two of the three which contain it and the antipodal triangle from two of the three which contain it, then we have six non-overlapping regions which cover the sphere, so the area of the sphere must be equal to the sum of the areas of these six regions.  We can write
+	We have six lunes.  In total, they cover the sphere, but share some overlap.  If we remove our triangle from two of the three which contain it and the antipodal triangle from two of the three which contain it, then we have six non-overlapping regions which cover the sphere, so the area of the sphere must be equal to the sum of the areas of these six regions.  \mute{We can write
 	
 	\begin{align*}
 	4\pi &= \mathrm{area}(L(\theta_1)) + \mathrm{area}(L'(\theta_1)) \\
 	&+  (\mathrm{area}(L(\theta_2)) - T) + (\mathrm{area}(L'(\theta_2)) - T) \\
 	&+ (\mathrm{area}(L(\theta_3)) - T)	 + (\mathrm{area}(L'(\theta_3)) - T).
 	\end{align*}
+}
 	
-	And by the earlier claim, we know that the areas of the lunes are twice their angles, so we can rewrite this as
+	By the earlier claim, we know that the areas of the lunes are twice their angles, so we can write this as
 	
 	
 	\begin{align*}
 	4\pi &= 2\theta_1 + 2\theta_1 
 	+  (2\theta_2 - T) + (2\theta_2-T) 
-	+ (2\theta_3 - T)	 + (2\theta_3 - T)
+	+ (2\theta_3 - T)	 + (2\theta_3 - T) = \pi+T
 	\end{align*}
-	
+	\mute{
 	which simplifies to 
 	
 	\begin{align*}
 	\theta_1+\theta_2+\theta_3 = \pi + T,
 	\end{align*}
 	
-	which is exactly the statement we wanted to show.
+	which is exactly the statement we wanted to show.}
 \end{proof}
 
 We will need one more fact about spherical triangles before we conclude this section.  It dates back to (at least) Euclid's \textit{Elements} \cite{elements} where it follows from Propositions I.6 and I.8.  
@@ -192,11 +197,9 @@ We will need one more fact about spherical triangles before we conclude this sec
 \begin{fact}
 	An equilateral triangle is equiangular, and vice versa.
 \end{fact}
-\zs{the proof of this is muted, if we want to include it}
 
-Since these propositions do not rely on the existence of parallel lines, they hold for triangles on the sphere as well as in the plane.
 
-\mute{
+
 \begin{proof}
 	To see this, first suppose that we have a triangle with vertices $a$, $b$, and $c$ and suppose that the length of the side $ab$ is equal to that of $bc$, and let $m$ be the midpoint of the segment $bc$.  Consider the segment $am$. This splits the triangle $abc$ into two triangles $amb$ and $amc$.  These three triangles have the same side lengths and are therefore congruent.  By this congruence, the angle opposite vertex $a$ is equal to the angle opposite vertex $c$.  To show that either of these is also equal to the angle opposite vertex $b$, take $m$ to be the midpoint of segment $ac$.
 	
@@ -206,7 +209,11 @@ Since these propositions do not rely on the existence of parallel lines, they ho
 
 
 A concerned reader may be wary that we have carelessly applied a result about planar geometry to the sphere while sweeping under the rug some critical difference in these settings.  While \textit{Elements} is indeed a compendium of facts about planar geometry, these two propositions do not rely on the assumption that parallel lines exist, and so they do indeed hold on the surface of the sphere.
-}
+
+
+
+\subsection{Some Definitions}
+
 Now that we have the necessary tools of spherical geometry, we will wrap up this section with a battery of definitions. 
 We carefully lay these out so
 as to align with an intuitive understanding of the concepts and to

@@ -8,9 +8,9 @@ $$\mathrm{Reock}(\Omega)=
 \frac{\mathrm{area}(\Omega)}{\mathrm{area}(\mathrm{circ}(\Omega))}.$$
 
 We again consider what properties a map projection $\vphi$ must have in order to preserve the ordering of regions by their Reock scores.  
-\zs{add discussion about the use of this score, why it's good, why not}
+
 \begin{lemma}\label{lem:reock_prep}
-  If $\vphi$ preserves the ordering of regions induced by their convex hull scores, then the following must hold:
+  If $\vphi$ preserves the ordering of regions induced by their Reock scores, then the following must hold:
   \begin{enumerate}
     \item $\vphi$ sends spherical caps in its domain to Euclidean circles in the plane,  and $\vphi^{-1}$ does the opposite 
     \item There exists a region $U$ in the domain of $\vphi$ such that for any regions $A,B\subset U$, if $A$ and $B$ have equal area on the sphere, then $\vphi(A)$ and $\vphi(B)$ have equal area in the plane.  The same holds for $\vphi^{-1}$ for all pairs of regions inside of $\vphi(U)$.
@@ -45,7 +45,7 @@ We again consider what properties a map projection $\vphi$ must have in order to
   and by the construction of $X$ and $Y$, we have 
   \begin{align*}
     \frac{\mathrm{Area}(\vphi(\kappa))
-    - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &=
+    - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(\kappa))} &=
     \frac{\mathrm{Area}(\vphi(\kappa))
     - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(\kappa))}\\
     \mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B)),
@@ -96,10 +96,11 @@ We can now show that no such $\vphi$ exists.  Rather than constructing a figure 
   other as in \Cref{fig:sevencircles}.
 
   \begin{figure}[!htb]
-    \label{fig:sevencircles}
+    
     \centering
     \input{figs/reock_construct}
     \caption{Seven circles arranged as in the construction for \Cref{thm:reockbad}.}
+    \label{fig:sevencircles}
   \end{figure}	
 
   Under $\vphi^{-1}$, they must be sent to an similar configuration 
