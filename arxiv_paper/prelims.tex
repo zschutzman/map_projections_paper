@@ -199,14 +199,14 @@ We will need one more fact about spherical triangles before we conclude this sec
 \end{fact}
 
 
-
+\mute{
 \begin{proof}
 	To see this, first suppose that we have a triangle with vertices $a$, $b$, and $c$ and suppose that the length of the side $ab$ is equal to that of $bc$, and let $m$ be the midpoint of the segment $bc$.  Consider the segment $am$. This splits the triangle $abc$ into two triangles $amb$ and $amc$.  These three triangles have the same side lengths and are therefore congruent.  By this congruence, the angle opposite vertex $a$ is equal to the angle opposite vertex $c$.  To show that either of these is also equal to the angle opposite vertex $b$, take $m$ to be the midpoint of segment $ac$.
 	
 	To see the converse, suppose that the angles at vertices $b$ and $c$ are equal.  Then the triangle $abc$ is congruent to the triangle $acb$ because they both share side $bc$ and the angle at vertex $a$, and the angle at vertex $b$ is equal to that at $c$.\footnote{This is sometimes called the ``side-side-angle'' congruence theorem.}  Since the triangles are congruent, the sides $ac$ and $ab$ have equal length.  To show that either of these is also equal to the length of side $bc$, consider angles $a$ and $c$ instead.
 \end{proof}
 
-
+}
 
 A concerned reader may be wary that we have carelessly applied a result about planar geometry to the sphere while sweeping under the rug some critical difference in these settings.  While \textit{Elements} is indeed a compendium of facts about planar geometry, these two propositions do not rely on the assumption that parallel lines exist, and so they do indeed hold on the surface of the sphere.
 
@@ -231,13 +231,13 @@ geometric weirdness, and nonmeasurability.
 \begin{definition}
 	A \textbf{region} $\Omega$ in $\mathbb{S}^2$ or 
 	in $\R^2$ is a non-empty open set together with its
-	boundary, such that $\Omega$ is compact and the boundary can be described piecewise as 
+	boundary, such that $\Omega$ is bounded and the boundary can be described piecewise as 
 	a finite collection of smooth curves.
 \end{definition}
 
 This definition is highly technical to allow us to assume away any annoying edge 
 cases that might crop up.  Piece-by-piece, a \textit{non-empty open set} lets us 
-talk about the \textit{area} of a region in a sensible way, and being \textit{compact} means that this area is finite.  Finally, the 
+talk about the \textit{area} of a region in a sensible way, and being \textit{bounded} means that this area is finite.  Finally, the 
 \textit{piecewise-smooth boundary} condition gives us a way to talk about the \textit{perimeter} 
 of a region.  We don't want to have to worry about fractal-like shapes which have well-defined 
 area but an infinite perimeter.
