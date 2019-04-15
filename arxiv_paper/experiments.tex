@@ -7,9 +7,10 @@
 While we have shown mathematically that the ordering of compactness scores can be permuted by any map 
 projection, the actual districts we wish to examine are relatively small compared to the surface of the Earth, 
 and we might ask whether this order reversal actually occurs in practice.
-We can extract the boundaries of the districts from a \textit{shapefile} from the U.S. Census Bureau\footnote{We use the U.S. Census Bureau's shapefile for the Congressional districts for the 115th Congress.} and compute the convex hull, Reock, and Polsby-Popper scores on the Earth and with respect to a common map projection\footnote{The code to compute the various compactness scores is based on Lee Hachadoorian's \textit{compactr} project \cite{hachadoorian2018reock}.} and examine the ordering of the districts with respect to both.
+We can extract the boundaries of the districts from a \textit{shapefile} from the U.S. Census Bureau\footnote{We use the U.S. Census Bureau's shapefile for the Congressional districts for the 115th Congress.} and compute the convex hull, Reock, and Polsby-Popper scores on the Earth and with respect to a common map projection\footnote{The code to compute the various compactness scores is based on Lee Hachadoorian's \textit{compactr} project. \cite{hachadoorian2018reock}} and examine the ordering of the districts with respect to both.
 
-The projection we use is the familiar \textit{Mercator} projection, which is commonly used in settings like Internet mapping applications and pulldown maps in school classrooms.  The Mercator projection presents latitudes and longitudes as equally-spaced horizontal and vertical lines, which causes small amounts of distortion near the equator, but large amounts outside of the tropics, with the areas of regions near the poles being dramatically inflated under the projection.
+The projection we use is the familiar \textit{Mercator} projection, which is commonly used in settings like Internet mapping applications and pulldown maps in school classrooms \cite{westwing}.  
+The Mercator projection presents latitudes and longitudes as equally-spaced horizontal and vertical lines, which causes small amounts of distortion near the equator, but large amounts outside of the tropics, with the areas of regions near the poles being dramatically inflated under the projection.
 
 
 

@@ -7,6 +7,7 @@
 
 \usepackage{caption}
 \usepackage{subcaption}
+
 \iffalse
 \documentclass[17pt]{extarticle}
 \usepackage{extsizes}
@@ -22,18 +23,18 @@
 \usepackage{soul}
 \usepackage{fullpage}
 \usepackage{url}
-
+\usepackage{hyperref}
 \else
 \usepackage{maa-monthly}
 \fi
 \usepackage[square, comma, numbers,sort&compress]{natbib}
 \bibliographystyle{plainnat}
-\usepackage{datetime}
+%\usepackage{datetime}
 \usepackage{cleveref}
 \usepackage{blindtext}
 \usepackage{csquotes}
 \usepackage{pgf,tikz,pgfplots}
-\pgfplotsset{compat=1.15}
+\pgfplotsset{compat=1.14}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 \usepackage{tikz-3dplot}
@@ -61,10 +62,7 @@
 \newtheorem{example}{Example}
 
 
-\makeatletter
-\def\thanks#1{\protected@xdef\@thanks{\@thanks
-        \protect\footnotetext{#1}}}
-\makeatother
+
 
 
 
@@ -103,9 +101,11 @@
 \newcommand{\cit}[1]{\textcolor{Orange}{[citation needed]}}
 
 
-\title{Order Non-Preservation of Compactness Scores Under Map Projections}
-\date{\today, \currenttime}
-\author{Assaf Bar-Natan \and Lorenzo Najt \and Zachary Schutzman }
+\title{Jumbling Districts' Compactness Scores Under Map Projections}
+\date{\today}
+\author{Assaf Bar-Natan\thanks{University of Toronto, Department of Mathematics. \href{mailto:assaf.barnatan@gmail.com}{\texttt{assaf.barnatan@gmail.com}}} 
+	\and Lorenzo Najt\thanks{University of Wisconsin, Department of Mathematics. \href{mailto:lnajt4@gmail.com}{\texttt{lnajt4@gmail.com}}}  
+	\and Zachary Schutzman\thanks{University of Pennsylvania, Department of Computer and Information Science. \href{mailto:ianzach@seas.upenn.edu}{\texttt{ianzach@seas.upenn.edu}}}  }
 %\author{Anonymous Author(s)}
 
 \begin{document}
@@ -148,7 +148,7 @@
 \fi
 
 
-\bibliography{bib.bib}
+\bibliography{bib}
 
 %\pagebreak
 %\appendix

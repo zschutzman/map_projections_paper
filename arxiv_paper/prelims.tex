@@ -235,9 +235,7 @@ geometric weirdness, and nonmeasurability.
 
 \begin{definition}
 	A \textbf{region} $\Omega$ in $\mathbb{S}^2$ or 
-	in $\R^2$ is a non-empty open set together with its
-	boundary, such that $\Omega$ is bounded and the boundary can be described piecewise as 
-	a finite collection of smooth curves.
+	in $\R^2$ is a non-empty open set such that $\Omega$ is bounded and its boundary is piecewise smooth.
 \end{definition}
 
 This definition is highly technical to allow us to assume away any annoying edge 
@@ -257,12 +255,12 @@ area but an infinite perimeter.
 
 
 \begin{definition}
-  A \textbf{compactness score function} $\mathcal{C}$ is a function from
-  the set of all regions to the positive real numbers.  We adopt the
-  convention that a region with a \textit{higher} compactness score is
-  \textit{more} compact, and this naturally induces a partial order over
-  the set of all regions, where $A$ is at least as compact as $B$ if and
-  only if $\mathcal{C}(A)\geq \mathcal{C}(B)$.
+A \textbf{compactness score function} $\mathcal{C}$ is a function from
+the set of all regions to the positive real numbers.  We can compare 
+the scores of any two regions, and we adopt the convention that 
+\textit{more compact} regions have \textit{higher} scores.  That is,
+region $A$ is at least as compact as region $B$ if and only if 
+$\mathcal{C}(A)\geq    \mathcal{C}(B)$.
 \end{definition}
 
 The final major definition we need is that of a \textit{map
@@ -297,7 +295,7 @@ $\varphi$.
 \begin{definition}
   We say that a map projection $\vphi$ \textbf{preserves the  
   compactness score ordering} of a score $\mc{C}$ if for any regions 
-  $\Omega,\Omega'$ in the sphere, $\mc{C}(\Omega)\ge \mc{C}(\Omega')$ 
+  $\Omega,\Omega'$ in the domain of $\vphi$, $\mc{C}(\Omega)\ge \mc{C}(\Omega')$ 
   if and only if $\mc{C}(\vphi(\Omega)) \ge \mc{C}(\vphi(\Omega'))$ in the plane.
 \end{definition}
 
