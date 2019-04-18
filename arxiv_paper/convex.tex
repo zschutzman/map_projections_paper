@@ -43,7 +43,7 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions i
 	hold:
 	\begin{enumerate}
 		\item $\vphi$ and $\vphi^{-1}$ send convex regions to convex regions
-		\item $\vphi$ sends every segment of a great circle on the sphere to a line segment in the plane.  That is, it preserves geodesics.  Such a projection is called a \textit{geodesic map}.
+		\item $\vphi$ sends every segment of a great circle on the sphere to a line segment in the plane.  That is, it preserves geodesics.\footnote{Such a projection is sometimes called a \textit{geodesic map}.}
 		\item There exists a region $U$ in the domain of $\vphi$
 		such that for any regions $A,B\subset U$, if 
 		$A$ and $B$ have equal area on the sphere, then 
@@ -128,8 +128,8 @@ By definition, we have
 \end{align*}
 and by the construction of $X$ and $Y$, we have 
 \begin{align*}
-\frac{\mathrm{Area}(\vphi(U)) - \mathrm{Area}(\vphi(A))}{\mathrm{Area}(\vphi(U))} &= \frac{\mathrm{Area}(\vphi(U)) - \mathrm{Area}(\vphi(B))}{\mathrm{Area}(\vphi(U))}\\
-\mathrm{Area}(\vphi(A)) &= \mathrm{Area}(\vphi(B))
+\frac{\mathrm{area}(\vphi(U)) - \mathrm{area}(\vphi(A))}{\mathrm{area}(\vphi(U))} &= \frac{\mathrm{area}(\vphi(U)) - \mathrm{area}(\vphi(B))}{\mathrm{area}(\vphi(U))}\\
+\mathrm{area}(\vphi(A)) &= \mathrm{area}(\vphi(B))
 \end{align*}
  which is what we wanted to show.  The proof that $\vphi^{-1}$ also has this property is analogous.
 
@@ -200,7 +200,7 @@ diagonals on the sphere divide it into four triangles of equal area.  To see thi
 
 Since $T\cup T_1$ and $T\cup T_2$ are both spherical quadrilaterals which overlap on the spherical triangle $T$, the images of $T\cup T_1$ and $T\cup T_2$ are Euclidean parallelograms of equal area which overlap on a shared triangle $\vphi(T)$.
 	Therefore, the image of $T\cup T_1\cup T_2$ has a boundary consisting of 
-	four line segments, with one pair of these parallel.
+	four line segments.
 	
 	To find the contradiction, consider the point on the sphere shared by $T$, $T_1$, and $T_2$.  Since these triangles are all equilateral spherical triangles, the three angles at this point are each strictly greater than $\tfrac{\pi}{3}$ radians, because the sum of interior angles on a triangle is strictly greater than $\pi$.  
 	so, the total measure of the three angles at this point is greater than $\pi$,  Therefore, the two geodesic segments which are part of the boundaries of $T_1$ and $T_2$ meet at this point at an angle of measure strictly greater than 

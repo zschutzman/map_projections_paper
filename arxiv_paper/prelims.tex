@@ -119,12 +119,12 @@ Why is this weird? In the plane, it is always the case that any pair of distinct
 \noindent\textbf{\Cref{lem:sphtri}.} [Girard's Theorem]
 \emph{The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.}\\}
 
-Contrast this to the planar setting, where the sum of the interior angles of a triangle is equal to $\pi$ for any triangle, regardless of its area.  As a concrete example, we can construct a spherical triangle with three right angles.  The triangle formed by the north pole and two points on the equator, one a quarter of the way around the sphere from the other, form such a triangle.  Its area is one eighth of the whole sphere, or $\tfrac{\pi}{2}$, which is, not coincidentally, equal to $\tfrac{\pi}{2}+\tfrac{\pi}{2}+\tfrac{\pi}{2} - \pi$.
+Another difference between spherical and planar geometry appears when computing the angles of triangles. In the planar setting, the sum of the interior angles of a triangle is always pi, regardless of its area. However, in the spherical case we can construct a triangle with three right angles. The triangle formed by the north pole and two points on the equator, one a quarter of the way around the sphere from the other, form such a triangle.  Its area is one eighth of the whole sphere, or $\tfrac{\pi}{2}$, which is, not coincidentally, equal to $\tfrac{\pi}{2}+\tfrac{\pi}{2}+\tfrac{\pi}{2} - \pi$. Girard's theorem, which we will prove below, connects the total angle to the area of a spherical triangle.\nocite{se_triangle}
 
 
-In order to  show \Cref{lem:sphtri}, we need some way to translate between \textit{angles} and \textit{area}.  To do that, we'll use a shape which doesn't even exist in the plane: the \textit{diangle} or \textit{lune}.    We know that two great circles intersect at two antipodal points, and we can also see that they cut the surface of the sphere into four regions.  Consider one of these regions.  Its boundary is a pair of great circle segments which connect antipodal points and meet at some angle $\theta$ at both of these points.   \mute{On the Earth, a lune is the region between any two lines of longitude, for example.}
+In order to  show Girard's Theorem, we need some way to translate between \textit{angles} and \textit{area}.  To do that, we'll use a shape which doesn't even exist in the plane: the \textit{diangle} or \textit{lune}.    We know that two great circles intersect at two antipodal points, and we can also see that they cut the surface of the sphere into four regions.  Consider one of these regions.  Its boundary is a pair of great circle segments which connect antipodal points and meet at some angle $\theta$ at both of these points.   \mute{On the Earth, a lune is the region between any two lines of longitude, for example.}
 
-The area of a lune with angle $\theta$ is easy to compute.
+Using that the surface area of a unit sphere is $4\pi$, computing the area of a lune with angle $\theta$ is straightforward.
 
 
 \begin{figure}[htb]
@@ -142,7 +142,7 @@ The area of a lune with angle $\theta$ is easy to compute.
 	This claim follows from observing that a lune with angle $\theta$ occupies a $\tfrac{2\pi}{\theta}$ portion of the sphere's surface area.  The total surface area of the sphere is $4\pi$, so a lune with angle $\theta$ has surface area $\tfrac{4\pi\theta}{2\pi}= 2\theta$.
 \end{proof}
 }
-Now that we have a tool that lets us relate angles and areas, we can finally prove \Cref{lem:sphtri}.
+Now that we have a tool that lets us relate angles and areas, we can prove Girard's Theorem.
 
 
 
@@ -159,7 +159,7 @@ Now that we have a tool that lets us relate angles and areas, we can finally pro
 \end{lemma}
 
 \begin{proof}
-	Consider a triangle on the sphere with angles $\theta_1$, $\theta_2$, and $\theta_3$.  Let $T$ denote the area of this triangle. If we extend the sides of the triangle to their entire great circles, each pair intersects at the vertices of our triangle as well as the three points antipodal to the vertices of our triangle, and at the same angles at both sets of points.  This triangle is congruent to our triangle, so its area is also $T$.  Each pair of lines cuts the sphere into four lunes, one which contains our triangle, one which contains the antipodal triangle, and two which do not contain either triangle.  We are interested in the three pairs of lunes which do contain the triangles.  We will label these lunes by their angles, so we have a lune $L(\theta_1)$ and its antipodal lune $L'(\theta_1)$, and we can similarly define $L(\theta_2)$, $L'(\theta_2)$, $L(\theta_3)$, and $L'(\theta_3)$.
+	Consider a triangle on the sphere with angles $\theta_1$, $\theta_2$, and $\theta_3$.  Let $T$ denote the area of this triangle. If we extend the sides of the triangle to their entire great circles, each pair intersects at the vertices of our triangle as well as the three points antipodal to the vertices of our triangle, and at the same angles at both sets of points.  This triangle is congruent to our triangle, so its area is also $T$.  Each pair of great circles cuts the sphere into four lunes, one which contains our triangle, one which contains the antipodal triangle, and two which do not contain either triangle.  We are interested in the three pairs of lunes which do contain the triangles.  We will label these lunes by their angles, so we have a lune $L(\theta_1)$ and its antipodal lune $L'(\theta_1)$, and we can similarly define $L(\theta_2)$, $L'(\theta_2)$, $L(\theta_3)$, and $L'(\theta_3)$.
 	
 	
 	\begin{figure}[htb]
@@ -197,7 +197,7 @@ Now that we have a tool that lets us relate angles and areas, we can finally pro
 	which is exactly the statement we wanted to show.
 \end{proof}
 
-We will need one more fact about spherical triangles before we conclude this section.  It dates back to (at least) Euclid's \textit{Elements} \cite{elements} where it follows from Propositions I.6 and I.8.  
+We will need one more fact about spherical triangles before we conclude this section.  It follows immediately from the Spherical Law of Cosines.
 
 \begin{fact}
 	An equilateral triangle is equiangular, and vice versa.
@@ -213,7 +213,7 @@ We will need one more fact about spherical triangles before we conclude this sec
 
 }
 
-A concerned reader may be wary that we have carelessly applied a result about planar geometry to the sphere while sweeping under the rug some critical difference in these settings.  While \textit{Elements} is indeed a compendium of facts about planar geometry, these two propositions only rely on Euclid's first four postulates, which do hold for the sphere, and, crucially, do not rely on the assumption that parallel lines exist.
+An astute reader may notice that this result is also true of planar triangles, and the planar version follows from Propositions I.6 and I.8 in Euclid's \textit{Elements} \cite{elements}.  Since Euclid's proof doesn't rely on the existence of parallel lines, this fact can alternatively be shown using his argument.
 
 
 

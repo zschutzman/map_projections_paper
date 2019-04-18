@@ -1,0 +1,111 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Altman(1998)]{altman_1998}
+Micah Altman.
+\newblock Traditional districting principles: Judicial myths vs. reality.
+\newblock \emph{Social Science History}, 22\penalty0 (2):\penalty0 159–200,
+  1998.
+\newblock \doi{10.1017/S0145553200023257}.
+
+\bibitem[Barnes and Solomon(2018)]{barnes2018gerrymandering}
+Richard Barnes and Justin Solomon.
+\newblock Gerrymandering and compactness: Implementation flexibility and abuse.
+\newblock \emph{arXiv:1803.02857}, 2018.
+
+\bibitem[Byrne(1847)]{elements}
+Oliver Byrne.
+\newblock \emph{The first six books of the Elements of Euclid: in which
+  coloured diagrams and symbols are used instead of letters for the greater
+  ease of learners}.
+\newblock William Pickering, 1847.
+
+\bibitem[DeFord et~al.(2018)DeFord, Lavenant, Schutzman, and
+  Solomon]{deford2018tv}
+Daryl DeFord, Hugo Lavenant, Zachary Schutzman, and Justin Solomon.
+\newblock Total variation isoperimetric profiles, 2018.
+
+\bibitem[Duchin and Tenner(2018)]{duchin2018discrete}
+Moon Duchin and Bridget~Eileen Tenner.
+\newblock Discrete geometry for electoral geography.
+\newblock \emph{arXiv:1808.05860}, 2018.
+
+\bibitem[Frolov(1975)]{frolov1975shape}
+Yu.~S. Frolov.
+\newblock Measuring the shape of geographical phenomena: A history of the
+  issue.
+\newblock \emph{Soviet Geography}, 16\penalty0 (10):\penalty0 676--687, 1975.
+\newblock \doi{10.1080/00385417.1975.10640104}.
+\newblock URL \url{https://doi.org/10.1080/00385417.1975.10640104}.
+
+\bibitem[Hachadoorian(2018)]{hachadoorian2018reock}
+Lee Hachadoorian.
+\newblock Compactr.
+\newblock \url{https://github.com/gerrymandr/compactr}, 2018.
+
+\bibitem[(https://math.stackexchange.com/users/13618/ben
+  crowell)()]{se_triangle}
+Ben~Crowell (https://math.stackexchange.com/users/13618/ben crowell).
+\newblock Is an equilateral triangle the same as an equiangular triangle, in
+  any geometry?
+\newblock Mathematics Stack Exchange.
+\newblock URL \url{https://math.stackexchange.com/q/95080}.
+\newblock URL:https://math.stackexchange.com/q/95080 (version: 2016-11-10).
+
+\bibitem[Ingraham(2014)]{ingraham2014solve}
+Christopher Ingraham.
+\newblock This computer programmer solved gerrymandering in his spare time, Jun
+  2014.
+\newblock URL
+  \url{https://www.washingtonpost.com/news/wonk/wp/2014/06/03/this-computer-programmer-solved-gerrymandering-in-his-spare-time/?noredirect=on&utm_term=.47fccb34f63d}.
+
+\bibitem[Kaufman et~al.(Forthcoming)Kaufman, King, and
+  Komisarchik]{kingeyeball}
+Aaron Kaufman, Gary King, and Mayya Komisarchik.
+\newblock How to measure legislative district compactness if you only know it
+  when you see it.
+\newblock \emph{American Journal of Political Science}, Forthcoming.
+
+\bibitem[Maceachren(1985)]{maceachren1985compact}
+Alan~M. Maceachren.
+\newblock Compactness of geographic shape: Comparison and evaluation of
+  measures.
+\newblock \emph{Geografiska Annaler. Series B, Human Geography}, 67\penalty0
+  (1):\penalty0 53--67, 1985.
+\newblock ISSN 04353684, 14680467.
+\newblock URL \url{http://www.jstor.org/stable/490799}.
+
+\bibitem[Osserman(1979)]{osserman1979bonnesen}
+Robert Osserman.
+\newblock Bonnesen-style isoperimetric inequalities.
+\newblock \emph{The American Mathematical Monthly}, 86\penalty0 (1):\penalty0
+  1--29, 1979.
+
+\bibitem[Polsby and Popper(1991)]{polsby1991third}
+Daniel~D Polsby and Robert~D Popper.
+\newblock The third criterion: Compactness as a procedural safeguard against
+  partisan gerrymandering.
+\newblock \emph{Yale Law \& Policy Review}, 9\penalty0 (2):\penalty0 301--353,
+  1991.
+
+\bibitem[Rado(1935)]{rado}
+Tibor Rado.
+\newblock The isoperimetric inequality on the sphere.
+\newblock \emph{American Journal of Mathematics}, 57\penalty0 (4):\penalty0
+  765--770, 1935.
+\newblock ISSN 00029327, 10806377.
+\newblock URL \url{http://www.jstor.org/stable/2371011}.
+
+\bibitem[Young(1988)]{young_compactness}
+H.~P. Young.
+\newblock Measuring the compactness of legislative districts.
+\newblock \emph{Legislative Studies Quarterly}, 13\penalty0 (1):\penalty0
+  105--115, 1988.
+\newblock ISSN 03629805.
+\newblock URL \url{http://www.jstor.org/stable/439947}.
+
+\end{thebibliography}
