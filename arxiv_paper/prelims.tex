@@ -32,7 +32,7 @@ Lines in the plane and great circles on the sphere are called \textbf{geodesics}
 \end{definition}  
 
 
-{The idea of {geodesics} generalizes the notion of `straight lines' in the plane to other settings.} One critical difference is that in the plane, there is a unique line passing through any two distinct points and a unique line segment joining them.  On the sphere, there will typically be a unique great circle and \textit{two} geodesic segments through a pair of points, with the exception of one case.
+{The idea of {geodesics} generalizes the notion of \enquote*{straight lines} in the plane to other settings.} One critical difference is that in the plane, there is a unique line passing through any two distinct points and a unique line segment joining them.  On the sphere, there will typically be a unique great circle and \textit{two} geodesic segments through a pair of points, with the exception of one case.
 
 
 
@@ -110,14 +110,14 @@ We now have enough terminology to show a very important fact about spherical geo
 
 
 
-Why is this weird? In the plane, it is always the case that any pair of distinct lines intersects exactly once or never, in which case we call them \textit{parallel}. Since distinct great circles on the sphere intersect exactly twice, there is no such thing as `parallel lines' on the sphere, and we have to be careful about discussing `the' intersection of two great circles since they do not meet at a unique point.  Furthermore, it is not the case that there is a unique segment of a great circle connecting any two points; there are two, but unless our two points are antipodes, one of the two segments will be shorter. 
+Why is this weird? In the plane, it is always the case that any pair of distinct lines intersects exactly once or never, in which case we call them \textit{parallel}. Since distinct great circles on the sphere intersect exactly twice, there is no such thing as \enquote*{parallel lines} on the sphere, and we have to be careful about discussing `the' intersection of two great circles since they do not meet at a unique point.  Furthermore, it is not the case that there is a unique segment of a great circle connecting any two points; there are two, but unless our two points are antipodes, one of the two segments will be shorter. 
 
 
 
-We will use this distinction to derive a result which we will use critically in the main theorems of this paper, namely\\
+\mute{We will use this distinction to derive a result which we will use critically in the main theorems of this paper, namely\\
 
 \noindent\textbf{\Cref{lem:sphtri}.} [Girard's Theorem]
-\emph{The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.}\\
+\emph{The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.}\\}
 
 Contrast this to the planar setting, where the sum of the interior angles of a triangle is equal to $\pi$ for any triangle, regardless of its area.  As a concrete example, we can construct a spherical triangle with three right angles.  The triangle formed by the north pole and two points on the equator, one a quarter of the way around the sphere from the other, form such a triangle.  Its area is one eighth of the whole sphere, or $\tfrac{\pi}{2}$, which is, not coincidentally, equal to $\tfrac{\pi}{2}+\tfrac{\pi}{2}+\tfrac{\pi}{2} - \pi$.
 
@@ -208,7 +208,7 @@ We will need one more fact about spherical triangles before we conclude this sec
 \begin{proof}
 	To see this, first suppose that we have a triangle with vertices $a$, $b$, and $c$ and suppose that the length of the side $ab$ is equal to that of $bc$, and let $m$ be the midpoint of the segment $bc$.  Consider the segment $am$. This splits the triangle $abc$ into two triangles $amb$ and $amc$.  These three triangles have the same side lengths and are therefore congruent.  By this congruence, the angle opposite vertex $a$ is equal to the angle opposite vertex $c$.  To show that either of these is also equal to the angle opposite vertex $b$, take $m$ to be the midpoint of segment $ac$.
 	
-	To see the converse, suppose that the angles at vertices $b$ and $c$ are equal.  Then the triangle $abc$ is congruent to the triangle $acb$ because they both share side $bc$ and the angle at vertex $a$, and the angle at vertex $b$ is equal to that at $c$.\footnote{This is sometimes called the ``side-side-angle'' congruence theorem.}  Since the triangles are congruent, the sides $ac$ and $ab$ have equal length.  To show that either of these is also equal to the length of side $bc$, consider angles $a$ and $c$ instead.
+	To see the converse, suppose that the angles at vertices $b$ and $c$ are equal.  Then the triangle $abc$ is congruent to the triangle $acb$ because they both share side $bc$ and the angle at vertex $a$, and the angle at vertex $b$ is equal to that at $c$.\footnote{This is sometimes called the \enquote{side-side-angle} congruence theorem.}  Since the triangles are congruent, the sides $ac$ and $ab$ have equal length.  To show that either of these is also equal to the length of side $bc$, consider angles $a$ and $c$ instead.
 \end{proof}
 
 }
@@ -224,7 +224,7 @@ We carefully lay these out so
 as to align with an intuitive understanding of the concepts and to
 appease the astute reader who may be concerned with edge cases,
 geometric weirdness, and nonmeasurability. 
-
+Throughout, we implicitly consider all figures on the sphere to be strictly contained in a hemisphere.
 
 
 
@@ -271,12 +271,12 @@ computer screen, and so have been subject to such a projection.
 
 \begin{definition}
   A \textbf{map projection} $\varphi$ is a 
-  diffeomorphism from a region on the sphere to a region on the 
+  diffeomorphism from a region on the sphere to a region of the 
   plane. 
 \end{definition}
 
-Intuitively, a map projection is a well-defined, invertible function between the sphere and the plane which sends regions on the sphere to regions in the plane.  Throughout, we use $\vphi$ to denote such a function from a region of the sphere 
-to a region of the plane and $\vphi^{-1}$ its inverse, which goes from a region of the plane to a region of the sphere. 
+We choose this definition, and particularly the term \textit{diffeomorphism}, to ensure that $\vphi$ is continuous, its inverse $\vphi^{-1}$ exists and is continuous, and both $\vphi$ and $\vphi^{-1}$ send regions in their domain to regions in their codomain.  Throughout, we use $\vphi$ to denote such a function from a region of the sphere 
+to a region of the plane and $\vphi^{-1}$, to denote the inverse which is a function from a region of the plane back to a region of the sphere.
 
 \begin{definition}
   We use the word \textbf{transformation} [of the plane/sphere] to mean
