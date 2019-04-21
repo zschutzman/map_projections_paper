@@ -9,7 +9,8 @@ In this section, we present some basic results about spherical geometry with the
 
 
 We use $\R^2$ to denote the 
-Euclidean plane with its usual metric;
+Euclidean plane with the usual way of measuring distances, 
+$$d(x,y) = \sqrt{(x-y)^2};$$
 similarly, $\R^3$ denotes Euclidean 3-space.  We use $\mbb{S}^2$ to denote the \textit{unit 2-sphere}, which can be 
 thought of as the set of points in $\R^3$ at Euclidean distance one from the origin.  
  
@@ -32,10 +33,13 @@ Lines in the plane and great circles on the sphere are called \textbf{geodesics}
 \end{definition}  
 
 
+
 {The idea of {geodesics} generalizes the notion of \enquote*{straight lines} in the plane to other settings.} One critical difference is that in the plane, there is a unique line passing through any two distinct points and a unique line segment joining them.  On the sphere, there will typically be a unique great circle and \textit{two} geodesic segments through a pair of points, with the exception of one case.
 
 
-
+\begin{definition}
+	A \textbf{triangle} in the plane or the sphere is defined by three distinct points and the shortest geodesics connecting each pair of points.
+\end{definition}
 
 
 
@@ -119,10 +123,10 @@ Why is this weird? In the plane, it is always the case that any pair of distinct
 \noindent\textbf{\Cref{lem:sphtri}.} [Girard's Theorem]
 \emph{The sum of the interior angles of a spherical triangle is strictly greater than $\pi$.  More specifically, the sum of the interior angles is equal to $\pi$ plus the area of the triangle.}\\}
 
-Another difference between spherical and planar geometry appears when computing the angles of triangles. In the planar setting, the sum of the interior angles of a triangle is always pi, regardless of its area. However, in the spherical case we can construct a triangle with three right angles. The triangle formed by the north pole and two points on the equator, one a quarter of the way around the sphere from the other, form such a triangle.  Its area is one eighth of the whole sphere, or $\tfrac{\pi}{2}$, which is, not coincidentally, equal to $\tfrac{\pi}{2}+\tfrac{\pi}{2}+\tfrac{\pi}{2} - \pi$. Girard's theorem, which we will prove below, connects the total angle to the area of a spherical triangle.\nocite{se_triangle}
+Another difference between spherical and planar geometry appears when computing the angles of triangles. In the planar setting, the sum of the interior angles of a triangle is always $\pi$, regardless of its area. However, in the spherical case we can construct a triangle with three right angles. The north pole and two points on the equator, one a quarter of the way around the sphere from the other, form such a triangle.  Its area is one eighth of the whole sphere, or $\tfrac{\pi}{2}$, which is, not coincidentally, equal to $\tfrac{\pi}{2}+\tfrac{\pi}{2}+\tfrac{\pi}{2} - \pi$. Girard's theorem, which we will prove below, connects the total angle to the area of a spherical triangle.
 
 
-In order to  show Girard's Theorem, we need some way to translate between \textit{angles} and \textit{area}.  To do that, we'll use a shape which doesn't even exist in the plane: the \textit{diangle} or \textit{lune}.    We know that two great circles intersect at two antipodal points, and we can also see that they cut the surface of the sphere into four regions.  Consider one of these regions.  Its boundary is a pair of great circle segments which connect antipodal points and meet at some angle $\theta$ at both of these points.   \mute{On the Earth, a lune is the region between any two lines of longitude, for example.}
+In order to  show Girard's Theorem, we need some way to translate between \textit{angles} and \textit{area}.  To do that, we'll use a shape which doesn't even exist in the plane: the \textit{diangle} or \textit{lune}.    We know that two great circles intersect at two antipodal points, and we can also see that they cut the surface of the sphere into four regions.  Consider one of these regions.  Its boundary is a pair of great circle segments which connect antipodal points and meet at some angle $\theta\leq \pi$ at both of these points.   
 
 Using that the surface area of a unit sphere is $4\pi$, computing the area of a lune with angle $\theta$ is straightforward.
 
@@ -159,7 +163,7 @@ Now that we have a tool that lets us relate angles and areas, we can prove Girar
 \end{lemma}
 
 \begin{proof}
-	Consider a triangle on the sphere with angles $\theta_1$, $\theta_2$, and $\theta_3$.  Let $T$ denote the area of this triangle. If we extend the sides of the triangle to their entire great circles, each pair intersects at the vertices of our triangle as well as the three points antipodal to the vertices of our triangle, and at the same angles at both sets of points.  This triangle is congruent to our triangle, so its area is also $T$.  Each pair of great circles cuts the sphere into four lunes, one which contains our triangle, one which contains the antipodal triangle, and two which do not contain either triangle.  We are interested in the three pairs of lunes which do contain the triangles.  We will label these lunes by their angles, so we have a lune $L(\theta_1)$ and its antipodal lune $L'(\theta_1)$, and we can similarly define $L(\theta_2)$, $L'(\theta_2)$, $L(\theta_3)$, and $L'(\theta_3)$.
+	Consider a triangle $T$ on the sphere with angles $\theta_1$, $\theta_2$, and $\theta_3$.  Let $\mathrm{area}(T)$ denote the area of this triangle. If we extend the sides of the triangle to their entire great circles, each pair intersects at the vertices of $T$ as well as the three points antipodal to the vertices of $T$, and at the same angles at antipodal points.  This second triangle is congruent to $T$, so its area is also $\mathrm{area}(T)$.  Each pair of great circles cuts the sphere into four lunes, one which contains $T$, one which contains the antipodal triangle, and two which do not contain either triangle.  We are interested in the three pairs of lunes which do contain the triangles.  We will label these lunes by their angles, so we have a lune $L(\theta_1)$ and its antipodal lune $L'(\theta_1)$, and we can similarly define $L(\theta_2)$, $L'(\theta_2)$, $L(\theta_3)$, and $L'(\theta_3)$.
 	
 	
 	\begin{figure}[htb]
@@ -170,12 +174,12 @@ Now that we have a tool that lets us relate angles and areas, we can prove Girar
 	\end{figure}
 	
 	
-	We have six lunes.  In total, they cover the sphere, but share some overlap.  If we remove our triangle from two of the three which contain it and the antipodal triangle from two of the three which contain it, then we have six non-overlapping regions which cover the sphere, so the area of the sphere must be equal to the sum of the areas of these six regions.  \mute{We can write
+	We have six lunes.  In total, they cover the sphere, but share some overlap.  If we remove $T$ from two of the three which contain it and the antipodal triangle from two of the three which contain it, then we have six non-overlapping regions which cover the sphere, so the area of the sphere must be equal to the sum of the areas of these six regions.  \mute{We can write
 	
 	\begin{align*}
 	4\pi &= \mathrm{area}(L(\theta_1)) + \mathrm{area}(L'(\theta_1)) \\
-	&+  (\mathrm{area}(L(\theta_2)) - T) + (\mathrm{area}(L'(\theta_2)) - T) \\
-	&+ (\mathrm{area}(L(\theta_3)) - T)	 + (\mathrm{area}(L'(\theta_3)) - T).
+	&+  (\mathrm{area}(L(\theta_2)) - \mathrm{area}(T)) + (\mathrm{area}(L'(\theta_2)) - \mathrm{area}(T)) \\
+	&+ (\mathrm{area}(L(\theta_3)) - \mathrm{area}(T))	 + (\mathrm{area}(L'(\theta_3)) - \mathrm{area}(T)).
 	\end{align*}
 }
 	
@@ -184,14 +188,14 @@ Now that we have a tool that lets us relate angles and areas, we can prove Girar
 	
 	\begin{align*}
 	4\pi &= 2\theta_1 + 2\theta_1 
-	+  (2\theta_2 - T) + (2\theta_2-T) 
-	+ (2\theta_3 - T)	 + (2\theta_3 - T)
+	+  (2\theta_2 - \mathrm{area}(T)) + (2\theta_2-\mathrm{area}(T)) 
+	+ (2\theta_3 - \mathrm{area}(T))	 + (2\theta_3 - \mathrm{area}(T))
 	\end{align*}
 	and rearrange to get
 	
 	
 	\begin{align*}
-	\theta_1+\theta_2+\theta_3 = \pi + T,
+	\theta_1+\theta_2+\theta_3 = \pi + \mathrm{area}(T),
 	\end{align*}
 	
 	which is exactly the statement we wanted to show.
@@ -200,7 +204,7 @@ Now that we have a tool that lets us relate angles and areas, we can prove Girar
 We will need one more fact about spherical triangles before we conclude this section.  It follows immediately from the Spherical Law of Cosines.
 
 \begin{fact}
-	An equilateral triangle is equiangular, and vice versa.
+	An equilateral triangle is equiangular, and vice versa, where \textit{equilateral} means that the three sides have equal length and \textit{equiangular} means that the three angles all have the same measure.
 \end{fact}
 
 
@@ -213,7 +217,7 @@ We will need one more fact about spherical triangles before we conclude this sec
 
 }
 
-An astute reader may notice that this result is also true of planar triangles, and the planar version follows from Propositions I.6 and I.8 in Euclid's \textit{Elements} \cite{elements}.  Since Euclid's proof doesn't rely on the existence of parallel lines, this fact can alternatively be shown using his argument.
+An astute reader may notice that this result is also true of planar triangles, and the planar version follows from Propositions I.6 and I.8 in Euclid's \textit{Elements} \cite{elements,se_triangle}.  Since Euclid's proof doesn't rely on the existence of parallel lines, this fact can alternatively be shown using his argument.
 
 
 
@@ -234,16 +238,11 @@ Throughout, we implicitly consider all figures on the sphere to be strictly cont
 
 
 \begin{definition}
-	A \textbf{region} $\Omega$ in $\mathbb{S}^2$ or 
-	in $\R^2$ is a non-empty open set such that $\Omega$ is bounded and its boundary is piecewise smooth.
+	A \textbf{region} is a non-empty, open subset $\Omega$ of $\mathbb{S}^2$ or $\R^2$ such that $\Omega$ is bounded and its boundary is piecewise smooth.
 \end{definition}
 
-This definition is highly technical to allow us to assume away any annoying edge 
-cases that might crop up.  Piece-by-piece, a \textit{non-empty open set} lets us 
-talk about the \textit{area} of a region in a sensible way, and being \textit{bounded} means that this area is finite.  Finally, the 
-\textit{piecewise-smooth boundary} condition gives us a way to talk about the \textit{perimeter} 
-of a region.  We don't want to have to worry about fractal-like shapes which have well-defined 
-area but an infinite perimeter.
+We choose this definition to ensure that the \textit{area} and \textit{perimeter} of the region are well-defined concepts.  This eliminates pathological examples of open sets whose boundaries have non-zero area or edge cases like considering the whole plane a \enquote*{region}.
+
 
 
 
@@ -256,7 +255,7 @@ area but an infinite perimeter.
 
 \begin{definition}
 A \textbf{compactness score function} $\mathcal{C}$ is a function from
-the set of all regions to the positive real numbers.  We can compare 
+the set of all regions to the non-negative real numbers or infinity.  We can compare 
 the scores of any two regions, and we adopt the convention that 
 \textit{more compact} regions have \textit{higher} scores.  That is,
 region $A$ is at least as compact as region $B$ if and only if 
@@ -275,13 +274,9 @@ computer screen, and so have been subject to such a projection.
   plane. 
 \end{definition}
 
-We choose this definition, and particularly the term \textit{diffeomorphism}, to ensure that $\vphi$ is continuous, its inverse $\vphi^{-1}$ exists and is continuous, and both $\vphi$ and $\vphi^{-1}$ send regions in their domain to regions in their codomain.  Throughout, we use $\vphi$ to denote such a function from a region of the sphere 
+We choose this definition, and particularly the term \textit{diffeomorphism}, to ensure that $\vphi$ is smooth, its inverse $\vphi^{-1}$ exists and is smooth, and both $\vphi$ and $\vphi^{-1}$ send regions in their domain to regions in their codomain.  Throughout, we use $\vphi$ to denote such a function from a region of the sphere 
 to a region of the plane and $\vphi^{-1}$, to denote the inverse which is a function from a region of the plane back to a region of the sphere.
 
-\begin{definition}
-  We use the word \textbf{transformation} [of the plane/sphere] to mean
-   a diffeomorphism from the plane or sphere to itself.
-\end{definition}
 
 Since the image of a region under a map projection $\varphi$ is also
 a region, we can examine the compactness score of that region both 

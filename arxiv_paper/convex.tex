@@ -6,7 +6,7 @@ define this score function.
 
 
 \begin{definition}
-	A set in a metric space is \textbf{convex} if every shortest geodesic segment between any two points in the set is entirely 
+	A set in $\R^2$ or $\mbb{S}^2$  is \textbf{convex} if every shortest geodesic segment between any two points in the set is entirely 
 	contained within that set.
 \end{definition}
 
@@ -37,13 +37,13 @@ define this score function.
 	\label{fig:ch_example}
 \end{figure}
 
-Suppose that our map projection $\vphi$ does  preserve the ordering of regions induced by the convex hull score.  We begin by observing that such a projection must preserve certain geometric properties of regions within these patches.
+Suppose that our map projection $\vphi$ does  preserve the ordering of regions induced by the convex hull score.  We begin by observing that such a projection must preserve certain geometric properties of regions within its domain.
 \begin{lemma}~\label{lem:CH_prep}
-	Let $\vphi$ be a map projection from some region of the sphere to a region of the plane. If $\vphi$ preserves the ordering of regions induced by their convex hull scores, then the following must 
+	Let $\vphi$ be a map projection from some region of the sphere to a region of the plane. If $\vphi$ preserves the convex hull compactness score ordering, then the following must 
 	hold:
 	\begin{enumerate}
 		\item $\vphi$ and $\vphi^{-1}$ send convex regions to convex regions
-		\item $\vphi$ sends every segment of a great circle on the sphere to a line segment in the plane.  That is, it preserves geodesics.\footnote{Such a projection is sometimes called a \textit{geodesic map}.}
+		\item $\vphi$ sends every segment of a great circle in its domain to a line segment in its codomain.  That is, it preserves geodesics.\footnote{Such a projection is sometimes called a \textit{geodesic map}.}
 		\item There exists a region $U$ in the domain of $\vphi$
 		such that for any regions $A,B\subset U$, if 
 		$A$ and $B$ have equal area on the sphere, then 
