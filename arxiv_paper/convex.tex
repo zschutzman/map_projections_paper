@@ -42,7 +42,7 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions i
 	Let $\vphi$ be a map projection from some region of the sphere to a region of the plane. If $\vphi$ preserves the convex hull compactness score ordering, then the following must 
 	hold:
 	\begin{enumerate}
-		\item $\vphi$ and $\vphi^{-1}$ send convex regions to convex regions
+		\item $\vphi$ and $\vphi^{-1}$ send convex regions in their domains to convex regions in their codomains.
 		\item $\vphi$ sends every segment of a great circle in its domain to a line segment in its codomain.  That is, it preserves geodesics.\footnote{Such a projection is sometimes called a \textit{geodesic map}.}
 		\item There exists a region $U$ in the domain of $\vphi$
 		such that for any regions $A,B\subset U$, if 
@@ -57,9 +57,16 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions i
 \else
 \begin{figure}[h]
 	\centering
-	%\includegraphics[width=.25\textwidth]{figs/ch_sphere_schema.png}
+	\begin{minipage}{.3\textwidth}
 	\input{figs/ch_sphere_schema}
-	\caption{Two equal area regions $A$ and $B$ removed from $U$.}
+			\end{minipage}
+	\begin{minipage}{.3\textwidth}
+	\input{figs/ch_sphere_schema-x}
+\end{minipage}
+	\begin{minipage}{.3\textwidth}
+	\input{figs/ch_sphere_schema-y}
+\end{minipage}
+	\caption{Two equal area regions $A$ and $B$ removed from $U$ to form the regions $X$ and $Y$.}
 	\label{fig:ch_schema}
 \end{figure}
 \fi
@@ -119,7 +126,7 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions i
 		
  To show (3), let $U$ be some convex region in the domain of $\vphi$.  Take $A,B$ to be regions of equal area such that $A$ and $B$ are properly contained in the interior of $U$, as in \Cref{fig:ch_schema}.  Define two new regions $X=U\ssm A$ and $Y=U\ssm B$, i.e. these regions are equal to $U$ with $A$ or $B$ deleted, respectively.  
 
-The cap $U$ is itself the convex hull of both $X$ and $Y$, and since $A$ and $B$ have equal area, we have that $\mathrm{CH}(X) = \mathrm{CH}(Y)$.  Since $U$ is a cap, it is convex, so by (1), $\vphi(U)$ is also convex.  Since $\vphi$ preserves the ordering of convex hull scores and $X$ and $Y$ had equal scores on the sphere, $\vphi$ must send $X$ and $Y$ to regions in the plane which also have the same convex hull score.  Furthermore, the convex hulls of $\vphi(X)$ and $\vphi(Y)$ are $\vphi(U)$.
+The cap $U$ is itself the convex hull of both $X$ and $Y$, and since $A$ and $B$ have equal area, we have that $\mathrm{CH}(X) = \mathrm{CH}(Y)$.  Since $U$ is a cap, it is convex, so by (1), $\vphi(U)$ is also convex.  Since $\vphi$ preserves the ordering of convex hull scores and $X$ and $Y$ had equal scores on the sphere, $\vphi$ must send $X$ and $Y$ to regions in the plane which also have the same convex hull score as each other.  Furthermore, the convex hulls of $\vphi(X)$ and $\vphi(Y)$ are $\vphi(U)$.
 
 By definition, we have
 \begin{align*}

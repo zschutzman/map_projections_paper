@@ -6,8 +6,11 @@
 \usepackage{comment}
 
 \usepackage{caption}
+
 \usepackage{subcaption}
 \usepackage{csquotes}
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{4}
 
 \iffalse
 \documentclass[17pt]{extarticle}
@@ -25,6 +28,10 @@
 \usepackage{fullpage}
 \usepackage{url}
 \usepackage{hyperref}
+\setlength{\parskip}{.4em}
+\setlength{\parindent}{0em}
+
+
 \else
 \usepackage{maa-monthly}
 \fi
@@ -112,7 +119,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-\input{abstract.tex}
+\noindent\input{abstract.tex}
 \end{abstract}
 \ifarxiv
 \else

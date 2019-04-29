@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -23,6 +23,12 @@ Oliver Byrne.
   coloured diagrams and symbols are used instead of letters for the greater
   ease of learners}.
 \newblock William Pickering, 1847.
+
+\bibitem[Cohen{-}Addad et~al.(2017)Cohen{-}Addad, Klein, and Young]{voronoi}
+Vincent Cohen{-}Addad, Philip~N. Klein, and Neal~E. Young.
+\newblock Balanced power diagrams for redistricting.
+\newblock \emph{CoRR}, abs/1710.03358, 2017.
+\newblock URL \url{http://arxiv.org/abs/1710.03358}.
 
 \bibitem[DeFord et~al.(2018)DeFord, Lavenant, Schutzman, and
   Solomon]{deford2018tv}
@@ -70,6 +76,11 @@ Aaron Kaufman, Gary King, and Mayya Komisarchik.
   when you see it.
 \newblock \emph{American Journal of Political Science}, Forthcoming.
 
+\bibitem[Levin and Friedler(2019)]{levin_friedler_2019}
+Harry Levin and Sorelle Friedler.
+\newblock Automated congressional redistricting.
+\newblock \emph{ACM Journal of Experimental Algorithms}, 2019.
+
 \bibitem[Maceachren(1985)]{maceachren1985compact}
 Alan~M. Maceachren.
 \newblock Compactness of geographic shape: Comparison and evaluation of
@@ -99,6 +110,10 @@ Tibor Rado.
   765--770, 1935.
 \newblock ISSN 00029327, 10806377.
 \newblock URL \url{http://www.jstor.org/stable/2371011}.
+
+\bibitem[Svec et~al.()Svec, Burden, and Dilley]{svec2007applying}
+Lukas Svec, Sam Burden, and Aaron Dilley.
+\newblock Applying voronoi diagrams to the redistricting problem.
 
 \bibitem[Young(1988)]{young_compactness}
 H.~P. Young.
