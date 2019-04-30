@@ -53,23 +53,25 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions i
 \end{lemma}
 
 
-\ifsmallfigs
-\else
+
 \begin{figure}[h]
 	\centering
 	\begin{minipage}{.3\textwidth}
+			\centering
 	\input{figs/ch_sphere_schema}
 			\end{minipage}
 	\begin{minipage}{.3\textwidth}
+			\centering
 	\input{figs/ch_sphere_schema-x}
 \end{minipage}
 	\begin{minipage}{.3\textwidth}
+			\centering
 	\input{figs/ch_sphere_schema-y}
 \end{minipage}
 	\caption{Two equal area regions $A$ and $B$ removed from $U$ to form the regions $X$ and $Y$.}
 	\label{fig:ch_schema}
 \end{figure}
-\fi
+
 
 
 \begin{proof}
@@ -84,31 +86,15 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions i
 
 
 
-\ifsmallfigs
-\begin{figure}
-	\centering
-	\begin{minipage}{.5\textwidth}
-		\centering
-	\resizebox{.95\textwidth}{!}{\input{figs/ch_sphere_schema}}	
-		\captionof{figure}{Two equal area regions $A$ and $B$\\ removed from $U$.}
-	\label{fig:ch_schema}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
-		\centering
-		\resizebox{1.15\textwidth}{!}{\input{figs/nonconvex}}
-\captionof{figure}{If $\vphi(s)$ is not a line segment,\\ then one of $\vphi(M)$ or $\vphi(L)$ is not convex.}
-\label{fig:lineconvexcont}
-	\end{minipage}
-\end{figure}
-\fi
+
 
 
 
 
 
 		
-\ifsmallfigs
-\else		
+
+		
 \begin{figure}[h]
 	\centering
 	%\includegraphics[width=.25\textwidth]{figs/ch_sphere_schema.png}
@@ -116,7 +102,7 @@ Suppose that our map projection $\vphi$ does  preserve the ordering of regions i
 	\caption{If $\vphi(s)$ is not a line segment, then one of $\vphi(M)$ or $\vphi(L)$ is not convex.}
 	\label{fig:lineconvexcont}
 \end{figure}
-\fi
+
 		 By (1), $\vphi$ must send both of these polygons to convex regions in the plane, but this is not the case.  All of the points along $\vphi(s)$ belong to both $\vphi(L)$ and $\vphi(M)$, but since $\vphi(s)$ is not a line segment, we can find two points along it which are joined by some line segment which contains points which only belong to $\vphi(L)$ or $\vphi(M)$, which means that at least one of these convex spherical polygons is sent to something non-convex in the plane, which contradicts our assumption.		See \Cref{fig:lineconvexcont} for an illustration.
 		
 		That $\vphi^{-1}$ sends line segments in the plane to great circle segments on the sphere is shown analogously.  

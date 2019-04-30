@@ -2,6 +2,9 @@
 
 \newif\ifarxiv\arxivtrue
 \newif\ifsmallfigs\smallfigsfalse
+
+
+
 \documentclass{article}
 \usepackage{comment}
 
@@ -11,13 +14,8 @@
 \usepackage{csquotes}
 %\usepackage{draftwatermark}
 %\SetWatermarkScale{4}
+\usepackage{lmodern}
 
-\iffalse
-\documentclass[17pt]{extarticle}
-\usepackage{extsizes}
-\usepackage{setspace}
-\linespread{1.5}
-\fi
 \ifarxiv
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -110,12 +108,14 @@
 
 
 \title{The Gerrymandering Jumble: Map Projections Permute Districts' Compactness Scores}
-\date{\today}
+%\date{\today}
+\ifarxiv
 \author{Assaf Bar-Natan\thanks{University of Toronto, Department of Mathematics. \href{mailto:assaf.barnatan@gmail.com}{\texttt{assaf.barnatan@gmail.com}}} 
 	\and Lorenzo Najt\thanks{University of Wisconsin, Madison, Department of Mathematics. \href{mailto:lnajt4@gmail.com}{\texttt{lnajt@math.wisc.edu}}}  
 	\and Zachary Schutzman\thanks{University of Pennsylvania, Department of Computer and Information Science. \href{mailto:ianzach@seas.upenn.edu}{\texttt{ianzach@seas.upenn.edu}}}  }
-%\author{Anonymous Author(s)}
-
+\else
+\author{Anonymous Author(s)}
+\fi
 \begin{document}
 \maketitle
 \begin{abstract}

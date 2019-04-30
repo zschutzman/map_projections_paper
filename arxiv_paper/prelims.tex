@@ -137,15 +137,17 @@ Using that the surface area of a unit sphere is $4\pi$, computing the area of a 
 	\caption{A lune corresponding to an angle $\theta$. }
 	\label{fig:lune}
 \end{figure}
+		\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.35\textwidth]{figs/trilune.pdf}
+	\caption{A spherical triangle and the antipodal triangle define six lunes.}
+	\label{fig:trilune}
+\end{figure}
 
 \begin{claim}
 	Consider a lune whose boundary segments meet at angle $\theta$.  Then the area of this lune is $2\theta$.
 \end{claim}
-\mute{
-\begin{proof}
-	This claim follows from observing that a lune with angle $\theta$ occupies a $\tfrac{2\pi}{\theta}$ portion of the sphere's surface area.  The total surface area of the sphere is $4\pi$, so a lune with angle $\theta$ has surface area $\tfrac{4\pi\theta}{2\pi}= 2\theta$.
-\end{proof}
-}
+
 Now that we have a tool that lets us relate angles and areas, we can prove Girard's Theorem.
 
 
@@ -166,12 +168,7 @@ Now that we have a tool that lets us relate angles and areas, we can prove Girar
 	Consider a triangle $T$ on the sphere with angles $\theta_1$, $\theta_2$, and $\theta_3$.  Let $\mathrm{area}(T)$ denote the area of this triangle. If we extend the sides of the triangle to their entire great circles, each pair intersects at the vertices of $T$ as well as the three points antipodal to the vertices of $T$, and at the same angles at antipodal points.  This second triangle is congruent to $T$, so its area is also $\mathrm{area}(T)$.  Each pair of great circles cuts the sphere into four lunes, one which contains $T$, one which contains the antipodal triangle, and two which do not contain either triangle.  We are interested in the three pairs of lunes which do contain the triangles.  We will label these lunes by their angles, so we have a lune $L(\theta_1)$ and its antipodal lune $L'(\theta_1)$, and we can similarly define $L(\theta_2)$, $L'(\theta_2)$, $L(\theta_3)$, and $L'(\theta_3)$.
 	
 	
-	\begin{figure}[htb]
-		\centering
-		\includegraphics[width=.35\textwidth]{figs/trilune.pdf}
-		\caption{A spherical triangle and the antipodal triangle define six lunes.}
-		\label{fig:trilune}
-	\end{figure}
+
 	
 	
 	We have six lunes.  In total, they cover the sphere, but share some overlap.  If we remove $T$ from two of the three which contain it and the antipodal triangle from two of the three which contain it, then we have six non-overlapping regions which cover the sphere, so the area of the sphere must be equal to the sum of the areas of these six regions.  \mute{We can write
@@ -183,14 +180,24 @@ Now that we have a tool that lets us relate angles and areas, we can prove Girar
 	\end{align*}
 }
 	
+	
+
+	
 	By the earlier claim, we know that the areas of the lunes are twice their angles, so we can write this as
 	
-	
+	\ifarxiv
 	\begin{align*}
 	4\pi &= 2\theta_1 + 2\theta_1 
-	+  (2\theta_2 - \mathrm{area}(T)) + (2\theta_2-\mathrm{area}(T)) 
+	+  (2\theta_2 - \mathrm{area}(T)) + (2\theta_2-\mathrm{area}(T))
 	+ (2\theta_3 - \mathrm{area}(T))	 + (2\theta_3 - \mathrm{area}(T))
 	\end{align*}
+	\else
+\begin{align*}
+4\pi &= 2\theta_1 + 2\theta_1 
++  (2\theta_2 - \mathrm{area}(T)) + (2\theta_2-\mathrm{area}(T))\\
+&\phantom{2\pi} + (2\theta_3 - \mathrm{area}(T))	 + (2\theta_3 - \mathrm{area}(T))
+\end{align*}	
+	\fi
 	and rearrange to get
 	
 	
