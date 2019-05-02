@@ -111,9 +111,10 @@ Tibor Rado.
 \newblock ISSN 00029327, 10806377.
 \newblock URL \url{http://www.jstor.org/stable/2371011}.
 
-\bibitem[Svec et~al.()Svec, Burden, and Dilley]{svec2007applying}
+\bibitem[Svec et~al.(2007)Svec, Burden, and Dilley]{svec2007applying}
 Lukas Svec, Sam Burden, and Aaron Dilley.
 \newblock Applying voronoi diagrams to the redistricting problem.
+\newblock \emph{The UMAP Journal}, 28\penalty0 (3):\penalty0 313--329, 2007.
 
 \bibitem[Young(1988)]{young_compactness}
 H.~P. Young.

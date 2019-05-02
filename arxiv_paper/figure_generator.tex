@@ -1,0 +1,226 @@
+\documentclass{standalone}
+\usepackage{asypictureB}
+
+\usepackage{comment}
+
+\begin{document}
+
+
+
+
+\begin{asypicture}{name=sph-1pl}
+settings.outformat = "pdf";
+import solids;
+import graph3;
+import three;
+size(20cm);
+
+
+real t = 4;
+triple p0 =(t,t,0), p1=(-t,t,0), p2 = (-t,-t,0), p3 = (t,-t,0); //adjusted p2
+
+settings.outformat = "pdf";
+import solids;
+import graph3;
+import three;
+size(20cm);
+
+currentprojection=orthographic(10,5,4);
+dotfactor=3.5;
+
+revolution b=sphere((0,0,0),3);
+
+draw(b,1,longitudinalpen=nullpen+linewidth(1));
+
+
+
+draw(b.silhouette(),black+linewidth(2));
+dot((0,0,0));
+
+draw(surface(p0--p1--p2--p3--cycle),grey+opacity(.3));
+
+\end{asypicture}
+
+
+
+
+
+\begin{asypicture}{name=2gc}
+	settings.outformat = "pdf";
+import solids;
+import graph3;
+import three;
+size(10cm);
+
+triple p0=(5,0,0), p1=(-5,0,0);
+currentprojection=orthographic((4,2,6), up=(.5,.5,.5));
+
+dotfactor=3.5;
+
+revolution b=sphere((0,0,0),3);
+
+skeleton s;
+
+
+b.transverse(s,reltime(b.g,0.5),P=currentprojection);
+
+draw(s.transverse.back,black+linewidth(2));
+draw(s.transverse.front,black+linewidth(2)+dotted);
+
+b.longitudinal(s,P=orthographic((2,3,-1), up=(.5,.5,.5)));
+draw(s.longitudinal.front,black+linewidth(2)+dotted);
+draw(s.longitudinal.back,black+linewidth(2));
+
+
+draw(b.silhouette(),black);
+
+draw(p0--p1);
+
+dot((0,0,0));
+
+
+\end{asypicture}
+
+
+\begin{asypicture}{name=lune}
+	settings.outformat = "pdf";
+	import solids;
+	import graph3;
+	import three;
+	size(10cm);
+	
+
+	currentprojection=orthographic((4,2,6), up=(.5,.5,.5));
+
+	dotfactor=3.5;
+	
+	revolution b=sphere((0,0,0),3);
+	
+	skeleton s;
+	
+	
+b.transverse(s,reltime(b.g,0.5),P=currentprojection);
+
+draw(s.transverse.back,black+linewidth(2));
+
+
+b.longitudinal(s,P=currentprojection);
+draw(s.longitudinal.front,black+linewidth(2));
+
+
+	
+draw(b.silhouette(),black);
+	
+label(scale(3)*"$\theta$",(-3.5,2,-3),SW);	
+\end{asypicture}
+
+
+
+
+\begin{asypicture}{name=trilune}
+	
+settings.prc=false;
+settings.tex="pdflatex";
+settings.render=0;
+settings.outformat = "pdf";
+import three;
+import solids;
+
+size(100); size3(100);
+size(20cm);
+currentprojection=orthographic(
+camera=(5.4290316601351,2.94352790610013,1.1108527434919),up=Z,target=O,zoom=0.7);
+real r=1;
+
+triple A,B,C;
+A=dir(110.0,30.0);
+B=dir(40.0,40.0);
+C=dir(80.0,80.0);
+
+
+triple A2,B2,C2;
+A2=dir(290.0,30.0);
+B2=dir(220.0,40.0);
+C2=dir(260.0,80.0);
+
+
+
+guide3 AB=arc(O,A,B,CCW);
+guide3 BC=arc(O,B,C,CCW);
+guide3 CA=arc(O,C,A,CCW);
+
+guide3 A2B2=arc(O,A2,B2,CCW);
+guide3 B2C2=arc(O,B2,C2,CCW);
+guide3 C2A2=arc(O,C2,A2,CCW);
+
+
+guide3 AB2=arc(O,A,B2,CCW);
+guide3 AC2=arc(O,A,C2,CCW);
+guide3 BC2=arc(O,B,C2,CCW);
+guide3 C2A=arc(O,C2,A,CCW);
+guide3 B2C=arc(O,B2,C,CCW);
+
+
+
+
+revolution b=sphere(O,1);
+draw(b.silhouette(),black);
+skeleton s;
+b.transverse(s,reltime(b.g,0.5),P=currentprojection);
+draw(s.transverse.back,black+linewidth(.5)+dotted+opacity(.5));
+draw(s.transverse.front,black+linewidth(1)+opacity(.5));
+
+
+
+guide3 g2=AB--BC2--C2A--cycle;
+// fill(project(g2),black);
+
+guide3 g2=CA--AB2--B2C--cycle;
+// fill(project(g2),green);
+
+
+draw(arc(O,A,B,CCW),black+linewidth(.5));
+draw(arc(O,B,C,CCW),black+linewidth(.5));
+draw(arc(O,C,A,CCW),black+linewidth(.5));
+
+draw(arc(O,A,B,CW),black+dotted+linewidth(1)+opacity(.6));
+draw(arc(O,B,C,CW),black+dotted+linewidth(1)+opacity(.6));
+draw(arc(O,C,A,CW),black+dotted+linewidth(1)+opacity(.6));
+
+pen alphaPen=black+fontsize(36);
+pen betaPen=black;
+pen gammaPen=black;
+
+void markAngle(string lab,triple v, guide3 gright, guide3 gleft, real arcdist, pen arcpen=currentpen){
+	triple t,s;
+	t=arcpoint(gright,arcdist); 
+	s=arcpoint(gleft,arcdist);
+	draw(arc(v,t,s,cross(t-v,s-v),CCW),arcpen);
+	label("$"+lab+"$",(v+t+s)/3,arcpen);
+}
+
+real ra,rb,rg; 
+ra=0.38; rb=0.35; rg=0.35;
+
+markAngle("\theta_1",A,reverse(CA),AB,ra,alphaPen);
+markAngle("\theta_2",B,reverse(AB),BC,rb,alphaPen);
+markAngle("\theta_3",C,reverse(BC),CA,rg,alphaPen);
+
+
+
+
+
+dot(A,black); dot(B,black); dot(C,black); dot(A2,black+opacity(.6)); dot(B2,black+opacity(.6)); dot(C2,black+opacity(.6));
+
+guide3 g=AB--BC--CA--cycle;
+fill(project(g),lightgray+opacity(.7));
+
+/*label("$A$",project(A),SW);
+label("$B$",project(B),N);
+label("$C$",project(C),SE);  */
+\end{asypicture}
+
+
+
+
+\end{document}
